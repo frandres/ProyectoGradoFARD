@@ -1,0 +1,150 @@
+<Configuration>
+	<UnitRegExp>^(.+?)$</UnitRegExp>
+	<MinimumHitRatio>.5</MinimumHitRatio>
+	<DocumentsFilePath>/home/frandres/Eclipse/workspace/ExtractionModule/tests/Designaciones/preProcessedDocuments/</DocumentsFilePath>
+	<FieldDescriptors>
+		<FieldDescriptor>
+			<FieldName>Profesor.Nombre</FieldName>
+			<SpecificRegExps>
+				<SpecificRegExp priority="1"  >^\W+([Pp]rof[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+).*</SpecificRegExp>           
+				<SpecificRegExp priority="2"  >^\W+(TSU[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="3"  >^\W+([Ll]ic[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="4"  >^\W+([Ss]e\u00f1or.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="5"  >^\W+([Aa]rq[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="6"  >^\W+([Ii]ng[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="7"  >^\W+(Sr[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="8"  >^\W+([Ee]con[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="9"  >^\W+(Sra[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="10" >^\W+([Pp]orf[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="11" >^\W+([Aa]bog[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="12" >^\W+([Ss]oco[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="13" >^\W+([Ss]oc[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="14" >^\W+([Pp]rofa[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="15" >^\W+([Tt]\u00e9cnico [Ss]uperior[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="16" >^\W+(Dr[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="17" >^\W+(Mgs[^,]*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="18" >^\W+([Pp]rofesora*[^,]*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="19" >^\W+([Ll]icenciad[oa][^,]*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="20" >^\W+([Ss]eñora*[^,]*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="21" >^\W+([Aa]rquitect[oa]*[^,]*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="22" >^\W+([Ii]ngenier[oa]*[^,]*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="23" >^\W+([Ec]conomist[oa]*[^,]*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="24" >^\W+([Aa]bogad[oa]*[^,]*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="25" >^\W+([Ss]ociólog[oa]*[^,]*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>	
+				<SpecificRegExp priority="26" >^\W+([Dd]octor[oa]*[^,]*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				
+				<SpecificRegExp priority="101" >([Pp]rof.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+).*</SpecificRegExp>           
+				<SpecificRegExp priority="102" >(TSU.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="103" >([Ll]ic.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="104" >([Ss]e\u00f1or.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="105" >([Aa]rq.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="106" >([Ii]ng.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="107" >(Sr.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="108" >([Ee]con.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="109" >(Sra.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="110" >([Pp]orf.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="111" >([Aa]bog.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="112" >([Ss]oco.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="113" >([Ss]oc.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="114" >([Pp]rofa.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="115" >([Tt]\u00e9cnico [Ss]uperior.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="116" >(Dr.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="117" >(Mgs.*?[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="118" >([Pp]rofesora*.*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="119" >([Ll]icenciad[oa].*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="120" >([Ss]eñora*.*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="121" >([Aa]rquitect[oa]*.*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="122" >([Ii]ngenier[oa]*.*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="123" >([Ec]conomist[oa]*.*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="124" >([Aa]bogad[oa]*.*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+				<SpecificRegExp priority="125" >([Ss]ociólog[oa]*.*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>	
+				<SpecificRegExp priority="125" >([Dd]octor[oa]*[^,]*[\w'’áéíóú'’ÁÉÍÓÚüñ \.]+),.*</SpecificRegExp>
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<isDate>0</isDate>
+		</FieldDescriptor>
+		
+		<FieldDescriptor>
+			<FieldName>EsAsignado.fechaAsignacion</FieldName>
+			<SpecificRegExps>
+				<SpecificRegExp priority="1" >a\s+partir\s+del{0,1}\s+([0-9][0-9\-/\.]+[0-9]).*</SpecificRegExp>
+				<SpecificRegExp priority="2" >del\s+([0-9][0-9\-/\.]+[0-9]).*</SpecificRegExp>
+				<SpecificRegExp priority="3" >desde\s+el\s+([0-9][0-9\-/\.]+[0-9]).*</SpecificRegExp>
+				<SpecificRegExp priority="4" >desde\s+([0-9][0-9\-/\.]+[0-9]).*</SpecificRegExp>
+				<SpecificRegExp priority="5" >\s+entre\s+el\s+([0-9][0-9\-/\.]+[0-9]).*</SpecificRegExp> 
+				<SpecificRegExp priority="6" >por\s+el\s+período\s+([0-9\-/\.]+[0-9]).*</SpecificRegExp>
+				
+				<SpecificRegExp priority="7" >a\s+partir\s+del{0,1}\s+([1-3]{0,1}[0-9]\s+de\s+(?:(?:[Ee]nero)|(?:[Ff]ebrero)|(?:[Mm]arzo)|(?:[Aa]bril)|(?:[Mm]ayo)|(?:[Jj]unio)|(?:[Jj]ulio)|(?:[Aa]gosto)|(?:[Ss]eptiembre)|(?:[Oo]ctubre)|(?:[Nn]oviembre)|(?:[Dd]iciembre))(?:\s+de\s\d\d\d\d)*).*</SpecificRegExp>
+				<SpecificRegExp priority="8" >del\s+([1-3]{0,1}[0-9]\s+de\s+(?:(?:[Ee]nero)|(?:[Ff]ebrero)|(?:[Mm]arzo)|(?:[Aa]bril)|(?:[Mm]ayo)|(?:[Jj]unio)|(?:[Jj]ulio)|(?:[Aa]gosto)|(?:[Ss]eptiembre)|(?:[Oo]ctubre)|(?:[Nn]oviembre)|(?:[Dd]iciembre))(?:\s+de\s\d\d\d\d)*).*</SpecificRegExp>
+				<SpecificRegExp priority="9" >desde\s+el\s+([1-3]{0,1}[0-9]\s+de\s+(?:(?:[Ee]nero)|(?:[Ff]ebrero)|(?:[Mm]arzo)|(?:[Aa]bril)|(?:[Mm]ayo)|(?:[Jj]unio)|(?:[Jj]ulio)|(?:[Aa]gosto)|(?:[Ss]eptiembre)|(?:[Oo]ctubre)|(?:[Nn]oviembre)|(?:[Dd]iciembre))(?:\s+de\s\d\d\d\d)*).*</SpecificRegExp>
+				<SpecificRegExp priority="10" >desde\s+([1-3]{0,1}[0-9]\s+de\s+(?:(?:[Ee]nero)|(?:[Ff]ebrero)|(?:[Mm]arzo)|(?:[Aa]bril)|(?:[Mm]ayo)|(?:[Jj]unio)|(?:[Jj]ulio)|(?:[Aa]gosto)|(?:[Ss]eptiembre)|(?:[Oo]ctubre)|(?:[Nn]oviembre)|(?:[Dd]iciembre))(?:\s+de\s\d\d\d\d)*).*</SpecificRegExp>
+				<SpecificRegExp priority="11" >\s+entre\s+el\s+([1-3]{0,1}[0-9]\s+de\s+(?:(?:[Ee]nero)|(?:[Ff]ebrero)|(?:[Mm]arzo)|(?:[Aa]bril)|(?:[Mm]ayo)|(?:[Jj]unio)|(?:[Jj]ulio)|(?:[Aa]gosto)|(?:[Ss]eptiembre)|(?:[Oo]ctubre)|(?:[Nn]oviembre)|(?:[Dd]iciembre))(?:\s+de\s\d\d\d\d)*).*</SpecificRegExp> 
+				<SpecificRegExp priority="12" >por\s+el\s+período\s+([1-3]{0,1}[0-9]\s+de\s+(?:(?:[Ee]nero)|(?:[Ff]ebrero)|(?:[Mm]arzo)|(?:[Aa]bril)|(?:[Mm]ayo)|(?:[Jj]unio)|(?:[Jj]ulio)|(?:[Aa]gosto)|(?:[Ss]eptiembre)|(?:[Oo]ctubre)|(?:[Nn]oviembre)|(?:[Dd]iciembre))(?:\s+de\s\d\d\d\d)*).*</SpecificRegExp>
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<isDate>1</isDate>
+		</FieldDescriptor>		
+		<!-- í: \u00ed -->
+		<FieldDescriptor>
+			<FieldName>EsAsignado.fechaFinal</FieldName>
+			<SpecificRegExps>
+				<SpecificRegExp priority="1" >hasta\s+(?:el\s+){0,1}([0-9][0-9\-/\.]+[0-9]).*</SpecificRegExp>
+				<SpecificRegExp priority="2" >al\s+([0-9][0-9\-/\.]+[0-9]).*</SpecificRegExp>
+				<SpecificRegExp priority="3" >hasta\s+(?:el\s+){0,1}([1-3]{0,1}[0-9]\s+de\s+(?:(?:[Ee]nero)|(?:[Ff]ebrero)|(?:[Mm]arzo)|(?:[Aa]bril)|(?:[Mm]ayo)|(?:[Jj]unio)|(?:[Jj]ulio)|(?:[Aa]gosto)|(?:[Ss]eptiembre)|(?:[Oo]ctubre)|(?:[Nn]oviembre)|(?:[Dd]iciembre))(?:\s+de\s\d\d\d\d)*).*</SpecificRegExp>
+				<SpecificRegExp priority="4" >al\s+([1-3]{0,1}[0-9]\s+de\s+(?:(?:[Ee]nero)|(?:[Ff]ebrero)|(?:[Mm]arzo)|(?:[Aa]bril)|(?:[Mm]ayo)|(?:[Jj]unio)|(?:[Jj]ulio)|(?:[Aa]gosto)|(?:[Ss]eptiembre)|(?:[Oo]ctubre)|(?:[Nn]oviembre)|(?:[Dd]iciembre))(?:\s+de\s\d\d\d\d)*).*</SpecificRegExp>
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<isDate>1</isDate>
+		</FieldDescriptor>		
+		
+		<FieldDescriptor>
+			<FieldName>EsAsignado.motivo</FieldName>
+			<SpecificRegExps>
+				<SpecificRegExp priority="1" >(por motivo .*?)$</SpecificRegExp>
+				<SpecificRegExp priority="2" >(con motivo .*?)$</SpecificRegExp>
+				<SpecificRegExp priority="4" >(en sustituci\u00f3n.*?)$</SpecificRegExp>
+				<SpecificRegExp priority="3" >(debido a .*?)$</SpecificRegExp>
+				<SpecificRegExp priority="3" >(por .*?)$</SpecificRegExp>
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<isDate>1</isDate>
+		</FieldDescriptor>		
+		
+		<FieldDescriptor>
+			<FieldName>EsAsignado.calificacion</FieldName>
+			<SpecificRegExps>
+	              <SpecificRegExp priority="1"  >([Jj]ef.*?)(?:(?:a\s+partir\s+del{0,1}\s)|(?:desde)|(?:hasta)|(?:por motivo)|(?:en sustitu)|(?:del\s\d)|(?:al\s\d)|(?:\s+entre\s+el\s+\d)|(?:por\s+el\s+período\s+)).*</SpecificRegExp>
+				<SpecificRegExp priority="2" >([Cc]oordinador.*?)(?:(?:a\s+partir\s+del{0,1}\s)|(?:desde)|(?:hasta)|(?:por motivo)|(?:en sustitu)|(?:del\s\d)|(?:al\s\d)|(?:\s+entre\s+el\s+\d)|(?:por\s+el\s+período\s+)).*</SpecificRegExp>
+				<SpecificRegExp priority="3" >((?:[Ss]ub-{0,1}){0,1}[Dd]irect.*?)(?:(?:a\s+partir\s+del{0,1}\s)|(?:desde)|(?:hasta)|(?:por motivo)|(?:en sustitu)|(?:del\s\d)|(?:al\s\d)|(?:\s+entre\s+el\s+\d)|(?:por\s+el\s+período\s+)).*</SpecificRegExp>
+				<SpecificRegExp priority="4" >([Dd]irector.*?)(?:(?:a\s+partir\s+del{0,1}\s)|(?:desde)|(?:hasta)|(?:por motivo)|(?:en sustitu)|(?:del\s\d)|(?:al\s\d)|(?:\s+entre\s+el\s+\d)|(?:por\s+el\s+período\s+)).*</SpecificRegExp>
+				<SpecificRegExp priority="5" >([Rr]esponsable.*?)(?:(?:a\s+partir\s+del{0,1}\s)|(?:desde)|(?:hasta)|(?:por motivo)|(?:en sustitu)|(?:del\s\d)|(?:al\s\d)|(?:\s+entre\s+el\s+\d)|(?:por\s+el\s+período\s+)).*</SpecificRegExp>
+				<SpecificRegExp priority="6" >([Aa]sistent.*?)(?:(?:a\s+partir\s+del{0,1}\s)|(?:desde)|(?:hasta)|(?:por motivo)|(?:en sustitu)|(?:del\s\d)|(?:al\s\d)|(?:\s+entre\s+el\s+\d)|(?:por\s+el\s+período\s+)).*</SpecificRegExp>
+				<SpecificRegExp priority="7" >([Dd]ecan[oa] .*?)(?:(?:a\s+partir\s+del{0,1}\s)|(?:desde)|(?:hasta)|(?:por motivo)|(?:en sustitu)|(?:del\s\d)|(?:al\s\d)|(?:\s+entre\s+el\s+\d)|(?:por\s+el\s+período\s+)).*</SpecificRegExp>		
+				<SpecificRegExp priority="8" >([Aa]sesor.*?)(?:(?:a\s+partir\s+del{0,1}\s)|(?:desde)|(?:hasta)|(?:por motivo)|(?:en sustitu)|(?:del\s\d)|(?:al\s\d)|(?:\s+entre\s+el\s+\d)|(?:por\s+el\s+período\s+)).*</SpecificRegExp>
+				<SpecificRegExp priority="9" >([Rr]epresentante.*?)(?:(?:a\s+partir\s+del{0,1}\s)|(?:desde)|(?:hasta)|(?:por motivo)|(?:en sustitu)|(?:del\s\d)|(?:al\s\d)|(?:\s+entre\s+el\s+\d)|(?:por\s+el\s+período\s+)).*</SpecificRegExp>
+				<SpecificRegExp priority="10" >([Tt]esorero.*?)(?:(?:a\s+partir\s+del{0,1}\s)|(?:desde)|(?:hasta)|(?:por motivo)|(?:en sustitu)|(?:del\s\d)|(?:al\s\d)|(?:\s+entre\s+el\s+\d)|(?:por\s+el\s+período\s+)).*</SpecificRegExp>
+				<SpecificRegExp priority="11" >([Tt]itular.*?)(?:(?:a\s+partir\s+del{0,1}\s)|(?:desde)|(?:hasta)|(?:por motivo)|(?:en sustitu)|(?:del\s\d)|(?:al\s\d)|(?:\s+entre\s+el\s+\d)|(?:por\s+el\s+período\s+)).*</SpecificRegExp>
+				<SpecificRegExp priority="12">([Ee]ncargad.*?)(?:(?:a\s+partir\s+del{0,1}\s)|(?:desde)|(?:hasta)|(?:por motivo)|(?:en sustitu)|(?:del\s\d)|(?:al\s\d)|(?:\s+entre\s+el\s+\d)|(?:por\s+el\s+período\s+)).*</SpecificRegExp>
+				
+				
+				<SpecificRegExp priority="13"  >([Jj]ef.*)</SpecificRegExp>
+				<SpecificRegExp priority="14" >([Cc]oordinador.*)</SpecificRegExp>
+				<SpecificRegExp priority="15" >((?:[Ss]ub-{0,1}){0,1}[Dd]irect.*)</SpecificRegExp>
+				<SpecificRegExp priority="16" >([Dd]irector.*)</SpecificRegExp>
+				<SpecificRegExp priority="17" >([Rr]esponsable.*)</SpecificRegExp>
+				<SpecificRegExp priority="18" >([Aa]sistent.*)</SpecificRegExp>
+				<SpecificRegExp priority="19" >([Dd]ecan[oa] .*)</SpecificRegExp>		
+				<SpecificRegExp priority="20" >([Aa]sesor.*)</SpecificRegExp>
+				<SpecificRegExp priority="21" >([Rr]epresentante.*)</SpecificRegExp>
+				<SpecificRegExp priority="22" >([Tt]esorero.*)</SpecificRegExp>
+				<SpecificRegExp priority="23" >([Tt]itular.*)</SpecificRegExp>
+				
+				<SpecificRegExp priority="24">([Ee]ncargad.*?).*</SpecificRegExp>
+				
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<isDate>0</isDate>
+		</FieldDescriptor>	
+	</FieldDescriptors>
+
+</Configuration>

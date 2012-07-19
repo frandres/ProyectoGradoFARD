@@ -1,0 +1,9 @@
+
+JURADOS PARA TRABAJOS DE ASCENSO
+Con base en la propuesta presentada por el Director de la División de Ciencias Física y Matemáticas, se designaron los jurados que habrán de conocer los siguientes trabajos de ascenso:
+1	"PREDICCIÓN DEL COMPORTAMIENTO DE TURBINAS A GAS DE UN EJE EN RÉGIMEN ESTACIONARIO Y TRANSITORIO ", presentado por los profesores PEDRO GUILLERMO PIERETTI ITRIAGO Y HERNÁN LORENZO DÍAZ del Departamento de Conversión y Transporte de Energía, a los fines de su ascenso a la categoría de ASOCIADO. El jurado quedó integrado por los siguientes profesores: Stefan Zarea (presidente), Mauricio Casanova y Reinaldo García Martínez (miembros principales), y Andrés Tremante Morakis (miembro suplente).
+2	"TÉCNICAS DE MEDIACIÓN EN FUENTES DE DATOS HETEROGENEAS" presentado por la profesora MARIA ESTHER VIDAL SERODIO del Departamento de Computación y Tecnología de la Información, a los fines de su ascenso a la categoría de ASOCIADO. El jurado quedó integrado por los siguientes profesores: José Ramírez (presidente), Héctor Alberto Geffner y Alonso Márquez Lerchundi (miembros principales), y Cristina Zoltán de Torres (miembro suplente).
+3	"MODIFICACIONES AL CÓDIGO DASSL PARA RESOLVER ECUACIONES DIFERENCIALES ALGEBRÁICAS DE ÍNDICE 3" presentado por el profesor ANDRÉS GUILLERMO VIDAL URBINA del Departamento de Termodinámica y Fenómenos de Transferencia, a los fines de su ascenso a la categoría de AGREGADO. El jurado quedó integrado por los siguientes profesores: Ulises Lacoa Valencia (presidente), Marianela Lentini Gil y Miguel Cerrolaza Rivas (miembros principales), y María de los Ángeles González (miembro suplente).
+
+--------------------------------
+

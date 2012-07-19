@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Filesources>
+
+  <Filesource>
+  		<Name>Designaciones</Name>
+        <InputFilePath>/home/frandres/Eclipse/workspace/ExtractionModule/tests/Designaciones/rawDocuments/</InputFilePath>
+        <OutputFilePath>/home/frandres/Eclipse/workspace/ExtractionModule/tests/Designaciones/preProcessedDocuments/</OutputFilePath>
+        <RegExps>
+            <RegExp>
+        		<Priority>1</Priority>
+        		<String>De acuerdo al numeral 7 del artículo 16(.*?)[^0-9 ][23(?:IV)(?:III)(?:II)][\.\t].*</String>
+        	</RegExp>
+        	<RegExp>
+        		<Priority>2</Priority>
+        		<String>.*(?:[Ii][Nn][Ff][Oo][Rr][Mm][Ee] [Dd][Ee][Ll] [Rr][Ee][Cc][Tt][Oo][Rr]).*?([Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][Oo\u00f3][Nn](?:[Ee][Ss]){0,1}.*?)[^0-9 ][23(?:IV)(?:III)(?:II)][\.\t].*</String>
+        	</RegExp>        	
+        </RegExps>
+
+
+        <readAllFiles>1</readAllFiles>
+        <outputExtension>.txt</outputExtension>   
+        
+</Filesource>
+</Filesources>  
+
+<!-- <String>.*(?:[Ii][Nn][Ff][Oo][Rr][Mm][Ee] [Dd][Ee][Ll] [Rr][Ee][Cc][Tt][Oo][Rr]).*?([Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][Oo\u00f3][Nn](?:[Ee][Ss]){0,1}.*?)[^0-9 ][23(?:IV)(?:III)(?:II)(?:donaci)][\.\t].*</String> --> 

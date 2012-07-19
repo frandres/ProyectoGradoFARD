@@ -1,0 +1,88 @@
+<Configuration>
+	<UnitRegExps>	
+		<UnitRegExp priority="1">^(.+?)$</UnitRegExp>	
+	</UnitRegExps>
+	
+	<MinimumHitRatio>.75</MinimumHitRatio>
+	<DocumentsFilePath>/home/frandres/Eclipse/workspace/ExtractionModule/tests/Escalafon/preProcessedDocuments/</DocumentsFilePath>
+	<FieldDescriptors>
+		<FieldDescriptor>
+			<FieldName>EsAscendido.Nombre</FieldName>
+			<SpecificRegExps>	
+				<SpecificRegExp priority="1" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}\.))\:{0,1} *\s* *\:{0,1}([\w'’áéíóú'’ÁÉÍÓÚüñÑÜ\s \-\.]+?) *\s* *(?:(?:\. *\s* *$)|(?:[Aa] *\s* *(?:[Ll][Oo][Ss]){0,1} *\s* *[Ff][Ii][Nn][Ee][Ss] *\s* *[Dd][Ee])|(?:[Dd][Ee][Ll] *\s* *[Dd][Ee][Pp][Aa][Rr][Tt][Aa][Mm][Ee][Nn][Tt][Oo])|(?:[Cc][Oo][Mm][Oo] *\s* *[Tt][Rr][Aa][Bb][Aa][Jj][Oo] *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo])|(?: como trabajo de ascenso))</SpecificRegExp>
+				<SpecificRegExp priority="2" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}\.))\:{0,1} *\s* *\:{0,1}([\w'’áéíóú'’ÁÉÍÓÚüñÑÜ\s \-\.]+?) *\s* *(?:[:,;])</SpecificRegExp>
+				<SpecificRegExp priority="3" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}\.)) *\s* *([\p{Upper}ÁÉÍÓÚÑÜ\s \-'’\.]*)</SpecificRegExp>
+
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<type>STRING</type>
+		</FieldDescriptor>
+		
+		<FieldDescriptor>
+			<FieldName>EsAscendido.NombreTrabajo</FieldName>
+			<SpecificRegExps>
+			
+				<SpecificRegExp priority="1" >["“]([\w'’áéíóú'’ÁÉÍÓÚüñÑÜ\s \.:–\-;,\(\)]+?)["”]</SpecificRegExp>
+				<SpecificRegExp priority="2" >["“]([\w'’áéíóú'’ÁÉÍÓÚüñÑÜ\s \.:–\-;,\(\)]+?)["”]</SpecificRegExp>
+				<SpecificRegExp priority="3" >["“](.+?)["”]</SpecificRegExp>
+				
+				<SpecificRegExp priority="101" >[Tt][Rr][Aa][Bb][Aa][Jj][Oo] *\s* *[Tt][Ii][Tt][Uu][Ll][Aa][Dd][Oo]:{0,1} *\s* *["“]([\w'’áéíóú'’ÁÉÍÓÚüñÑÜ\s \.–\-¿?\:;,\(\)]+?)["”]</SpecificRegExp>
+				<SpecificRegExp priority="102" >[Tt][Rr][Aa][Bb][Aa][Jj][Oo] *\s* *[Tt][Ii][Tt][Uu][Ll][Aa][Dd][Oo]:{0,1} *\s* *["“]{0,1}([\p{Upper}ÁÉÍÓÚÑÜ\s \.–\-¿?\:;,\(\)]+[\p{Upper}ÁÉÍÓÚÑÜ])["”]{0,1}</SpecificRegExp>
+				<SpecificRegExp priority="103" >[Tt][Rr][Aa][Bb][Aa][Jj][Oo] *\s* *[Tt][Ii][Tt][Uu][Ll][Aa][Dd][Oo]:{0,1} *\s* *["“]{0,1}([\w'’áéíóúÁÉÍÓÚüñÑÜ\s \.–\-¿?\:;,\(\)]+[\w'’áéíóúÁÉÍÓÚüñÑÜ])["”]{0,1}</SpecificRegExp>
+				
+				<SpecificRegExp priority="201" >[Tt][Rr][Aa][Bb][Aa][Jj][Oo] *\s* *[Tt][Ii][Tt][Uu][Ll][Aa][Dd][Oo]:{0,1} *\s* *["“](.+?)["”]</SpecificRegExp>
+				<SpecificRegExp priority="202" >[Tt][Rr][Aa][Bb][Aa][Jj][Oo] *\s* *[Tt][Ii][Tt][Uu][Ll][Aa][Dd][Oo]:{0,1} *\s* *(.+?)[,]</SpecificRegExp>
+				
+				<SpecificRegExp priority="301" >(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo]){0,1} *\s* *(?:[Tt][Ii][Tt][Uu][Ll][Aa][Dd][Oo]:{0,1}) *\s* *["“]([\w'’áéíóú'’ÁÉÍÓÚüñÑÜ\s \.–\-¿?\:;,\(\)]+?)["”]</SpecificRegExp>
+				<SpecificRegExp priority="302" >(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo]){0,1} *\s* *(?:[Tt][Ii][Tt][Uu][Ll][Aa][Dd][Oo]:{0,1}) *\s* *["“]{0,1}([\p{Upper}ÁÉÍÓÚÑÜ\s \.–\-¿?\:;,\(\)]+[\p{Upper}ÁÉÍÓÚÑÜ])["”]{0,1}</SpecificRegExp>
+				<SpecificRegExp priority="303" >(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo]){0,1} *\s* *(?:[Tt][Ii][Tt][Uu][Ll][Aa][Dd][Oo]:{0,1}) *\s* *["“]{0,1}([\w'’áéíóúÁÉÍÓÚüñÑÜ\s \.–\-¿?\:;,\(\)]+[\w'’áéíóúÁÉÍÓÚüñÑÜ])["”]{0,1}</SpecificRegExp>
+								
+				<SpecificRegExp priority="401" >(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo]){0,1} *\s* *(?:[Tt][Ii][Tt][Uu][Ll][Aa][Dd][Oo]:{0,1}) *\s* *["“](.+?)["”]</SpecificRegExp>
+				<SpecificRegExp priority="403" >(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo]){0,1} *\s* *(?:[Tt][Ii][Tt][Uu][Ll][Aa][Dd][Oo]:{0,1}) *\s* *(.+?)[,]</SpecificRegExp>
+				
+				<SpecificRegExp priority="501" >[Tt][Rr][Aa][Bb][Aa][Jj][Oo] *\s* *["“]([\w'’áéíóú'’ÁÉÍÓÚüñÑÜ\s \.–\-¿?\:;,\(\)]+?)["”]</SpecificRegExp>
+				<SpecificRegExp priority="502" >[Tt][Rr][Aa][Bb][Aa][Jj][Oo] *\s* *["“]{0,1}([\p{Upper}ÁÉÍÓÚÑÜ\s \.–\-¿?\:;,\(\)]+[\p{Upper}ÁÉÍÓÚÑÜ])["”]{0,1}</SpecificRegExp>
+				<SpecificRegExp priority="503" >[Tt][Rr][Aa][Bb][Aa][Jj][Oo] *\s* *["“](.+?)["”]</SpecificRegExp>
+												
+				<SpecificRegExp priority="601" >["“]([\p{Upper}ÁÉÍÓÚÑÜ]+[\p{Upper}ÁÉÍÓÚÑÜ\s \.–\-¿?\:;,\(\)]*)["”]{0,1}</SpecificRegExp>
+				<SpecificRegExp priority="601" >["“]{0,1}([\p{Upper}ÁÉÍÓÚÑÜ]+[\p{Upper}ÁÉÍÓÚÑÜ\s \.–\-¿?\:;,\(\)]*?)["”]</SpecificRegExp>
+			
+				<SpecificRegExp priority="701" >[Tt][Rr][Aa][Bb][Aa][Jj][Oo] *\s* *["“]{0,1}([\w'’áéíóúÁÉÍÓÚüñÑÜ\s \.–\-¿?\:;,\(\)]+[\w'’áéíóúÁÉÍÓÚüñÑÜ])["”]{0,1}</SpecificRegExp>
+				
+				
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<type>STRING</type>
+		</FieldDescriptor>		
+		<!-- í: \u00ed -->
+		<FieldDescriptor>
+			<FieldName>EsAscendido.fecha</FieldName>
+			<SpecificRegExps>
+				<SpecificRegExp priority="1" >a\s+partir\s+del{0,1}\s+([0-9]+[\-/\.][0-9]+[\-/\.][0-9]+).*</SpecificRegExp>
+				<SpecificRegExp priority="101" >([0-9]+[\-/\.][0-9]+[\-/\.][0-9]+)</SpecificRegExp>				
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<type>DATE</type>
+		</FieldDescriptor>		
+		
+		<FieldDescriptor>
+			<FieldName>EsAscendido.escalafon</FieldName>
+			<SpecificRegExps>
+				<SpecificRegExp priority="1" >((?:[Tt][Ii][Tt][Uu][Ll][Aa][Rr])|(?:[Aa][Gg][Rr][Ee][Gg][Aa][Dd][Oo])|(?:[Aa][Ss][Oo][Cc][Ii][Aa][Dd][Oo]))</SpecificRegExp>
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<type>STRING</type>
+		</FieldDescriptor>		
+		
+		<FieldDescriptor>
+			<FieldName>EsAscendido.postergado</FieldName>
+			<SpecificRegExps>
+				<SpecificRegExp priority="1" >([Vv][Ee][Rr][Ee][Dd][Ii][Cc][Tt][o] *\s* *(?:(?:[Rr][Ee][Pp][Rr][Oo][Bb][Aa][Tt][Oo][Rr][Ii][Oo])|(?:[Dd][Ee][Ss][Ff][Aa][Vv][Oo][Rr][Aa][Bb][Ll][Ee])))</SpecificRegExp>
+				<SpecificRegExp priority="2" >([Rr][Ee][Cc][Hh][Aa][Zz][Aa][Rr] *\s* *[Dd][Ii][Cc][Hh][Oo] *\s* *[Tt][Rr][Aa][Bb][Aa][Jj][Oo])</SpecificRegExp>
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<type>BOOLEAN</type>
+		</FieldDescriptor>		
+	</FieldDescriptors>
+
+</Configuration>

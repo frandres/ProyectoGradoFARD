@@ -1,0 +1,192 @@
+	DISTRIBUTIVIDAD DEL AND Y EL OR
+	
+	
+	list.add(new Atom("Cond 1", null));
+		list.add(new Atom("Cond 2", null));
+		
+		Formula temp = AndFormula.convertAndSeq(list);//AndFormula.convertAndSeq(list);
+		list = new ArrayList<Formula>();
+		
+		list.add(temp);
+		list.add(new Atom("Cond 3", null));
+		list.add(new Atom("Cond 4", null));
+		
+		Formula form = ORFormula.convertOrSeq(list);
+		System.out.println(form.getConditionText(true))
+		
+	DISTRIBUTIVIDAD DEL AND Y OR CON NEGACION.
+	
+	lTemp.add(new Atom("Cond 1", null));
+		lTemp.add(new Atom("Cond 2", null));
+		
+		temp = AndFormula.convertAndSeq(lTemp);//AndFormula.convertAndSeq(list);
+		list.add(new NegativeFormula(temp));
+
+		lTemp = new ArrayList<Formula>();
+		
+		lTemp.add(new Atom("Cond 3", null));
+		lTemp.add(new Atom("Cond 4", null));
+		
+		temp = ORFormula.convertOrSeq(lTemp);//AndFormula.convertAndSeq(list);
+		list.add(new NegativeFormula(temp));
+
+		list.add(new Atom("Cond 5", null));
+		
+		----
+		
+		DOBLES NEGACIONES
+		
+				lTemp.add(new NegativeFormula(new Atom("Cond 1", null)));
+		lTemp.add(new NegativeFormula(new Atom("Cond 2", null)));
+		
+		temp = AndFormula.convertAndSeq(lTemp);//AndFormula.convertAndSeq(list);
+		list.add(new NegativeFormula(temp));
+
+		lTemp = new ArrayList<Formula>();
+		
+		lTemp.add(new NegativeFormula(new Atom("Cond 3", null)));
+		lTemp.add(new NegativeFormula(new Atom("Cond 4", null)));
+		
+		temp = ORFormula.convertOrSeq(lTemp);//AndFormula.convertAndSeq(list);
+		list.add(new NegativeFormula(temp));
+
+		list.add(new NegativeFormula(new NegativeFormula(new Atom("Cond 5", null))));
+		
+		Formula form = AndFormula.convertAndSeq(list);
+		
+		
+		
+		
+		----
+		16/04/12
+		
+		
+		1) Cadena ANDs/ ORs con:
+		
+			1) Cadenas Ands internas:
+			
+			lTemp.add(new Atom("Cond 1a", null));
+			lTemp.add(new Atom("Cond 2a", null));
+			
+			list.add(AndFormula.convertAndSeq(lTemp));
+			
+			lTemp = new ArrayList<Formula>();
+			lTemp.add(new Atom("Cond 1b", null));
+			lTemp.add(new Atom("Cond 2b", null));
+			
+			list.add(AndFormula.convertAndSeq(lTemp));
+			
+			Formula form = AndFormula.convertAndSeq(list);
+			Formula form = ORFormula.convertOrSeq(list);
+			
+			2) Cadenas Ands internas negadas:
+			
+			lTemp.add(new Atom("Cond 1a", null));
+			lTemp.add(new Atom("Cond 2a", null));
+			
+			list.add(new NegativeFormula(AndFormula.convertAndSeq(lTemp)));
+			
+			lTemp = new ArrayList<Formula>();
+			lTemp.add(new Atom("Cond 1b", null));
+			lTemp.add(new Atom("Cond 2b", null));
+			
+			list.add(AndFormula.convertAndSeq(lTemp));
+			
+			//Formula form = AndFormula.convertAndSeq(list);
+			Formula form = ORFormula.convertOrSeq(list);
+			
+			3) Cadenas ORs.
+			
+			lTemp.add(new Atom("Cond 1a", null));
+			lTemp.add(new Atom("Cond 2a", null));
+			
+			list.add(ORFormula.convertOrSeq(lTemp));
+			
+			lTemp = new ArrayList<Formula>();
+			lTemp.add(new Atom("Cond 1b", null));
+			lTemp.add(new Atom("Cond 2b", null));
+			
+			list.add(ORFormula.convertOrSeq(lTemp));
+			
+			Formula form = AndFormula.convertAndSeq(list);
+			// Formula form = ORFormula.convertOrSeq(list);
+			
+			4) Cadenas ORs negadas. 
+			
+			lTemp.add(new Atom("Cond 1a", null));
+			lTemp.add(new Atom("Cond 2a", null));
+			
+			list.add(new NegativeFormula(ORFormula.convertOrSeq(lTemp)));
+			
+			lTemp = new ArrayList<Formula>();
+			lTemp.add(new Atom("Cond 1b", null));
+			lTemp.add(new Atom("Cond 2b", null));
+			
+			list.add(ORFormula.convertOrSeq(lTemp));
+			
+			Formula form = AndFormula.convertAndSeq(list);
+			// Formula form = ORFormula.convertOrSeq(list);
+			
+			5) Cadenas ANDs ORs Mixtas. 
+			
+			lTemp.add(new Atom("Cond 1a", null));
+			lTemp.add(new Atom("Cond 2a", null));
+			
+			list.add(AndFormula.convertAndSeq(lTemp));
+			
+			lTemp = new ArrayList<Formula>();
+			lTemp.add(new Atom("Cond 1b", null));
+			lTemp.add(new Atom("Cond 2b", null));
+			
+			list.add(OrFormula.convertOrSeq(lTemp));
+			
+			//Formula form = AndFormula.convertAndSeq(list);
+			Formula form = OrFormula.convertOrSeq(list);
+			
+			6) Cadenas ANDs ORs Mixtas, algo  negado (tercer temporal). 
+			
+				lTemp.add(new Atom("Cond 1a", null));
+			lTemp.add(new Atom("Cond 2a", null));
+			
+			list.add(AndFormula.convertAndSeq(lTemp));
+			
+			lTemp = new ArrayList<Formula>();
+			lTemp.add(new Atom("Cond 1b", null));
+			lTemp.add(new Atom("Cond 2b", null));
+			
+			list.add(ORFormula.convertOrSeq(lTemp));
+			
+			lTemp = new ArrayList<Formula>();
+			lTemp.add(new Atom("Cond 1c", null));
+			lTemp.add(new Atom("Cond 2c", null));
+			
+			list.add(new NegativeFormula(ORFormula.convertOrSeq(lTemp)));
+			
+			Formula form = AndFormula.convertAndSeq(list);
+			// Formula form = ORFormula.convertOrSeq(list);
+		
+		2) Negaciones anidadas. (Arboles con negaciones en varios niveles:) 
+		
+						AND							OR
+					/		 \					/		 \
+				  AND		OR				   AND	      OR
+				 /   \     /   \		       /   \     /   \
+				AND  OR   AND   OR            AND  OR   AND   OR 	
+				
+		ArrayList<Formula> list = new ArrayList<Formula>();
+		ArrayList<Formula> lTemp = new ArrayList<Formula>();
+
+
+		
+		Formula tempL = new OrFormula(new AndFormula(new Atom("C1", null), 
+													 new Atom("C2", null)),
+									  new OrFormula(new Atom("C3", null), 
+												 new Atom("C4", null))));
+		Formula tempR = new AndFormula(new AndFormula(new Atom("C5", null), 
+													 new Atom("C6", null)),
+							           new OrFormula(new Atom("C7", null), 
+							        		  		new Atom("C8", null)));
+
+		Formula form = new NegativeFormula(new OrFormula(tempL, tempR));
+		
+		System.out.println(form.getConditionText(true));

@@ -1,0 +1,60 @@
+En cada archivo de configuración del Preprocesador es necesario definir uno o más filesource. Un filesource especifica un conjunto de documentos que se quiere preprocesar, bien sea explicitamente indicando la ruta de cada documento o implicitamente indicando un directorio que contenga exclusivamente documentos, un directorio de salida y un conjunto de expresiones regulares para extraer uno o más fragmentos de un documento. A continuación se presentan ejemplos con una plantilla XML vacia para cada caso. El campo readAllFiles debe tener valor 1 si se definen los archivos explicitamente o 0 si se definen implicitamente.
+
+Es importante que las expresiones regulares estén ordenadas por orden de prioridad. Se recomienda que las expresiones regulares más restrictivas tengan una prioridad elevada y las menos restrictivas menor prioridad. 
+
+Es importante también que cada filesource esté diseñado para extraer un fragmento específico del texto y que las expresiones regulares estén diseñadas para ese fragmento en específico. En caso de que el preprocesamiento requiera extraer más de un fragmento por documento se puede perfectamente definir otro Filesource con los mismos archivos de entrada y salida y el extractor rellenará los archivos de salida según sea necesario sin sobreescribir el resultado de la extracción realizado por otros filesource. 
+
+Las expresiones regulares deben especificarse en el formato utilizado por Java (http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html) y deben definir como grupos los fragmentos que se quieren extraer. Una expresión regular puede tener más de un grupo; en ese caso se extraen todos los grupos posibles y se separan con un salto de línea.
+
+<!-- Ejemplo de Filesource definido implicitamente -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Filesources>
+
+        <Filesource>
+  	        <Name></Name>
+                <InputFilePath></InputFilePath>
+                <OutputFilePath></OutputFilePath>
+                <RegExps>
+       	
+    		        <RegExp>
+                		<Priority></Priority>
+                		<String></String>
+                	</RegExp>
+                	
+                </RegExps>
+
+
+                <readAllFiles>1</readAllFiles>
+                <outputExtension></outputExtension>   
+        
+        </Filesource>
+
+<!-- Ejemplo de Filesource definido explicitamente -->
+
+        <Filesource>
+  	        <Name></Name>
+
+                <File>
+                        <InputFilename> </InputFilename>
+                        <InputFilename> </InputFilename>
+                        <InputFilename> </InputFilename>
+                </File>
+                <OutputFilePath></OutputFilePath>
+                <RegExps>
+       	
+    		        <RegExp>
+                		<Priority></Priority>
+                		<String></String>
+                	</RegExp>
+                	
+                </RegExps>
+
+
+                <readAllFiles>0</readAllFiles>
+                <outputExtension></outputExtension>   
+        
+        </Filesource>
+</Filesources>
+
+

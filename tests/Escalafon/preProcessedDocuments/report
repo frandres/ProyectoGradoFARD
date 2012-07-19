@@ -1,0 +1,260 @@
+Extraction report
+ Using regexp: (?:Informes{0,1}\s*de\s*la\s*[Cc]omisión\s*[Pp]ermanente\s*sobre\s*[Cc]ontrataciones,\s*[Rr]enovaciones\s*de\s*[Cc]ontratos(?:,|\s*e\s*)\s*[Ii]ngresos\s*(?:y\s*[Aa]scensos{0,1}\s*){0,1}al\s*[Ee]scalafón\s*del\s*[Pp]ersonal\s*[Aa]cadémico.*)*(Informes{0,1}\s*de\s*la\s*[Cc]omisión\s*[Pp]ermanente\s*sobre\s*[Cc]ontrataciones,\s*[Rr]enovaciones\s*de\s*[Cc]ontratos(?:,|\s*e\s*)\s*[Ii]ngresos\s*(?:y\s*[Aa]scensos{0,1}\s*){0,1}al\s*[Ee]scalafón\s*del\s*[Pp]ersonal\s*[Aa]cadémico.*?)(?:(?:[Ss]olicitud(?:es){0,1}\s*de\s*[Ee]quivalencias{0,1})|(?:[Ss]olicitud(?:es){0,1}\s*de\s*[Pp]ermiso)|(?:Cc]omisi[oó]n\s*de\s*[Ll]icitacion(?:es){0,1})|(?:Informe\s*de\s*la\s*Comisión\s*de\s*Año\s*Sabático)|(?:[Pp]rograma\s*de\s*[Dd]esarrollo\s*[Pp]rofesoral)|(?:[Ii]nforme\s*de\s*la\s*[Cc]omisión\s*de\s*[Dd]esarrollo\s*[Pp]rofesoral)|(?:[Ss]olicitud(?:es){0,1}\s*de\s*[Rr]econsideración\s*de\s*[Ee]quivalencias{0,1})|(?:[Cc]asos{0,1}\s*[Rr]elativos{0,1}\s*a\s*año\s*[Ss]abático)|(?:[Ss]olicitud(?:es){0,1}\s*de\s*[Rr]eingresos{0,1})|(?:[Ii]nforme\s*de\s*[Aa]ctividad(?:es){0,1}\s*[Rr]ealizadas{0,1}\s*[Dd]urante\s*[Aa]ños*[Ss]abático)|(?:[Ii]nforme\s*[Dd]e\s*[Ll]a\s*[Cc]omisión\s*[dD]el\s*[Bb]ono\s*[Dd]e\s*[Rr]endimiento\s*[Aa]cadémico)|(?:[Pp]roceso\s*[Dd]e\s*[Rr]eingeniería\:\s*[Ii]nforme\s*[Dd]e\s*[Aa]vance)|(?:Comisi[óo]n(?:es){0,1}\s*de\s*[Ll]icitaci[óo]n(?:es){0,1})).*
+  .~lock.D09-19.doc#: no match found.
+  2002-01.docx: 
+  2002-02.docx: 
+  2002-03.docx: 
+  2002-05.docx: 
+  2002-07.docx: 
+  2002-08.docx: 
+  2002-11.docx: no match found.
+  2002-14.docx: 
+  2002-16.docx: 
+  2002-18.docx: 
+  2002-19.docx: 
+  2002-20.docx: 
+  2002-21.docx: 
+  2002-22.docx: 
+  2002-24.docx: 
+  2002-26.docx: 
+  2002-27.docx: 
+  2002-32.docx: 
+  2012-01.doc: 
+  2012-02.doc: 
+  2012-04.doc: 
+  2012-06.doc: 
+  2012-07.doc: 
+  2012-08.doc: 
+  2012-09.doc: 
+  2012-11.doc: 
+  2012-12.doc: 
+  Acta D01-1.doc: no match found.
+  Acta D01-10.doc: 
+  Acta D01-13.doc: 
+  Acta D01-14.doc: 
+  Acta D01-16.doc: 
+  Acta D01-18a.doc: 
+  Acta D01-2.doc: 
+  Acta D01-20a.doc: 
+  Acta D01-21a.doc: 
+  Acta D01-22.doc: 
+  Acta D01-23.doc: 
+  Acta D01-25.doc: 
+  Acta D01-28.doc: 
+  Acta D01-29.doc: 
+  Acta D01-30.doc: 
+  Acta D01-31.doc: 
+  Acta D01-32.doc: 
+  Acta D01-33.doc: 
+  Acta D01-35.doc: 
+  Acta D01-36.doc: 
+  Acta D01-4.doc: 
+  Acta D01-8.doc: 
+  Acta D04-1.doc: 
+  Acta D04-10.doc: 
+  Acta D04-11.doc: 
+  Acta D04-12.doc: 
+  Acta D04-13.doc: 
+  Acta D04-14.doc: 
+  Acta D04-16.doc: 
+  Acta D04-18.doc: 
+  Acta D04-19.doc: 
+  Acta D04-2.doc: 
+  Acta D04-20.doc: 
+  Acta D04-21.doc: 
+  Acta D04-22.doc: 
+  Acta D04-23.doc: 
+  Acta D04-3.doc: 
+  Acta D04-4.doc: 
+  Acta D04-6.doc: 
+  Acta D04-7.doc: 
+  Acta D04-8.doc: 
+  Acta D04-9.doc: 
+  D 2010-1.doc: 
+  D 2010-10.doc: 
+  D 2010-11.doc: 
+  D 2010-12.doc: 
+  D 2010-13.doc: 
+  D 2010-14.doc: 
+  D 2010-16.doc: 
+  D 2010-18.doc: no match found.
+  D 2010-2.doc: 
+  D 2010-20.doc: 
+  D 2010-21.doc: 
+  D 2010-22.doc: 
+  D 2010-23.doc: 
+  D 2010-24.doc: 
+  D 2010-26.doc: 
+  D 2010-3.doc: 
+  D 2010-4.doc: 
+  D 2010-5.doc: 
+  D 2010-6.doc: 
+  D 2010-8.doc: 
+  D 2010-9.doc: 
+  D 2011-01.doc: 
+  D 2011-02.doc: 
+  D 2011-03.doc: 
+  D 2011-07.doc: 
+  D 2011-08.doc: 
+  D 2011-10.doc: 
+  D 2011-11.doc: 
+  D 2011-12.doc: 
+  D 2011-13.doc: 
+  D 2011-15.doc: 
+  D 2011-17.doc: 
+  D 2011-19.doc: 
+  D 2011-20.doc: 
+  D 2011-21.doc: 
+  D 2011-23.doc: 
+  D 2011-26.doc: 
+  D 2011-27.doc: 
+  D 2011-28.doc: 
+  D 2011-29.doc: 
+  D 2011-31.doc: 
+  D06-1.doc: 
+  D06-10.doc: 
+  D06-11.doc: 
+  D06-12.doc: 
+  D06-13.doc: 
+  D06-14.doc: 
+  D06-15.doc: 
+  D06-16.doc: 
+  D06-17.doc: 
+  D06-18.doc: 
+  D06-19.doc: 
+  D06-2.doc: 
+  D06-20.doc: 
+  D06-21.doc: 
+  D06-3.doc: 
+  D06-4.doc: 
+  D06-5.doc: 
+  D06-6.doc: 
+  D06-7.doc: 
+  D06-8.doc: 
+  D06-9.doc: 
+  D07-1.doc: 
+  D07-11.doc: 
+  D07-12.doc: 
+  D07-13.doc: 
+  D07-14.doc: 
+  D07-15.doc: 
+  D07-16.doc: 
+  D07-18.doc: 
+  D07-2.doc: 
+  D07-20.doc: 
+  D07-22.doc: 
+  D07-23.doc: 
+  D07-24.doc: 
+  D07-3.doc: 
+  D07-4.doc: 
+  D07-5.doc: 
+  D07-6.doc: 
+  D07-7.doc: 
+  D07-8.doc: 
+  D07-9.doc: 
+  D08-1.doc: 
+  D08-10.doc: 
+  D08-12.doc: 
+  D08-14.doc: 
+  D08-15.doc: 
+  D08-16.doc: 
+  D08-17.doc: 
+  D08-19.doc: 
+  D08-20.doc: 
+  D08-22.doc: 
+  D08-23.doc: 
+  D08-24.doc: 
+  D08-25.doc: 
+  D08-27.doc: 
+  D08-28.doc: 
+  D08-3.doc: 
+  D08-4.doc: 
+  D08-6.doc: 
+  D08-8.doc: 
+  D08-9.doc: 
+  D09-1.doc: 
+  D09-10.doc: 
+  D09-11.doc: 
+  D09-12.doc: 
+  D09-13.doc: 
+  D09-14.doc: 
+  D09-17.doc: 
+  D09-19.doc: no match found.
+  D09-2.doc: 
+  D09-20.doc: 
+  D09-22.doc: 
+  D09-23.doc: 
+  D09-24.doc: 
+  D09-25.doc: 
+  D09-26.doc: 
+  D09-27.doc: 
+  D09-4.doc: 
+  D09-5.doc: 
+  D09-6.doc: 
+  D09-7.doc: 
+  D09-9.doc: 
+  D2000-1.doc: 
+  D2000-10.doc: 
+  D2000-12.doc: 
+  D2000-15.doc: 
+  D2000-16.doc: 
+  D2000-18.doc: 
+  D2000-20.doc: 
+  D2000-21.doc: no match found.
+  D2000-22.doc: no match found.
+  D2000-24.doc: 
+  D2000-26.doc: 
+  D2000-27.doc: 
+  D2000-29.doc: 
+  D2000-31.doc: 
+  D2000-32.doc: 
+  D2000-3A.doc: 
+  D2000-4.doc: 
+  D2000-5.doc: 
+  D2000-8.doc: 
+  D2000-9.doc: 
+  D2003-1.doc: 
+  D2003-12.doc: 
+  D2003-13.doc: 
+  D2003-15.doc: 
+  D2003-18.doc: 
+  D2003-19.doc: 
+  D2003-2.doc: 
+  D2003-23.doc: 
+  D2003-24.doc: 
+  D2003-25.doc: 
+  D2003-26.doc: 
+  D2003-28.doc: 
+  D2003-3.doc: 
+  D2003-4.doc: 
+  D2003-5.doc: 
+  D2003-7.doc: 
+  D2003-8.doc: 
+Matches: 223 total: 230
+ Using regexp: (?:[Vv]eredictos{0,1}\s*[Ss]obre\s*[Tt]rabajos{0,1}\s*de\s*[Aa]scensos{0,1}.*)*([Vv]eredictos{0,1}\s*[Ss]obre\s*[Tt]rabajos{0,1}\s*de\s*[Aa]scensos{0,1}.*?)(?:(?:[Ss]olicitud(?:es){0,1}\s*de\s*[Ee]quivalencias{0,1})|(?:[Ss]olicitud(?:es){0,1}\s*de\s*[Pp]ermiso)|(?:Cc]omisi[oó]n\s*de\s*[Ll]icitacion(?:es){0,1})|(?:Informe\s*de\s*la\s*Comisión\s*de\s*Año\s*Sabático)|(?:[Pp]rograma\s*de\s*[Dd]esarrollo\s*[Pp]rofesoral)|(?:[Ii]nforme\s*de\s*la\s*[Cc]omisión\s*de\s*[Dd]esarrollo\s*[Pp]rofesoral)|(?:[Ss]olicitud(?:es){0,1}\s*de\s*[Rr]econsideración\s*de\s*[Ee]quivalencias{0,1})|(?:[Cc]asos{0,1}\s*[Rr]elativos{0,1}\s*a\s*año\s*[Ss]abático)|(?:[Ss]olicitud(?:es){0,1}\s*de\s*[Rr]eingresos{0,1})|(?:[Ii]nforme\s*de\s*[Aa]ctividad(?:es){0,1}\s*[Rr]ealizadas{0,1}\s*[Dd]urante\s*[Aa]ños*[Ss]abático)).*
+  .~lock.D09-19.doc#: no match found.
+  2002-11.docx: no match found.
+  Acta D01-1.doc: no match found.
+  D 2010-18.doc: no match found.
+  D09-19.doc: no match found.
+  D2000-21.doc: 
+  D2000-22.doc: no match found.
+Matches: 1 total: 7
+ Using regexp: (?:Informes{0,1}\s*de\s*la\s*[Cc]omisión\s*[Pp]ermanente\s*sobre\s*[Cc]ontrataciones,\s*[Rr]enovaciones\s*de\s*[Cc]ontratos(?:,|\s*e\s*)\s*[Ii]ngresos\s*(?:y\s*[Aa]scensos{0,1}\s*){0,1}al\s*[Ee]scalafón\s*del\s*[Pp]ersonal\s*[Aa]cadémico.*)*(Informes{0,1}\s*de\s*la\s*[Cc]omisión\s*[Pp]ermanente\s*sobre\s*[Cc]ontrataciones,\s*[Rr]enovaciones\s*de\s*[Cc]ontratos(?:,|\s*e\s*)\s*[Ii]ngresos\s*(?:y\s*[Aa]scensos{0,1}\s*){0,1}al\s*[Ee]scalafón\s*del\s*[Pp]ersonal\s*[Aa]cadémico.*ascienden{0,1}\s*a\s*las{0,1}\s*[cC]ategor[íi]as{0,1}.*?[\.\:]).*
+  .~lock.D09-19.doc#: no match found.
+  2002-11.docx: 
+  Acta D01-1.doc: no match found.
+  D 2010-18.doc: 
+  D09-19.doc: no match found.
+  D2000-22.doc: no match found.
+Matches: 2 total: 6
+ Using regexp: (?:[Vv]eredictos{0,1}\s*[Ss]obre\s*[Tt]rabajos{0,1}\s*de\s*[Aa]scensos{0,1}.*)*([Vv]eredictos{0,1}\s*[Ss]obre\s*[Tt]rabajos{0,1}\s*de\s*[Aa]scensos{0,1}.*a\s*los\s*fines\s*de\s*su\s*[Aa]sc{0,1}enso\s*a\s*la\s*categoría.*?[\.\:]).*
+  .~lock.D09-19.doc#: no match found.
+  Acta D01-1.doc: 
+  D09-19.doc: no match found.
+  D2000-22.doc: 
+Matches: 2 total: 4
+ Using regexp: (?:Informes{0,1}\s*de\s*la\s*[Cc]omisión\s*[Pp]ermanente\s*sobre\s*[Cc]ontrataciones,\s*[Rr]enovaciones\s*de\s*[Cc]ontratos(?:,|\s*e\s*)\s*[Ii]ngresos\s*(?:y\s*[Aa]scensos{0,1}\s*){0,1}al\s*[Ee]scalafón\s*del\s*[Pp]ersonal\s*[Aa]cadémico.*)*(Informes{0,1}\s*de\s*la\s*[Cc]omisión\s*[Pp]ermanente\s*sobre\s*[Cc]ontrataciones,\s*[Rr]enovaciones\s*de\s*[Cc]ontratos(?:,|\s*e\s*)\s*[Ii]ngresos\s*(?:y\s*[Aa]scensos{0,1}\s*){0,1}al\s*[Ee]scalafón\s*del\s*[Pp]ersonal\s*[Aa]cadémico.*?)(?:[abcde]\.\s*Informe).*
+  .~lock.D09-19.doc#: no match found.
+  D09-19.doc: 
+Matches: 1 total: 2

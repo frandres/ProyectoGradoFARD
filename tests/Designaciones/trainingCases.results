@@ -1,0 +1,16 @@
+RESULTS: 
+
+Field: EsAsignado.calificacion
+ Tasa de acierto: 97.12230215827338
+
+Field: EsAsignado.fechaAsignacion
+ Tasa de acierto: 97.12230215827338
+
+Field: EsAsignado.fechaFinal
+ Tasa de acierto: 100.0
+
+Field: EsAsignado.motivo
+ Tasa de acierto: 94.96402877697842
+
+Field: Profesor.Nombre
+ Tasa de acierto: 99.28057553956835

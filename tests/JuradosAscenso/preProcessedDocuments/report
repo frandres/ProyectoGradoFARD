@@ -1,0 +1,155 @@
+Extraction report
+ Using regexp: (?:(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*)*((?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*?Con base (?:(?:a)|(?:en)) las{0,1} propuestas{0,1} presentada.*?)(?:(?:\W[IXV\.\:]*)|(?:\W[abcd\.\:]*)) *\s* *(?:(?:[Ss][Oo][Ll][Ii][Cc][Ii][Tt][Uu][Dd](?:[Ee][Ss]){0,1})|(?:[Ii][Nn][Ff][Oo][Rr][Mm][Ee][Ss]{0,1})|(?:[Ee][Qq][Uu][Ii][Vv][Aa][Ll][Ee][Nn][Cc][Ii][Aa])|(?:[Pp][Uu][Nn][Tt][Oo][Ss]{0,1}))
+  2002-01.docx: 
+  2002-03.docx: 
+  2002-04.docx: 
+  2002-05.docx: 
+  2002-06.docx: 
+  2002-07.docx: 
+  2002-08.docx: 
+  2002-09.docx: 
+  2002-10.docx: 
+  2002-11.docx: 
+  2002-12.docx: 
+  2002-13.docx: 
+  2002-14.docx: 
+  2002-15.docx: 
+  2002-16.docx: 
+  A 2011-01.doc: 
+  A 2011-02.doc: 
+  A 2011-03.doc: 
+  A 2011-04.doc: 
+  A 2011-05.doc: 
+  A 2011-08.doc: 
+  A 2011-10.doc: 
+  A 2011-11.doc: 
+  A 2011-12.doc: 
+  A 2011-13.doc: 
+  A 2011-14.doc: 
+  A 2011-15.doc: 
+  A 2011-16.doc: 
+  A 2011-17.doc: 
+  A 2011-18.doc: 
+  A 2011-20.doc: 
+  A 2011-21.doc: 
+  A 2012-01.doc: 
+  A 2012-07.doc: 
+  A 2012-08.doc: 
+  A 2012-09.doc: 
+  A06-10.doc: 
+  A06-11.doc: 
+  A06-12.doc: 
+  A06-13.doc: 
+  A06-14.doc: 
+  A06-15.doc: 
+  A06-16.doc: 
+  A06-17.doc: 
+  A06-18.doc: 
+  A06-19.doc: 
+  A06-2.doc: 
+  A06-3.doc: 
+  A06-4.doc: 
+  A06-6.doc: 
+  A06-7.doc: 
+  A06-8.doc: 
+  A06-9.doc: 
+  A07-1.doc: 
+  A07-10.doc: 
+  A07-11.doc: 
+  A07-12.doc: 
+  A07-13.doc: 
+  A07-14.doc: 
+  A07-15.doc: 
+  A07-16.doc: 
+  A07-19.doc: 
+  A07-2.doc: 
+  A07-3.doc: 
+  A07-4.doc: 
+  A07-6.doc: 
+  A07-7.doc: 
+  A07-8.doc: 
+  A07-9.doc: 
+  A2000-1.doc: 
+  A2000-10.doc: 
+  A2000-11.doc: 
+  A2000-12.doc: 
+  A2000-13.doc: 
+  A2000-15.doc: 
+  A2000-16.doc: 
+  A2000-17.doc: 
+  A2000-18.doc: 
+  A2000-2.doc: 
+  A2000-3.doc: 
+  A2000-4.doc: 
+  A2000-5.doc: 
+  A2000-6.doc: 
+  A2000-7.doc: 
+  A2000-8.doc: 
+  A2000-9.doc: 
+  A2010-10.doc: 
+  A2010-11.doc: 
+  A2010-12.doc: 
+  A2010-13.doc: 
+  A2010-15.doc: 
+  A2010-16.doc: 
+  A2010-17.doc: 
+  A2010-18.doc: 
+  A2010-2.doc: 
+  A2010-20.doc: 
+  A2010-21.doc: 
+  A2010-3.doc: 
+  A2010-4.doc: 
+  A2010-5.doc: 
+  A2010-6.doc: 
+  A2010-8.doc: 
+  A2010-9.doc: 
+  A99-10.doc: 
+  A99-11.doc: 
+  A99-12.doc: 
+  A99-13.doc: 
+  A99-14.doc: 
+  A99-15.doc: 
+  A99-16.doc: 
+  A99-17.doc: 
+  A99-2.doc: 
+  A99-3.doc: 
+  A99-4.doc: 
+  A99-5.doc: 
+  A99-6.doc: 
+  A99-7.doc: 
+  A99-9.doc: 
+  Acta A01-10.doc: 
+  Acta A01-11.doc: 
+  Acta A01-12.doc: 
+  Acta A01-13.doc: 
+  Acta A01-14.doc: 
+  Acta A01-16.doc: 
+  Acta A01-17.doc: 
+  Acta A01-18.doc: 
+  Acta A01-2.doc: 
+  Acta A01-3.doc: 
+  Acta A01-4.doc: 
+  Acta A01-5.doc: 
+  Acta A01-8.doc: 
+  Acta A01-9.doc: 
+  Acta A04-1.doc: 
+  Acta A04-10.doc: 
+  Acta A04-11.doc: 
+  Acta A04-12.doc: 
+  Acta A04-13.doc: 
+  Acta A04-15.doc: 
+  Acta A04-17.doc: 
+  Acta A04-18.doc: 
+  Acta A04-19.doc: 
+  Acta A04-2.doc: 
+  Acta A04-3.doc: 
+  Acta A04-5.doc: 
+  Acta A04-7.doc: 
+  Acta A04-8.doc: 
+Matches: 146 total: 146
+ Using regexp: (?:(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*)*((?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*?)(?:(?:\W[IXV\.\:]*)|(?:\W[abcd\.\:]*)) *\s* *(?:(?:[Ss][Oo][Ll][Ii][Cc][Ii][Tt][Uu][Dd](?:[Ee][Ss]){0,1})|(?:[Ii][Nn][Ff][Oo][Rr][Mm][Ee][Ss]{0,1})|(?:[Ee][Qq][Uu][Ii][Vv][Aa][Ll][Ee][Nn][Cc][Ii][Aa])|(?:[Pp][Uu][Nn][Tt][Oo][Ss]{0,1}))
+Matches: 0 total: 0
+ Using regexp: (?:(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*)*((?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*?Con base (?:(?:a)|(?:en)) las{0,1} propuestas{0,1} presentada.*?)(?:(?:\W[IXV\.\:]+)|(?:\W[abcd\.\:]+)) *\s* *(?:(?:[Ss][Oo][Ll][Ii][Cc][Ii][Tt][Uu][Dd](?:[Ee][Ss]){0,1})|(?:[Ii][Nn][Ff][Oo][Rr][Mm][Ee][Ss]{0,1})|(?:[Pp][Rr][Oo][Pp][Uu][Ee][Ss][Tt][Aa])|(?:[Pp][Rr][Oo][Yy][Ee][Cc][Tt][Oo])||(?:[Ee][Qq][Uu][Ii][Vv][Aa][Ll][Ee][Nn][Cc][Ii][Aa])|(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][ÓóOo][Nn](?:[Ee][Ss]){0,1})|(?:[Pp][Uu][Nn][Tt][Oo][Ss]{0,1}))
+Matches: 0 total: 0
+ Using regexp: (?:(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*)*((?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*?)(?:(?:\W[IXV\.\:]+)|(?:\W[abcd\.\:]+)) *\s* *(?:(?:[Ss][Oo][Ll][Ii][Cc][Ii][Tt][Uu][Dd](?:[Ee][Ss]){0,1})|(?:[Ii][Nn][Ff][Oo][Rr][Mm][Ee][Ss]{0,1})|(?:[Pp][Rr][Oo][Pp][Uu][Ee][Ss][Tt][Aa])|(?:[Pp][Rr][Oo][Yy][Ee][Cc][Tt][Oo])||(?:[Ee][Qq][Uu][Ii][Vv][Aa][Ll][Ee][Nn][Cc][Ii][Aa])|(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][ÓóOo][Nn](?:[Ee][Ss]){0,1})|(?:[Pp][Uu][Nn][Tt][Oo][Ss]{0,1}))
+Matches: 0 total: 0

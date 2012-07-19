@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Filesources>
+
+  <Filesource>
+  		<Name>Escalafon</Name>
+        <InputFilePath>/home/frandres/Eclipse/workspace/ExtractionModule/tests/JuradosAscenso/rawDocuments/</InputFilePath>
+        <OutputFilePath>/home/frandres/Eclipse/workspace/ExtractionModule/tests/JuradosAscenso/preProcessedDocuments/</OutputFilePath>
+        <RegExps>
+       	
+    		<RegExp>
+        		<Priority>1</Priority>
+        		<String>(?:(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*)*((?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*?Con base (?:(?:a)|(?:en)) las{0,1} propuestas{0,1} presentada.*?)(?:(?:\W[IXV\.\:]*)|(?:\W[abcd\.\:]*)) *\s* *(?:(?:[Ss][Oo][Ll][Ii][Cc][Ii][Tt][Uu][Dd](?:[Ee][Ss]){0,1})|(?:[Ii][Nn][Ff][Oo][Rr][Mm][Ee][Ss]{0,1})|(?:[Ee][Qq][Uu][Ii][Vv][Aa][Ll][Ee][Nn][Cc][Ii][Aa])|(?:[Pp][Uu][Nn][Tt][Oo][Ss]{0,1}))</String>
+        	</RegExp>
+        	
+			<RegExp>
+        		<Priority>2</Priority>
+        		<String>(?:(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*)*((?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*?)(?:(?:\W[IXV\.\:]*)|(?:\W[abcd\.\:]*)) *\s* *(?:(?:[Ss][Oo][Ll][Ii][Cc][Ii][Tt][Uu][Dd](?:[Ee][Ss]){0,1})|(?:[Ii][Nn][Ff][Oo][Rr][Mm][Ee][Ss]{0,1})|(?:[Ee][Qq][Uu][Ii][Vv][Aa][Ll][Ee][Nn][Cc][Ii][Aa])|(?:[Pp][Uu][Nn][Tt][Oo][Ss]{0,1}))</String>
+        	</RegExp>
+        	
+        	<RegExp>
+        		<Priority>3</Priority>
+        		<String>(?:(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*)*((?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*?Con base (?:(?:a)|(?:en)) las{0,1} propuestas{0,1} presentada.*?)(?:(?:\W[IXV\.\:]+)|(?:\W[abcd\.\:]+)) *\s* *(?:(?:[Ss][Oo][Ll][Ii][Cc][Ii][Tt][Uu][Dd](?:[Ee][Ss]){0,1})|(?:[Ii][Nn][Ff][Oo][Rr][Mm][Ee][Ss]{0,1})|(?:[Pp][Rr][Oo][Pp][Uu][Ee][Ss][Tt][Aa])|(?:[Pp][Rr][Oo][Yy][Ee][Cc][Tt][Oo])||(?:[Ee][Qq][Uu][Ii][Vv][Aa][Ll][Ee][Nn][Cc][Ii][Aa])|(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][ÓóOo][Nn](?:[Ee][Ss]){0,1})|(?:[Pp][Uu][Nn][Tt][Oo][Ss]{0,1}))</String>
+        	</RegExp>
+        	
+			<RegExp>
+        		<Priority>4</Priority>
+        		<String>(?:(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*)*((?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}.*?)(?:(?:\W[IXV\.\:]+)|(?:\W[abcd\.\:]+)) *\s* *(?:(?:[Ss][Oo][Ll][Ii][Cc][Ii][Tt][Uu][Dd](?:[Ee][Ss]){0,1})|(?:[Ii][Nn][Ff][Oo][Rr][Mm][Ee][Ss]{0,1})|(?:[Pp][Rr][Oo][Pp][Uu][Ee][Ss][Tt][Aa])|(?:[Pp][Rr][Oo][Yy][Ee][Cc][Tt][Oo])||(?:[Ee][Qq][Uu][Ii][Vv][Aa][Ll][Ee][Nn][Cc][Ii][Aa])|(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][ÓóOo][Nn](?:[Ee][Ss]){0,1})|(?:[Pp][Uu][Nn][Tt][Oo][Ss]{0,1}))</String>
+        	</RegExp>
+        	
+        </RegExps>
+
+
+        <readAllFiles>1</readAllFiles>
+        <outputExtension>.txt</outputExtension>   
+        
+</Filesource>
+
+ 
+</Filesources>
+
+<!--
+
+<RegExp>
+        		<Priority>4</Priority>
+        		<String>(?:(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1})*((?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}).*</String>
+        	</RegExp>
+     	
+     		<RegExp>
+        		<Priority>5</Priority>
+        		<String>(?:(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1})*((?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][OoÓó][Nn](?:[Ee][Ss]){0,1}{0,1} *\s* *[Dd][Ee] *\s* *){0,1}[Jj][Uu][Rr][Aa][Dd][Oo][Ss]{0,1} *\s* *(?:(?:[Pp][Aa][Rr][Aa])|(?:[Dd][Ee])){0,1} *\s* *(?:[Tt][Rr][Aa][Bb][Aa][Jj][Oo][Ss]{0,1}){0,1} *\s* *[Dd][Ee] *\s* *[Aa][Ss][Cc][Ee][Nn][Ss][Oo][Ss]{0,1}).*</String>
+        	</RegExp>
+        	
+        	<RegExp>
+        		<Priority>6</Priority>
+        		<String>(Jurados{0,1} *\s* * para *\s* *trabajo *\s* *de *\s* *ascenso)</String>
+        	</RegExp>
+        	
+        	
+(?:(?:\W[IXV\.\:]*)|(?:\W[abcd\.\:]*)) *\s* *(?:(?:[Ss][Oo][Ll][Ii][Cc][Ii][Tt][Uu][Dd](?:[Ee][Ss]){0,1})|(?:[Ii][Nn][Ff][Oo][Rr][Mm][Ee][Ss]{0,1})|(?:[Ee][Qq][Uu][Ii][Vv][Aa][Ll][Ee][Nn][Cc][Ii][Aa])|(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][ÓóOo][Nn](?:[Ee][Ss]){0,1})|(?:[Pp][Uu][Nn][Tt][Oo][Ss]{0,1}))
+(?:(?:\W[IXV\.\:]*)|(?:\W[abcd\.\:]*)) *\s* *{0,1}(?:(?:[Ss][Oo][Ll][Ii][Cc][Ii][Tt][Uu][Dd](?:[Ee][Ss]){0,1})|(?:[Ii][Nn][Ff][Oo][Rr][Mm][Ee][Ss]{0,1})|(?:[Ee][Qq][Uu][Ii][Vv][Aa][Ll][Ee][Nn][Cc][Ii][Aa])|(?:[Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][ÓóOo][Nn](?:[Ee][Ss]){0,1})|(?:[Pp][Uu][Nn][Tt][Oo][Ss]{0,1}))
+
+-->  

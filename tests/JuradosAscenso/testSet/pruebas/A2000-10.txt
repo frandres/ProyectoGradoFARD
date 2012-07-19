@@ -1,0 +1,60 @@
+JURADOS PARA TRABAJOS DE ASCENSO
+Con base en la propuesta presentada por los Directores de las Divisiones de Ciencias Físicas y Matemáticas, y Ciencias Sociales y Humanidades, se designaron los jurados que habrán de conocer los siguientes trabajos de ascenso:
+1	"MODELACIÓN COMPOSICIONAL DEL RENDIMIENTO DE UNA BIBLIOTECA DE MENSAJERÍA BASADA EN CORBA", presentado por el profesor NUNZIO NICOLO SAVINO VÁSQUEZ del Departamento de Computación y Tecnología de la Información, a los fines de su ascenso a la categoría de ASOCIADO. El jurado quedó integrado por los siguientes profesores: María Blanca Ibañez Espiga (presidente), Emilio Fernando Hernández González y Francisca Losavio de Ordaz (miembros principales), y Emely Arraiz Bilbao (miembro suplente).
+2	"FORMULACIÓN BRST DE TEORÍAS TOPOLÓGICAS", presentado por la profesora RITA GIANVITTORIO DANESE del Departamento de Física, a los fines de su ascenso a la categoría de TITULAR. El jurado quedó integrado por los siguientes profesores: Sebastián Salamó Schijman (presidente), Pablo Martín De Julián y Simón Codrianski (miembros principales), y Gloria María Buendía (miembro suplente). 
+3	“DISEÑO Y CARACTERIZACIÓN DE UN SISTEMA ASIMÉTRICO PARA RADIO DIGITAL DE ALTA VELOCIDAD", presentado por el profesor RENNY ELIAS BADRA BADRA del Departamento de Electrónica y Circuitos, a los fines de su ascenso a la categoría de ASOCIADO. El jurado quedó integrado por los siguientes profesores: Biagio Allocca Notaro (presidente), Carlos Filipo Pantsios Markhauser y José Rafael Coll Meneghin (miembros principales), y María Ángeles Margarita Juanatey Sánchez (miembro suplente).
+4	"APORTES AL CONOCIMIENTO DE LOS CAMPOS ELECTROMAGNÉTICOS", presentado por el profesor ORLANDO JOSÉ SUCRE ROSALES del Departamento de Electrónica y Circuitos, a los fines de su ascenso a la categoría de ASOCIADO. El jurado quedó integrado por los siguientes profesores: Nelson José Vázquez Rodríguez (presidente), Eduardo Pestana Mariño y Luis Francisco Fernández González (miembros principales), y Trina Adrián de Pérez (miembro suplente).
+5	"GERENCIA DE SISTEMAS CONDUCTUALES Y CAMBIO ORGANIZACIONAL", presentado por el profesor GUILLERMO ENRIQUE YÁBER OLTRA del Departamento de Ciencia y Tecnología del Comportamiento, a los fines de su ascenso a la categoría de TITULAR. El jurado quedó integrado por los siguientes profesores: Michael Suárez Fontúrvel (presidente), Guillermo Alvarez Guerra y Andrés Miñarro (miembros principales), y Carlos Enrique Seaton Moore (miembro suplente).
+6	"URBANISMO Y PATRIMONIO: LA CONSERVACIÓN DE LOS CENTROS HISTÓRICOS", presentado por el profesor LORENZO GONZÁLEZ CASAS del Departamento de Planificación Urbana, a los fines de su ascenso a la categoría de TITULAR. El jurado quedó integrado por los siguientes profesores: Oscar Gómez Navas (presidente), José Miguel Roig Erice y Henrique Hernández Osuna (miembros principales), y Alfredo Cilento Sarli (miembro suplente).
+VI. PROPUESTA PARA LA ASIGNACIÓN DE CARRERA A LOS ESTUDIANTES DIFERIDOS DE LA COHORTE 99
+La profesora María Lourdes Iturralde de Anda, Decana de Estudios Profesionales, presentó la propuesta de ese Decanato para la asignación de carrera a los estudiantes diferidos de la cohorte 99, la cual forma parte integrante de la presente acta. En la misma se plantea que dichos estudiantes ingresen en la Universidad en septiembre del año 2000 al Ciclo Básico, y una vez culminado su primer año de estudios serán asignados a carrera de acuerdo a su índice de aprovechamiento. Es decir, se aplicará el mismo procedimiento de asignación de carrera utilizado hasta el año 1999.
+Una vez analizada la propuesta por los Consejeros se acordó aprobarla, con el voto salvado de la profesora Gloria María Buendía. Además se sugirió que la Decana de Estudios Profesionales y el Secretario realicen la redacción definitiva de la propuesta con los elementos técnicos considerados durante esta sesión, así como las instrucciones que deberán recibir los estudiantes diferidos al momento de su inscripción en el Ciclo Básico.
+Se transcribe a continuación la propuesta presentada:
+Propuesta para la Asignación de Carrera a los Estudiantes Diferidos de la Cohorte 99
+De los estudiantes que son admitidos en la USB en el proceso de admisión, hay un grupo que difiere su inscripción según está establecido en el Reglamento de Admisión para los Programas de Pregrado. El número de estudiantes que se acogen a esta figura suele estar alrededor de cien, de los cuales aproximadamente el 50% formaliza su inscripción al cabo de un año. Estos datos fueron suministrados por la Directora de Admisión y Control de Estudios, se me explicó que es difícil obtener datos más exactos ya que este proceso se realiza en forma manual. Tradicionalmente este grupo de estudiantes se integraba con la cohorte del año siguiente. Los estudiantes de la cohorte 1999 que difirieron su ingreso a la USB tiene que integrarse con los estudiantes de la cohorte 2000.
+Sin embargo, debido a las modificaciones realizadas en el proceso de asignación a carrera este grupo de estudiantes (cohorte 99 que difirieron) no tienen asignada carrera y los estudiantes cohorte 2000 ya tienen su carrera asignada. Tenemos que definir por lo tanto la forma en la cual este grupo de estudiantes va a ser asignado a carrera.
+Tomando en cuenta que el examen de admisión del año 2000 tuvo modificaciones importantes con respecto al del año 1999, no es fácil comparar el desempeño de este grupo de estudiantes diferidos con los de la cohorte 2000. El Decanato de Estudios Profesionales propone que los estudiantes diferidos ingresen a la Universidad sin tener carrera asignada y al finalizar el primer año se corra el programa de asignación a carrera para todos los estudiantes que ingresaron en septiembre del 2000 (diferidos y cohorte 2000), en esta corrida se determine el lugar en el cual quedarían los estudiantes diferidos y se realice la asignación. Este ejercicio nos permitiría adicionalmente evaluar el comportamiento de los estudiantes que tienen carrera asignada y la desviación con respecto a lo que se hacía anteriormente.
+Opciones de Carrera Diferidos 99
+Código Carrera 	1ª Opción 	2ª Opción 	3ª Opción 
+0100 	4 	7 	7 
+0200 	12 	16 	14 
+0300 	17 	10 	13 
+0400 	1 	2 	4 
+0500 	1 	1 	 
+0501 	 	2 	 
+0600 	14 	17 	13 
+0700 	10 	6 	2 
+0800 	19 	14 	15 
+0900 	 	 	 
+1000 	1 	1 	2 
+1100 	 	5 	3 
+1200 	7 	4 	10 
+1501 	 	1 	5 
+1502 	 	6 	4 
+1503 	1 	2 	1 
+1504 	 	 	1 
+1700 	21 	15 	17 
+1900 	4 	3 	1 
+Total 	112 	112 	112 
+ 
+VII. RESULTADOS DE LA EVALUACIÓN EXTERNA DE LA CARRERA DE INGENIERÍA DE MATERIALES
+La profesora Carmen Rosales Castillo, Coordinadora de la Carrera de Ingeniería de Materiales, presentó al Cuerpo los resultados de la evaluación externa realizada a dicha carrera en el marco del proyecto SECAI.
+En forma precisa la profesora Rosales expuso las debilidades, fortalezas y recomendaciones, producto de dicho proceso evaluativo, destacando la identificación de estos aspectos con los reflejados en la evaluación interna de la carrera.
+Entre las principales recomendaciones se señalan:
+1	Modificar la orientación del currículum de Ingeniería de Materiales.
+2	Unificar el Programa en sus distintas opciones.
+3	Implementar un sistema de tutorías personales.
+4	Implementar acciones propedéuticas que permitan mejorar el rendimiento de los alumnos.
+5	Mejorar la infraestructura informática disponible al Programa.
+6	Valorar la formación profesional del personal académico en el campo de la Ingeniería de Materiales. 
+Una vez realizadas las observaciones por parte de los Consejeros, el Consejo Académico acogió los resultados de la evaluación de la Carrera de Ingeniería de Materiales, y por ende la necesidad de modificar el pensum de estudios correspondiente. 
+En tal sentido se instruyó al Decanato de Estudios Profesionales impulsar los cambios propuestos, a fin de que próximamente se presente una propuesta formal de modificación de la carrera ante este Cuerpo, considerando las recomendaciones de la evaluación y la integración de opiniones de todas las instancias de la Institución que pudiesen contribuir con el proceso de cambio correspondiente. 
+Para finalizar, el profesor Carlos Reginal Pérez García expresó el reconocimiento del Cuerpo para la profesor Carmen Rosales y a todo el equipo que la acompañó en tan importante labor; así como también a la Decana de Estudios Profesionales, quienes han trabajado con gran dedicación y empeño para llevar a feliz término este proceso de evaluación.
+VIII. MODIFICACIÓN SUSTANCIAL DEL PLAN DE ESTUDIOS DE INGENIERÍA DE PRODUCCIÓN
+El profesor Leonardo Saab Verardy, Coordinador de la Carrera de Ingeniería de Producción, para consideración de este Cuerpo, presentó una propuesta de modificación sustancial al plan de estudios de dicha carrera, la cual forma parte integrante de la presente acta.
+Inició su exposición planteando las motivaciones que condujeron a la proposición de los cambios y que justifican los planteamientos propuestos, basados en la opinión de profesores, estudiantes, egresados y profesionales del área.
+Seguidamente presentó un resumen de las modificaciones del plan, que consisten en la inclusión, exclusión, fusión, agrupación por áreas y desplazamiento de asignaturas a lo largo de todo el mapa de la carrera, con una mayor incidencia de cambios en el cuarto año. Señaló además que el impacto de esta propuesta implica la puesta en práctica de planes de transición para las cohortes 96, 97 y 98 con las materias del nuevo pensum. 
+Una vez culminada la presentación del Coordinador de la Carrera y expuestas las observaciones por parte de los Consejeros, se acordó darle el aval correspondiente, recomendando su remisión al Consejo Directivo para la sanción definitiva del proyecto, previa inclusión en la propuesta de los siguientes aspectos:
+1	Definición del perfil del egresado de la Carrera de Ingeniería de Producción, con base en las modificaciones planteadas y donde se contemple la formación ambiental que debe recibir un estudiante en esta área.
+2	Formalización del apoyo de los laboratorios en las áreas relacionadas a la Carrera.
+Además se sugiere incluir la Carrera de Ingeniería de Producción en el proceso de evaluación de las Ingenierías en el marco del Proyecto SECAI.

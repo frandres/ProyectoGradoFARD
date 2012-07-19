@@ -1,0 +1,118 @@
+<Configuration>
+	<UnitRegExps>	
+	    
+	    <UnitRegExp priority="1">(["“][^^]*?(?:(?:[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee][Ss]{0,1} *\s* *[Ee][Xx][Tt][Ee][Rr][Nn][Oo][Ss]{0,1})|(?:[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee][Ss] *\s* *[Ii][Nn][Tt][Ee][Rr][Nn][Oo][Ss])|(?:[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee][Ss]{0,1} *\s* *\)\.)|(?:[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee] *\s* *(?:(?:[Dd][Ee][Ll])|(?:[Dd][Ee] *\s* *[Ll][Aa])) *\s* *[Pp][Rr][Oo][Ff][^^]*?){2,2}))</UnitRegExp>
+		
+	</UnitRegExps>
+
+
+	<MinimumHitRatio>.75</MinimumHitRatio>
+	<DocumentsFilePath>/home/frandres/Eclipse/workspace/ExtractionModule/tests/JuradosAscenso/preProcessedDocuments/</DocumentsFilePath>
+	<FieldDescriptors>
+		<FieldDescriptor>
+			<FieldName>Profesor.Nombre</FieldName>
+			<SpecificRegExps>	
+				<SpecificRegExp priority="2" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1}(?:[Ee][Ss]|[Ss]){0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}(?:[Ee][Ss]|[Ss]){0,1}\.)) *\s* *([\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ\s \-\.]+?) *\s* *,</SpecificRegExp>
+				<SpecificRegExp priority="1" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1}(?:[Ee][Ss]|[Ss]){0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}(?:[Ee][Ss]|[Ss]){0,1}\.)) *\s* *([\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ\s \-\.]+?) *\s* *(?:(?:[Aa][Dd][Ss][Cc][Rr][Ii][Tt][OoAa])|(?:(?:[J][Ee][Ff][Ee] *\s* *){0,1}[Dd][Ee][Ll] *\s* *[Dd][Ee][Pp][Aa][Rr][Tt][Aa][Mm][Ee][Nn][Tt][Oo]))</SpecificRegExp>
+				<SpecificRegExp priority="3" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1}(?:[Ee][Ss]|[Ss]){0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}(?:[Ee][Ss]|[Ss]){0,1}\.)) *\s* *([\p{Upper}ÁÉÍÓÚÑÜ\s \-`'’´\.]*)</SpecificRegExp> -->
+
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<type>STRING</type>
+		</FieldDescriptor>
+		
+		<FieldDescriptor>
+			<FieldName>Profesor.Departamento</FieldName>
+			<SpecificRegExps>	
+				<SpecificRegExp priority="1" >([Dd][Ee][Pp][Aa][Rr][Tt][Aa][Mm][Ee][Nn][Tt][Oo].*?)(?:(?:,{0,1} *\s* *[Aa] *\s* *[Ll][Oo][Ss] *\s* *[Ff][Ii][Nn][Ee][Ss])|(?:[Pp][Aa][Rr][Aa] *\s* *[Ss][Uu]))</SpecificRegExp>
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<type>STRING</type>
+		</FieldDescriptor>
+		
+		<FieldDescriptor>
+			<FieldName>Trabajo.Nombre</FieldName>
+			<SpecificRegExps>
+			
+				<SpecificRegExp priority="1" >["“]([\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ\s \.:–\-;,\(\)]+?)["”]</SpecificRegExp>
+				<SpecificRegExp priority="2" >["“]([\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ\s \.:–\-;,\(\)]+?), *\s* *[Pp][Rr][Ee]</SpecificRegExp>
+				<SpecificRegExp priority="3" >["“]{0,1}(.+?)["”]</SpecificRegExp>
+				
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<type>STRING</type>
+		</FieldDescriptor>		
+	
+		
+		<FieldDescriptor>
+			<FieldName>Trabajo.Escalafon</FieldName>
+			<SpecificRegExps>
+				<SpecificRegExp priority="1" >((?:[Tt][Ii][Tt][Uu][Ll][Aa][Rr])|(?:[Aa][Gg][Rr][Ee][Gg][Aa][Dd][Oo])|(?:[Aa][Ss][Oo][Cc][Ii][Aa][Dd][Oo]))</SpecificRegExp>
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<type>STRING</type>
+		</FieldDescriptor>		
+		
+		<FieldDescriptor>
+			<FieldName>Jurado.Presidente</FieldName>
+			<SpecificRegExps>
+				<SpecificRegExp priority="1" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}\.)|(?:[Dd][Oo][Cc][Tt][Oo][Rr][Aa]{0,1})|(?:[Dd][Rr][Aa]{0,1}\.)) *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}[Pp][Rr][Ee][Ss][Ii][Dd][Ee][Nn][Tt][EeAa]\){0,1})</SpecificRegExp>
+				<SpecificRegExp priority="2" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Ee][Ss]:(?:(?:,)|(?:$^)){0,1}{0,1})) *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}[Pp][Rr][Ee][Ss][Ii][Dd][Ee][Nn][Tt][EeAa]\){0,1})</SpecificRegExp>
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<type>STRING</type>
+		</FieldDescriptor>	
+		
+		<FieldDescriptor>
+			<FieldName>Jurado.MiembroPrincipalInterno</FieldName>
+			<SpecificRegExps>
+				
+				<SpecificRegExp priority="1" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}\.)|(?:[Dd][Oo][Cc][Tt][Oo][Rr][Aa]{0,1})|(?:[Dd][Rr][Aa]{0,1}\.)) *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}[Mm][Ii][Ee][Mm][Bb][Rr][Oo] *\s* *[Pp][Rr][Ii][Nn][Cc][Ii][Pp][Aa][Ll] *\s* *[Ii][Nn][Tt][Ee][Rr][Nn][Oo]\){0,1})</SpecificRegExp>
+				<SpecificRegExp priority="2" >(?:(?:[Pp][Rr][Ee][Ss][Ii][Dd][Ee][Nn][Tt][EeAa]\){0,1}(?:(?:,)|(?:$^)){0,1})) *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}[Mm][Ii][Ee][Mm][Bb][Rr][Oo] *\s* *[Pp][Rr][Ii][Nn][Cc][Ii][Pp][Aa][Ll] *\s* *[Ii][Nn][Tt][Ee][Rr][Nn][Oo]\){0,1})</SpecificRegExp>
+				
+				<SpecificRegExp priority="101" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}\.)|(?:[Dd][Oo][Cc][Tt][Oo][Rr][Aa]{0,1})|(?:[Dd][Rr][Aa]{0,1}\.)) *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}[Mm][Ii][Ee][Mm][Bb][Rr][Oo][Ss] *\s* *[Pp][Rr][Ii][Nn][Cc][Ii][Pp][Aa][Ll][Ee][Ss] *\s* *(?:[Ii][Nn][Tt][Ee][Rr][Nn][Oo][Ss]){0,1}\){0,1})</SpecificRegExp>
+				<SpecificRegExp priority="102" >(?:(?:[Pp][Rr][Ee][Ss][Ii][Dd][Ee][Nn][Tt][EeAa]\){0,1}(?:(?:,)|(?:$^)){0,1})) *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}[Mm][Ii][Ee][Mm][Bb][Rr][Oo][Ss] *\s* *[Pp][Rr][Ii][Nn][Cc][Ii][Pp][Aa][Ll][Ee][Ss] *\s* *(?:(?:[Ii][Nn][Tt][Ee][Rr][Nn][Oo][Ss])|\)))</SpecificRegExp>
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<type>STRING</type>
+		</FieldDescriptor>	
+
+		<FieldDescriptor>
+			<FieldName>Jurado.MiembroPrincipalExterno</FieldName>
+			<SpecificRegExps>
+				<SpecificRegExp priority="1" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}\.)|(?:[Dd][Oo][Cc][Tt][Oo][Rr][Aa]{0,1})|(?:[Dd][Rr][Aa]{0,1}\.)) *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}[Mm][Ii][Ee][Mm][Bb][Rr][Oo] *\s* *[Pp][Rr][Ii][Nn][Cc][Ii][Pp][Aa][Ll] *\s* *[Ee][Xx][Tt][Ee][Rr][Nn][Oo]\){0,1})</SpecificRegExp>
+				<SpecificRegExp priority="2" >(?:(?:[Pp][Rr][Ee][Ss][Ii][Dd][Ee][Nn][Tt][EeAa])|(?:\({0,1}[Mm][Ii][Ee][Mm][Bb][Rr][Oo] *\s* *[Pp][Rr][Ii][Nn][Cc][Ii][Pp][Aa][Ll] *\s* *[Ii][Nn][Tt][Ee][Rr][Nn][Oo]))\){0,1},{0,1}(?:(?: *\s* *[ey] *\s* *)|(?:$^)){0,1} *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}[Mm][Ii][Ee][Mm][Bb][Rr][Oo] *\s* *[Pp][Rr][Ii][Nn][Cc][Ii][Pp][Aa][Ll] *\s* *[Ee][Xx][Tt][Ee][Rr][Nn][Oo]\){0,1})</SpecificRegExp>
+				
+				<SpecificRegExp priority="101" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}\.)|(?:[Dd][Oo][Cc][Tt][Oo][Rr][Aa]{0,1})|(?:[Dd][Rr][Aa]{0,1}\.)) *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}[Mm][Ii][Ee][Mm][Bb][Rr][Oo][Ss] *\s* *[Pp][Rr][Ii][Nn][Cc][Ii][Pp][Aa][Ll][Ee][Ss] *\s* *[Ee][Xx][Tt][Ee][Rr][Nn][Oo][Ss]\){0,1})</SpecificRegExp>
+				<SpecificRegExp priority="102" >(?:(?:[Pp][Rr][Ee][Ss][Ii][Dd][Ee][Nn][Tt][EeAa])|(?:\({0,1}[Mm][Ii][Ee][Mm][Bb][Rr][Oo] *\s* *[Pp][Rr][Ii][Nn][Cc][Ii][Pp][Aa][Ll] *\s* *[Ii][Nn][Tt][Ee][Rr][Nn][Oo]))\){0,1},{0,1}(?:(?: *\s* *[ey] *\s* *)|(?:$^)){0,1} *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}[Mm][Ii][Ee][Mm][Bb][Rr][Oo][Ss] *\s* *[Pp][Rr][Ii][Nn][Cc][Ii][Pp][Aa][Ll][Ee][Ss] *\s* *[Ee][Xx][Tt][Ee][Rr][Nn][Oo][Ss]\){0,1})</SpecificRegExp>
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<type>STRING</type>
+		</FieldDescriptor>	
+		
+		<FieldDescriptor>
+			<FieldName>Jurado.SuplenteInterno</FieldName>
+			<SpecificRegExps>
+				<SpecificRegExp priority="1" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Ee][Ss]\:)|(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}\.)|(?:[Dd][Oo][Cc][Tt][Oo][Rr][Aa]{0,1})|(?:[Dd][Rr][Aa]{0,1}\.)) *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}(?: *\s* *[Mm][Ii][Ee][Mm][Bb][Rr][Oo]){0,1} *\s* *[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee] *\s* *[Dd][Ee])(?:[^^]*[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee] *\s* *[Dd][Ee])</SpecificRegExp>
+				<SpecificRegExp priority="2" >(?:(?:\({0,1}(?:[Mm][Ii][Ee][Mm][Bb][Rr][Oo]){0,1} *\s* *[Pp][Rr][Ii][Nn][Cc][Ii][Pp][Aa][Ll] *\s* *(?:[Ee][Xx][Tt][Ee][Rr][Nn][Oo])){0,1})\){0,1},{0,1}(?:(?: *\s* *[ey] *\s* *)|(?:$^)){0,1} *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}(?: *\s* *[Mm][Ii][Ee][Mm][Bb][Rr][Oo]){0,1} *\s* *[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee] *\s* *[Dd][Ee])(?:[^^]*[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee] *\s* *[Dd][Ee])</SpecificRegExp>
+				<SpecificRegExp priority="3" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Ee][Ss]\:)|(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}\.)|(?:[Dd][Oo][Cc][Tt][Oo][Rr][Aa]{0,1})|(?:[Dd][Rr][Aa]{0,1}\.)) *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}(?: *\s* *[Mm][Ii][Ee][Mm][Bb][Rr][Oo]){0,1} *\s* *[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee] *\s* *(?:(?:[Ii][Nn][Tt][Ee][Rr][Nn][Oo]\){0,1})|\)))</SpecificRegExp>
+				<SpecificRegExp priority="4" >(?:(?:\({0,1}(?:[Mm][Ii][Ee][Mm][Bb][Rr][Oo]){0,1} *\s* *[Pp][Rr][Ii][Nn][Cc][Ii][Pp][Aa][Ll] *\s* *(?:[Ee][Xx][Tt][Ee][Rr][Nn][Oo])){0,1})\){0,1},{0,1}(?:(?: *\s* *[ey] *\s* *)|(?:$^)){0,1} *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}(?: *\s* *[Mm][Ii][Ee][Mm][Bb][Rr][Oo]){0,1} *\s* *[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee] *\s* *(?:(?:[Ii][Nn][Tt][Ee][Rr][Nn][Oo]\){0,1})|\)))</SpecificRegExp>
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<type>STRING</type>
+		</FieldDescriptor>	
+		
+		<FieldDescriptor>
+			<FieldName>Jurado.SuplenteExterno</FieldName>
+			<SpecificRegExps>
+				<SpecificRegExp priority="2" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}\.)|(?:[Dd][Oo][Cc][Tt][Oo][Rr][Aa]{0,1})|(?:[Dd][Rr][Aa]{0,1}\.)) *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}(?: *\s* *[Mm][Ii][Ee][Mm][Bb][Rr][Oo]){0,1} *\s* *[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee] *\s* *[Ee][Xx][Tt][Ee][Rr][Nn][Oo]\){0,1})</SpecificRegExp>
+				<SpecificRegExp priority="3" >(?:(?:\({0,1}(?:[Mm][Ii][Ee][Mm][Bb][Rr][Oo]){0,1} *\s* *[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee] *\s* *[Ii][Nn][Tt][Ee][Rr][Nn][Oo]))\){0,1},{0,1}(?:(?: *\s* *[ey] *\s* *)|(?:$^)){0,1} *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}(?: *\s* *[Mm][Ii][Ee][Mm][Bb][Rr][Oo]){0,1} *\s* *[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee] *\s* *[Ee][Xx][Tt][Ee][Rr][Nn][Oo]\){0,1})</SpecificRegExp>
+				<SpecificRegExp priority="1" >(?:(?:\({0,1}(?:[Mm][Ii][Ee][Mm][Bb][Rr][Oo]){0,1} *\s* *[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee] *\s* *[Dd][Ee])).*?(?:$^)* *\s* *(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}\.)|(?:[Dd][Oo][Cc][Tt][Oo][Rr][Aa]{0,1})|(?:[Dd][Rr][Aa]{0,1}\.)) *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}(?: *\s* *[Mm][Ii][Ee][Mm][Bb][Rr][Oo]){0,1} *\s* *[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee] *\s* *[Dd][Ee]\){0,1})</SpecificRegExp>
+				<SpecificRegExp priority="4" >(?:(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Ee][Ss]\:)|(?:[Pp][Rr][Oo][Ff][Ee][Ss][Oo][Rr][Aa]{0,1})|(?:[Pp][Rr][Oo][Ff][Aa]{0,1}\.)|(?:[Dd][Oo][Cc][Tt][Oo][Rr][Aa]{0,1})|(?:[Dd][Rr][Aa]{0,1}\.)) *\s* *([\w`'’´áéíóúÁÉÍÓÚüñÑÜ][\w`'’´áéíóú`'’´ÁÉÍÓÚüñÑÜ \t \-\.]+?) *\s* *(?:\({0,1}(?: *\s* *[Mm][Ii][Ee][Mm][Bb][Rr][Oo][Ss]){0,1} *\s* *[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee][Ss] *\s* *[Dd][Ee])(?:[^^]*[Ss][Uu][Pp][Ll][Ee][Nn][Tt][Ee][Ss] *\s* *[Dd][Ee])</SpecificRegExp>
+			</SpecificRegExps>
+			<Weight>1</Weight>
+			<type>STRING</type>
+		</FieldDescriptor>									
+	</FieldDescriptors>
+
+</Configuration>

@@ -1,0 +1,404 @@
+Extraction report
+ Using regexp: De acuerdo al numeral 7 del artículo 16(.*?)[^0-9 ][23(?:IV)(?:III)(?:II)][\.\t].*
+  .~lock.2002-01.docx#: no match found.
+  2002-01.docx: no match found.
+  2002-02.docx: no match found.
+  2002-03.docx: no match found.
+  2002-05.docx: no match found.
+  2002-08.docx: no match found.
+  2002-14.docx: no match found.
+  2002-16.docx: no match found.
+  2002-20.docx: no match found.
+  2002-21.docx: no match found.
+  2002-22.docx: no match found.
+  2002-24.docx: no match found.
+  2002-26.docx: no match found.
+  2002-27.docx: no match found.
+  2012-01.doc: no match found.
+  2012-02.doc: no match found.
+  2012-04.doc: no match found.
+  2012-06.doc: no match found.
+  2012-07.doc: no match found.
+  2012-08.doc: no match found.
+  2012-09.doc: no match found.
+  2012-11.doc: no match found.
+  2012-12.doc: no match found.
+  Acta D01-1.doc: no match found.
+  Acta D01-13.doc: no match found.
+  Acta D01-14.doc: no match found.
+  Acta D01-16.doc: no match found.
+  Acta D01-18a.doc: no match found.
+  Acta D01-2.doc: no match found.
+  Acta D01-20a.doc: no match found.
+  Acta D01-21a.doc: no match found.
+  Acta D01-22.doc: no match found.
+  Acta D01-23.doc: no match found.
+  Acta D01-25.doc: no match found.
+  Acta D01-28.doc: no match found.
+  Acta D01-29.doc: no match found.
+  Acta D01-30.doc: no match found.
+  Acta D01-31.doc: no match found.
+  Acta D01-32.doc: no match found.
+  Acta D01-33.doc: no match found.
+  Acta D01-35.doc: no match found.
+  Acta D01-36.doc: no match found.
+  Acta D01-4.doc: no match found.
+  Acta D01-8.doc: no match found.
+  Acta D04-1.doc: no match found.
+  Acta D04-10.doc: no match found.
+  Acta D04-11.doc: no match found.
+  Acta D04-12.doc: no match found.
+  Acta D04-13.doc: no match found.
+  Acta D04-14.doc: no match found.
+  Acta D04-15.doc: no match found.
+  Acta D04-16.doc: no match found.
+  Acta D04-18.doc: no match found.
+  Acta D04-19.doc: no match found.
+  Acta D04-2.doc: no match found.
+  Acta D04-20.doc: no match found.
+  Acta D04-21.doc: no match found.
+  Acta D04-22.doc: no match found.
+  Acta D04-23.doc: no match found.
+  Acta D04-3.doc: no match found.
+  Acta D04-4.doc: no match found.
+  Acta D04-6.doc: no match found.
+  Acta D04-7.doc: no match found.
+  Acta D04-8.doc: no match found.
+  Acta D04-9.doc: no match found.
+  D 2010-1.doc: no match found.
+  D 2010-10.doc: no match found.
+  D 2010-11.doc: no match found.
+  D 2010-12.doc: no match found.
+  D 2010-13.doc: no match found.
+  D 2010-14.doc: no match found.
+  D 2010-16.doc: no match found.
+  D 2010-18.doc: no match found.
+  D 2010-2.doc: no match found.
+  D 2010-20.doc: no match found.
+  D 2010-21.doc: no match found.
+  D 2010-22.doc: no match found.
+  D 2010-23.doc: no match found.
+  D 2010-24.doc: no match found.
+  D 2010-26.doc: no match found.
+  D 2010-3.doc: no match found.
+  D 2010-5.doc: no match found.
+  D 2010-6.doc: no match found.
+  D 2010-8.doc: no match found.
+  D 2010-9.doc: no match found.
+  D 2011-01.doc: no match found.
+  D 2011-02.doc: no match found.
+  D 2011-03.doc: no match found.
+  D 2011-07.doc: no match found.
+  D 2011-08.doc: no match found.
+  D 2011-10.doc: no match found.
+  D 2011-11.doc: no match found.
+  D 2011-12.doc: no match found.
+  D 2011-13.doc: no match found.
+  D 2011-15.doc: no match found.
+  D 2011-17.doc: no match found.
+  D 2011-19.doc: no match found.
+  D 2011-20.doc: no match found.
+  D 2011-21.doc: no match found.
+  D 2011-23.doc: no match found.
+  D 2011-26.doc: no match found.
+  D 2011-27.doc: no match found.
+  D 2011-28.doc: no match found.
+  D 2011-29.doc: no match found.
+  D 2011-31.doc: no match found.
+  D06-1.doc: no match found.
+  D06-10.doc: no match found.
+  D06-11.doc: 
+  D06-12.doc: 
+  D06-13.doc: 
+  D06-14.doc: 
+  D06-15.doc: 
+  D06-16.doc: 
+  D06-17.doc: 
+  D06-18.doc: 
+  D06-19.doc: no match found.
+  D06-2.doc: no match found.
+  D06-20.doc: no match found.
+  D06-21.doc: no match found.
+  D06-3.doc: no match found.
+  D06-4.doc: 
+  D06-5.doc: 
+  D06-6.doc: 
+  D06-7.doc: 
+  D06-8.doc: no match found.
+  D06-9.doc: 
+  D07-1.doc: 
+  D07-12.doc: 
+  D07-13.doc: 
+  D07-14.doc: 
+  D07-15.doc: 
+  D07-16.doc: 
+  D07-18.doc: 
+  D07-2.doc: 
+  D07-22.doc: 
+  D07-23.doc: 
+  D07-24.doc: 
+  D07-3.doc: 
+  D07-4.doc: no match found.
+  D07-5.doc: 
+  D07-6.doc: 
+  D07-7.doc: 
+  D07-8.doc: 
+  D07-9.doc: 
+  D08-1.doc: 
+  D08-10.doc: 
+  D08-12.doc: 
+  D08-14.doc: 
+  D08-15.doc: 
+  D08-16.doc: 
+  D08-17.doc: 
+  D08-19.doc: no match found.
+  D08-20.doc: no match found.
+  D08-22.doc: no match found.
+  D08-23.doc: no match found.
+  D08-24.doc: no match found.
+  D08-25.doc: no match found.
+  D08-27.doc: no match found.
+  D08-28.doc: no match found.
+  D08-3.doc: 
+  D08-4.doc: 
+  D08-6.doc: 
+  D08-8.doc: no match found.
+  D08-9.doc: 
+  D09-1.doc: no match found.
+  D09-10.doc: no match found.
+  D09-11.doc: no match found.
+  D09-12.doc: no match found.
+  D09-13.doc: no match found.
+  D09-14.doc: no match found.
+  D09-17.doc: no match found.
+  D09-19.doc: no match found.
+  D09-2.doc: no match found.
+  D09-20.doc: no match found.
+  D09-22.doc: no match found.
+  D09-23.doc: no match found.
+  D09-24.doc: no match found.
+  D09-25.doc: no match found.
+  D09-26.doc: no match found.
+  D09-27.doc: no match found.
+  D09-4.doc: no match found.
+  D09-5.doc: no match found.
+  D09-6.doc: no match found.
+  D09-7.doc: no match found.
+  D09-9.doc: no match found.
+  D2000-1.doc: no match found.
+  D2000-10.doc: no match found.
+  D2000-12.doc: no match found.
+  D2000-16.doc: no match found.
+  D2000-18.doc: no match found.
+  D2000-20.doc: no match found.
+  D2000-21.doc: no match found.
+  D2000-22.doc: no match found.
+  D2000-24.doc: no match found.
+  D2000-26.doc: no match found.
+  D2000-27.doc: no match found.
+  D2000-29.doc: no match found.
+  D2000-31.doc: no match found.
+  D2000-32.doc: no match found.
+  D2000-3A.doc: no match found.
+  D2000-4.doc: no match found.
+  D2000-5.doc: no match found.
+  D2000-8.doc: no match found.
+  D2000-9.doc: no match found.
+  D2003-1.doc: no match found.
+  D2003-12.doc: no match found.
+  D2003-15.doc: no match found.
+  D2003-18.doc: no match found.
+  D2003-19.doc: no match found.
+  D2003-2.doc: no match found.
+  D2003-23.doc: no match found.
+  D2003-24.doc: no match found.
+  D2003-25.doc: no match found.
+  D2003-26.doc: no match found.
+  D2003-28.doc: no match found.
+  D2003-3.doc: no match found.
+  D2003-4.doc: no match found.
+  D2003-5.doc: no match found.
+  D2003-7.doc: no match found.
+  D2003-8.doc: no match found.
+Matches: 41 total: 220
+ Using regexp: .*(?:[Ii][Nn][Ff][Oo][Rr][Mm][Ee] [Dd][Ee][Ll] [Rr][Ee][Cc][Tt][Oo][Rr]).*?([Dd][Ee][Ss][Ii][Gg][Nn][Aa][Cc][Ii][Oo\u00f3][Nn](?:[Ee][Ss]){0,1}.*?)[^0-9 ][23(?:IV)(?:III)(?:II)][\.\t].*
+  .~lock.2002-01.docx#: no match found.
+  2002-01.docx: 
+  2002-02.docx: 
+  2002-03.docx: 
+  2002-05.docx: 
+  2002-08.docx: 
+  2002-14.docx: 
+  2002-16.docx: 
+  2002-20.docx: 
+  2002-21.docx: 
+  2002-22.docx: 
+  2002-24.docx: 
+  2002-26.docx: 
+  2002-27.docx: 
+  2012-01.doc: 
+  2012-02.doc: 
+  2012-04.doc: 
+  2012-06.doc: 
+  2012-07.doc: 
+  2012-08.doc: 
+  2012-09.doc: 
+  2012-11.doc: 
+  2012-12.doc: 
+  Acta D01-1.doc: 
+  Acta D01-13.doc: 
+  Acta D01-14.doc: 
+  Acta D01-16.doc: 
+  Acta D01-18a.doc: 
+  Acta D01-2.doc: 
+  Acta D01-20a.doc: 
+  Acta D01-21a.doc: 
+  Acta D01-22.doc: 
+  Acta D01-23.doc: 
+  Acta D01-25.doc: 
+  Acta D01-28.doc: 
+  Acta D01-29.doc: 
+  Acta D01-30.doc: 
+  Acta D01-31.doc: 
+  Acta D01-32.doc: 
+  Acta D01-33.doc: 
+  Acta D01-35.doc: 
+  Acta D01-36.doc: 
+  Acta D01-4.doc: 
+  Acta D01-8.doc: 
+  Acta D04-1.doc: 
+  Acta D04-10.doc: 
+  Acta D04-11.doc: 
+  Acta D04-12.doc: 
+  Acta D04-13.doc: 
+  Acta D04-14.doc: 
+  Acta D04-15.doc: 
+  Acta D04-16.doc: 
+  Acta D04-18.doc: 
+  Acta D04-19.doc: 
+  Acta D04-2.doc: 
+  Acta D04-20.doc: 
+  Acta D04-21.doc: 
+  Acta D04-22.doc: 
+  Acta D04-23.doc: 
+  Acta D04-3.doc: 
+  Acta D04-4.doc: 
+  Acta D04-6.doc: 
+  Acta D04-7.doc: 
+  Acta D04-8.doc: 
+  Acta D04-9.doc: 
+  D 2010-1.doc: 
+  D 2010-10.doc: 
+  D 2010-11.doc: 
+  D 2010-12.doc: 
+  D 2010-13.doc: 
+  D 2010-14.doc: 
+  D 2010-16.doc: 
+  D 2010-18.doc: 
+  D 2010-2.doc: 
+  D 2010-20.doc: 
+  D 2010-21.doc: 
+  D 2010-22.doc: 
+  D 2010-23.doc: 
+  D 2010-24.doc: 
+  D 2010-26.doc: 
+  D 2010-3.doc: 
+  D 2010-5.doc: 
+  D 2010-6.doc: 
+  D 2010-8.doc: 
+  D 2010-9.doc: 
+  D 2011-01.doc: 
+  D 2011-02.doc: 
+  D 2011-03.doc: 
+  D 2011-07.doc: 
+  D 2011-08.doc: 
+  D 2011-10.doc: 
+  D 2011-11.doc: 
+  D 2011-12.doc: 
+  D 2011-13.doc: 
+  D 2011-15.doc: 
+  D 2011-17.doc: 
+  D 2011-19.doc: 
+  D 2011-20.doc: 
+  D 2011-21.doc: 
+  D 2011-23.doc: 
+  D 2011-26.doc: 
+  D 2011-27.doc: 
+  D 2011-28.doc: 
+  D 2011-29.doc: 
+  D 2011-31.doc: 
+  D06-1.doc: 
+  D06-10.doc: 
+  D06-19.doc: 
+  D06-2.doc: 
+  D06-20.doc: 
+  D06-21.doc: 
+  D06-3.doc: 
+  D06-8.doc: 
+  D07-4.doc: 
+  D08-19.doc: 
+  D08-20.doc: 
+  D08-22.doc: 
+  D08-23.doc: 
+  D08-24.doc: 
+  D08-25.doc: 
+  D08-27.doc: 
+  D08-28.doc: 
+  D08-8.doc: 
+  D09-1.doc: 
+  D09-10.doc: 
+  D09-11.doc: 
+  D09-12.doc: 
+  D09-13.doc: 
+  D09-14.doc: 
+  D09-17.doc: 
+  D09-19.doc: 
+  D09-2.doc: 
+  D09-20.doc: 
+  D09-22.doc: 
+  D09-23.doc: 
+  D09-24.doc: 
+  D09-25.doc: 
+  D09-26.doc: 
+  D09-27.doc: 
+  D09-4.doc: 
+  D09-5.doc: 
+  D09-6.doc: 
+  D09-7.doc: 
+  D09-9.doc: 
+  D2000-1.doc: 
+  D2000-10.doc: 
+  D2000-12.doc: 
+  D2000-16.doc: 
+  D2000-18.doc: 
+  D2000-20.doc: 
+  D2000-21.doc: 
+  D2000-22.doc: 
+  D2000-24.doc: 
+  D2000-26.doc: 
+  D2000-27.doc: 
+  D2000-29.doc: 
+  D2000-31.doc: 
+  D2000-32.doc: 
+  D2000-3A.doc: 
+  D2000-4.doc: 
+  D2000-5.doc: 
+  D2000-8.doc: 
+  D2000-9.doc: 
+  D2003-1.doc: 
+  D2003-12.doc: 
+  D2003-15.doc: 
+  D2003-18.doc: 
+  D2003-19.doc: 
+  D2003-2.doc: 
+  D2003-23.doc: 
+  D2003-24.doc: 
+  D2003-25.doc: 
+  D2003-26.doc: 
+  D2003-28.doc: 
+  D2003-3.doc: 
+  D2003-4.doc: 
+  D2003-5.doc: 
+  D2003-7.doc: 
+  D2003-8.doc: 
+Matches: 178 total: 179

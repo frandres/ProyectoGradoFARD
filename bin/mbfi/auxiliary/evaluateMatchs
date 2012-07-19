@@ -1,0 +1,27 @@
+#!/bin/sh
+#inputFilePath='/home/frandres/Eclipse/workspace/text-processor/inputPruebas/DesignacionesPruebas/'
+
+inputFilePath='/home/frandres/diff/setA/'
+outputFilePath='/home/frandres/diff/setB/'
+outPutFileName='matchEvaluationReport'
+
+rm -f $outputFilePath$outPutFileName
+
+iguales=$((0))
+totales=$((0))
+
+for i in $(ls $inputFilePath)
+do
+        diff -qN  $inputFilePath$i $outputFilePath$i >> $outputFilePath$outPutFileName
+     
+        totales=$(( totales + 1 ))
+        if [ "$(diff -qN  $inputFilePath$i $outputFilePath$i)" = "" ]
+        then
+                iguales=$(( iguales + 1 ))
+        fi  
+done
+
+echo "Iguales: $iguales" >> $outputFilePath$outPutFileName 
+echo "Totales: $totales" >> $outputFilePath$outPutFileName
+echo "scale=2;$iguales/$totales" | bc >> $outputFilePath$outPutFileName
+exit 0
