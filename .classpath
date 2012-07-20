@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/frandres/Eclipse/workspace/ExtractionModule/lib/pdfbox-app-1.6.0.jar"/>
+	<classpathentry kind="lib" path="/home/frandres/Eclipse/workspace/ExtractionModule/lib/tika-app-1.1.jar"/>
+	<classpathentry kind="lib" path="/home/frandres/Eclipse/workspace/ExtractionModule/lib/poi-ooxml-schemas-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="/home/frandres/Eclipse/workspace/ExtractionModule/lib/poi-excelant-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="/home/frandres/Eclipse/workspace/ExtractionModule/lib/poi-ooxml-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="/home/frandres/Eclipse/workspace/ExtractionModule/lib/poi-examples-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="/home/frandres/Eclipse/workspace/ExtractionModule/lib/poi-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="/home/frandres/Eclipse/workspace/ExtractionModule/lib/poi-scratchpad-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="/home/frandres/Eclipse/workspace/ExtractionModule/lib/jericho-html-3.2.jar"/>
+	<classpathentry kind="lib" path="/home/frandres/Eclipse/workspace/ExtractionModule/lib/lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="/home/frandres/Eclipse/workspace/ExtractionModule/lib/lib/junit-3.8.1.jar"/>
+	<classpathentry kind="lib" path="/home/frandres/Eclipse/workspace/ExtractionModule/lib/lib/log4j-1.2.13.jar"/>
+	<classpathentry kind="lib" path="/home/frandres/Eclipse/workspace/ProyectoGradoFARD"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
