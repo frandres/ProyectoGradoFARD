@@ -1,0 +1,20 @@
+<Configuration>
+	<DomainName></DomainName>
+	
+	<FieldDescriptors>
+		<FieldDescriptor>
+			<ConceptName>EsAscendido.Nombre</ConceptName>
+			<FieldName>EsAscendido.Nombre</FieldName>
+			<type></type>
+			<domainType></domainType>
+			<implicitDomainMinimumValue></implicitDomainMinimumValue>
+			<implicitDomainMaximumValue></implicitDomainMaximumValue>
+			
+			<posibleValues>
+				<posibleValue></posibleValue>
+			</posibleValues>
+		</FieldDescriptor>
+	</FieldDescriptors>
+	
+<Configuration>	
+	
