@@ -92,8 +92,9 @@ public class Tester {
 			}		
 		}
 		
-		
-		return new FieldInformation(fieldName, fieldValue);
+		ArrayList<String> values = new ArrayList<String>();
+		values.add(fieldValue);
+		return new FieldInformation(fieldName, values);
 	}
 	
 

@@ -101,11 +101,20 @@ public abstract class BinaryFormula extends Formula {
 	}
 	
 	public Formula getLeftSide() {
-		return leftSide.clone();
+		if (leftSide != null){
+			return leftSide.clone();
+		}
+		
+		return null;
 	}
 
 	public Formula getRightSide() {
-		return rightSide.clone();
+		
+		if (rightSide != null){
+			return leftSide.clone();
+		}
+		
+		return null;
 	}
 
 	public void setLeftSide(Formula leftSide) {

@@ -154,35 +154,39 @@ public class Atom extends Formula {
 		this.comparationOperation = comparationOperation;
 	}
 
-	public void negateCondition() {
-		switch (getComparationOperation()) {
+	public Formula negateCondition() {
+		Atom newAtom = (Atom) this.clone();
+		
+		switch (newAtom.getComparationOperation()) {
 		case OP_EQUALS:
-			setComparationOperation(OP_DIFFERENT_THAN);
+			newAtom.setComparationOperation(OP_DIFFERENT_THAN);
 			break;
 		case OP_DIFFERENT_THAN:
-			setComparationOperation(OP_EQUALS);
+			newAtom.setComparationOperation(OP_EQUALS);
 			break;
 			
 		case OP_LESS_THAN:
-			setComparationOperation(OP_GREATER_OR_EQUAL);
+			newAtom.setComparationOperation(OP_GREATER_OR_EQUAL);
 			break;		
 			
 		case OP_GREATER_THAN:
-			setComparationOperation(OP_LESS_OR_EQUAL);
+			newAtom.setComparationOperation(OP_LESS_OR_EQUAL);
 			break;
 			
 		case OP_LESS_OR_EQUAL:
-			setComparationOperation(OP_GREATER_THAN);
+			newAtom.setComparationOperation(OP_GREATER_THAN);
 			break;
 			
 		case OP_GREATER_OR_EQUAL:
-			setComparationOperation(OP_LESS_THAN);
+			newAtom.setComparationOperation(OP_LESS_THAN);
 			break;		
 			
 		default:
+			log.log(Level.ERROR, "Negation not defined for: " + getComparationOperation());
 			break;
 		}
 		
+		return newAtom;
 	}
 
 	

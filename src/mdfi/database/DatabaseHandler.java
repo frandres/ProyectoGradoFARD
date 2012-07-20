@@ -2,7 +2,9 @@ package mdfi.database;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
+import mbfi.focalizedExtractor.FieldDescriptor;
 import mbfi.focalizedExtractor.FieldInformation;
 import mbfi.focalizedExtractor.FieldValue;
 import mdfi.query.Query;
@@ -19,6 +21,10 @@ public class DatabaseHandler {
 	
 	public static List<FieldValue> getQueryResult (Query query){
 		List<FieldValue> results = new ArrayList<FieldValue>();
+		Random random = new Random();
+		
+		FieldValue value = new FieldValue(Integer.toString(random.nextInt(100)), FieldDescriptor.INTEGER);
+		results.add(value);
 		return results;
 		
 	}

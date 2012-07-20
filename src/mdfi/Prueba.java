@@ -10,26 +10,52 @@ import mdfi.query.Attribute;
 import mdfi.query.Query;
 
 import mdfi.conditions.*;
+import mdfi.conditions.rightHandedSide.BinaryRightHandSide;
+import mdfi.conditions.rightHandedSide.NestedQuery;
+import mdfi.conditions.rightHandedSide.NullCondition;
 import mdfi.conditions.rightHandedSide.RightHandSide;
 import mdfi.conditions.rightHandedSide.SimpleValue;
+import mdfi.incompletitudeFinder.QueryFlattener;
 
 public class Prueba {
 	public static void main(String[] args) {
 		
 		List<Attribute> requestedAttributes = new ArrayList<Attribute>();
+		List<FieldValue> values;
+		RightHandSide rhsLS,rhsRS,rhs;
 		
 		requestedAttributes.add(new Attribute("A1", "C1"));
 		
-		List<FieldValue> values = new ArrayList<FieldValue>();
+		values = new ArrayList<FieldValue>();
 		values.add(new FieldValue("1", FieldDescriptor.INTEGER));
-		RightHandSide rhs = new SimpleValue(values);
-		Formula condition = new Atom(rhs, 
+		rhsLS = new NestedQuery(new Query(null, requestedAttributes, new NullCondition()));
+		
+		values = new ArrayList<FieldValue>();
+		values.add(new FieldValue("-2", FieldDescriptor.DOUBLE));
+		
+		rhsRS = new SimpleValue(values);
+		
+		rhs = new BinaryRightHandSide(rhsLS, rhsRS, BinaryRightHandSide.OP_SUM);
+		
+		Formula condition = new NegativeFormula(
+									 new Atom(rhs, 
 									 new Attribute("A2", "C1"),
-									 Atom.OP_EQUALS);
+									 Atom.OP_GREATER_THAN));
 		
 		Query query = new Query(null, requestedAttributes, condition);
 		
 		System.out.println(query.toString());
+		
+		Attribute a1 = new Attribute("A1", "C1");
+		System.out.println(a1.getIdentifier());
+		System.out.println(requestedAttributes.get(0).getIdentifier());
+		query = QueryFlattener.flattenQuery(query,new Attribute("A1", "C1"));
+		
+		System.out.println(query.toString());
+		int a =2;
+		double b = 1;
+		double c = (double) a;
+
 	}
 //	public static void main(String[] args) {
 //		

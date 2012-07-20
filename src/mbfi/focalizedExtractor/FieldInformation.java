@@ -1,21 +1,23 @@
 package mbfi.focalizedExtractor;
 
+import java.util.List;
+
 public class FieldInformation implements Comparable<FieldInformation>{
 
 	private String fieldName;
-	private String fieldValue;
+	private List<String> fieldValues;
 
-	public FieldInformation(String fieldName, String fieldValue) {
+	public FieldInformation(String fieldName, List<String> fieldValues) {
 		super();
 		this.fieldName = fieldName;
-		this.fieldValue = fieldValue;
+		this.fieldValues = fieldValues;
 	}
 	
 	public String getFieldName() {
 		return fieldName;
 	}
-	public String getFieldValue() {
-		return fieldValue;
+	public List<String> getFieldValues() {
+		return fieldValues;
 	}
 
 	@Override

@@ -215,11 +215,18 @@ public class FocalizedExtractor {
 			if (fDescriptor == null){
 				continue;
 			}
-			List<String> possibleValues = fDescriptor.getPossibleValues(fieldInformation.getFieldValue());
+			
+			List<String> values = fieldInformation.getFieldValues();
+			List<String> possiblesValues = new ArrayList<String>();
+			
+			for (Iterator <String> iterator2 = values.iterator(); iterator2.hasNext();) {
+				String value = iterator2.next();
+				possiblesValues.addAll(fDescriptor.getPossibleValues(value));
+			}
 			
 			maxHitMeasure += fDescriptor.getWeight();
 			
-			for (Iterator <String> iterator2 = possibleValues.iterator(); iterator2
+			for (Iterator <String> iterator2 = possiblesValues.iterator(); iterator2
 					.hasNext();) {
 				String possibleValue = iterator2.next();
 				

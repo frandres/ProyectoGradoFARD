@@ -84,7 +84,13 @@ public class AndFormula extends BinaryFormula {
 			return "(" + leftSide.getConditionText(true) + getOperatorText() + rightSide.getConditionText(true) +")";
 		}
 	}
-
+	
+	@Override
+	public Formula negateCondition() {
+		// TODO Auto-generated method stub
+		return new OrFormula(getLeftSide().negateCondition(), getRightSide().negateCondition());
+	}
+	
 	@Override
 	public Formula clone() {
 		return new AndFormula(getLeftSide(), getRightSide());

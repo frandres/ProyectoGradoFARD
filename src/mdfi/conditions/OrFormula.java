@@ -94,6 +94,12 @@ public class OrFormula extends BinaryFormula {
 	
 	@Override
 	public Formula clone() {
-		return new OrFormula(getLeftSide(), getRightSide());
+		return new OrFormula(getLeftSide().negateCondition(), getRightSide().negateCondition());
+	}
+	
+	@Override
+	public Formula negateCondition() {
+		// TODO Auto-generated method stub
+		return new AndFormula(getLeftSide(), getRightSide());
 	}
 }

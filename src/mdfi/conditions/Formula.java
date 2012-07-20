@@ -5,7 +5,12 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import mbfi.focalizedExtractor.FieldInformation;
+import mdfi.conditions.rightHandedSide.NullCondition;
+import mdfi.incompletitudeFinder.QueryFlattener;
 import mdfi.query.Attribute;
 import mdfi.query.Query;
 
@@ -33,6 +38,7 @@ import mdfi.query.Query;
  */
 public abstract class Formula {
 
+	static Logger log = Logger.getLogger(Formula.class.getName());
 
 	
 	// Constructor. 
@@ -47,7 +53,7 @@ public abstract class Formula {
 	
 	public boolean hasAttribute (Attribute at){
 		
-		List<Attribute> ats = getAttributes();
+		List<Attribute> ats = getAllAttributes();
 		
 		for (Iterator<Attribute> iterator = ats.iterator(); iterator.hasNext();) {
 			Attribute attribute = (Attribute) iterator.next();
@@ -127,32 +133,59 @@ public abstract class Formula {
 	}
 
 
-	public Formula toNCFSingleFormula() {
-		List<Formula> formulas = toNCF();
-		
+//	public Formula toNCFSingleFormula() {
+//		List<Formula> formulas = toNCF();
+//		
+//		return flattenListOfFormulas(formulas);
+//
+//	}
+
+	public abstract Formula negateCondition();
 	
-		AndFormula ncfSingleFormula = new AndFormula(null, null);
-		AndFormula iteratorF = ncfSingleFormula;
+	private Formula flattenListOfFormulas(List<Formula> formulas) {
 		
 		int remainingObjects = formulas.size();
 		
-		for (Iterator <Formula> iterator = formulas.iterator(); iterator.hasNext();) {
-			Formula formula = iterator.next();
-			iteratorF.setLeftSide(formula);
+		if (remainingObjects==1){
+			return formulas.get(0);
+		} 
+		if (remainingObjects>1)
+		{
+			Formula rightSide = formulas.remove(remainingObjects-1);
+			Formula leftSide = flattenListOfFormulas(formulas);
 			
-			if (remainingObjects==1){
-				iteratorF.setRightSide(null);
-			}
+			AndFormula andForm = new AndFormula(leftSide, rightSide);
 			
-			if (remainingObjects>1){
-				iteratorF.setRightSide(new AndFormula(null, null));
-				iteratorF = (AndFormula) iteratorF.getRightSide();
-			}
+			return flattenListOfFormulas(formulas);
+		}
+		if (remainingObjects<1){
 			
-			remainingObjects--;
+			return new NullCondition();
 		}
 		
-		return ncfSingleFormula;
+		return null;
+	}
+
+
+	public Formula removeAttribute(Attribute attribute) {
+		List<Formula> formulas = toNCF();
+		
+		for (Iterator <Formula> iterator = formulas.iterator(); iterator.hasNext();) {
+			 Formula formula = iterator.next();
+			if (formula.hasAttribute(attribute)){
+				iterator.remove();
+				log.log(Level.INFO, "Found attribute");
+			}
+		}
+		
+		return flattenListOfFormulas(formulas);
+		
+	}
+
+
+	public Formula toNCFSF() {
+		List<Formula> formulas = toNCF();
+		return flattenListOfFormulas(formulas);
 	}
 
 }

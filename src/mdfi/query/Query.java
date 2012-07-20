@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import mdfi.conditions.Formula;
 
 public class Query {
@@ -12,6 +15,7 @@ public class Query {
 	private List<Attribute> requestedAttributes;
 	private Formula condition;
 	
+	static Logger log = Logger.getLogger(Query.class.getName());
 	
 	public Query(Query parentQuery, List<Attribute> requestedAttributes,
 			Formula condition) {
@@ -29,6 +33,11 @@ public class Query {
 	
 	public Formula getCondition() {
 		return condition.clone();
+	}
+
+	
+	public void setCondition(Formula condition) {
+		this.condition = condition;
 	}
 
 	public List<Attribute> getConditionAttributes(){
@@ -53,14 +62,28 @@ public class Query {
 	private final static String keyword []= new String[10];
 	{
 		keyword[0] = "LIST ";
-		keyword[1] = " INSTANCES\n";
+		keyword[1] = " INSTANCES ";
 		keyword[2] = "SUCH THAT ";
-		keyword[3] = ";\n";
 
 	}
 	public String toString(){
+		return toString(false);
+	}
+	
+	private String addLineDelimitator(boolean add){
+		if (add){
+			return System.getProperty("line.separator");
+		}else{
+			return "";
+		}
+	}
+	public String toString(boolean nestedQuery){
 		
-		String qString = keyword[0];
+		String qString = "";
+		if (nestedQuery){
+			qString += "(";
+		}
+		qString += keyword[0];
 		
 		for (Iterator <Attribute> iterator = getRequestedAttributes().iterator(); iterator.hasNext();) {
 			qString += iterator.next();
@@ -71,13 +94,33 @@ public class Query {
 		}
 		
 		qString+= keyword[1];
-		qString+= keyword[2];
+		qString+= keyword[2]+addLineDelimitator(!nestedQuery);
 		
 		qString+=getCondition().getConditionText(true);
 		
-		qString+= keyword[3];
+		qString+= addLineDelimitator(!nestedQuery);
 		
+		if (nestedQuery){
+			qString += ")";
+		}
 		return qString;
 		
+	}
+
+	/*
+	 * Remove the given attribute from the Query (meaning requested attributes) and
+	 * puts the condition in the NCF, removing conditions which have the given attribute.
+	 * 
+	 */
+	public void removeAttribute(Attribute attribute) {
+		for (Iterator<Attribute> iterator = getRequestedAttributes().iterator(); iterator.hasNext();) {
+			Attribute at = iterator.next();
+			if (at.equals(attribute)){
+				iterator.remove();
+				log.log(Level.INFO, "Found attribute");
+			}
+		}
+		
+		getCondition().removeAttribute(attribute);
 	}
 }

@@ -115,6 +115,11 @@ public class NegativeFormula extends Formula {
 		return new NegativeFormula(getnFormula());
 	}
 
+	@Override
+	public Formula negateCondition() {
+		return getnFormula().negateCondition();
+	}
+	
 	/*
 	@Override
 	public Formula filterAttribute(Attribute at) {

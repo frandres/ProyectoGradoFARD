@@ -87,7 +87,7 @@ public class TestSet {
 	}
 	
 	public String getCorrectAnswer(int num){
-		return getTestCases().get(getContextNum(num)).getFieldsInformation().get(getFieldNum(num)).getFieldValue();
+		return getTestCases().get(getContextNum(num)).getFieldsInformation().get(getFieldNum(num)).getFieldValues().get(0);
 	}
 
 

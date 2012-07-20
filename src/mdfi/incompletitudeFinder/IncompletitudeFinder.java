@@ -5,24 +5,16 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-
-import mbfi.focalizedExtractor.DateManipulator;
 import mbfi.focalizedExtractor.ExtractionContext;
 import mbfi.focalizedExtractor.FieldInformation;
 import mbfi.focalizedExtractor.FieldValue;
 import mbfi.focalizedExtractor.FocalizedExtractor;
-import mdfi.conditions.Atom;
-import mdfi.conditions.BinaryFormula;
 import mdfi.conditions.Formula;
-import mdfi.conditions.NegativeFormula;
-import mdfi.conditions.rightHandedSide.BinaryRightHandSide;
-import mdfi.conditions.rightHandedSide.NestedQuery;
-import mdfi.conditions.rightHandedSide.RightHandSide;
-import mdfi.conditions.rightHandedSide.SimpleValue;
 import mdfi.database.DatabaseHandler;
-import mdfi.query.*;
+import mdfi.query.Attribute;
+import mdfi.query.Query;
+
+import org.apache.log4j.Logger;
 
 public class IncompletitudeFinder {
 
@@ -63,7 +55,9 @@ public class IncompletitudeFinder {
 	public boolean processAttribute (Query query,Attribute attribute){
 		boolean foundValues;
 		
-		ExtractionContext extContext = buildExtContext(query, attribute);
+		Query flattenedQuery = QueryFlattener.flattenQuery(query,attribute);
+		
+		ExtractionContext extContext = buildExtContext(flattenedQuery, attribute);
 		
 		FocalizedExtractor focalizedExtractor = new FocalizedExtractor(getConfigFilePath(), 
 																	   extContext, 
@@ -84,9 +78,7 @@ public class IncompletitudeFinder {
 	private ExtractionContext buildExtContext (Query query,Attribute attribute){
 		List<FieldInformation> fieldsInformation = new ArrayList<FieldInformation>();
 		 
-		Query flattenedQuery = queryFlattener.flattenQuery(query);
-		
-		Formula condition = flattenedQuery.getCondition();
+		Formula condition = query.getCondition();
 		
 		fieldsInformation.addAll(getConditionFieldInformation(condition));
 	
