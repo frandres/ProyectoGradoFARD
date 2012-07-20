@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mbfi.focalizedExtractor.FieldDescriptor;
-import mbfi.focalizedExtractor.FieldInformation;
 import mbfi.focalizedExtractor.FieldValue;
 import mdfi.conditions.Atom;
 import mdfi.conditions.BinaryFormula;
 import mdfi.conditions.Formula;
 import mdfi.conditions.NegativeFormula;
+import mdfi.conditions.NullCondition;
 import mdfi.conditions.rightHandedSide.BinaryRightHandSide;
 import mdfi.conditions.rightHandedSide.NestedQuery;
 import mdfi.conditions.rightHandedSide.RightHandSide;
@@ -33,6 +33,7 @@ public class QueryFlattener {
 		
 		if (at!= null){
 			workingCopy.removeAttribute(at);
+			System.out.println(workingCopy.toString());
 		} else{
 			workingCopy.setCondition(workingCopy.getCondition().toNCFSF());
 		}
@@ -75,6 +76,11 @@ public class QueryFlattener {
 			return atom;
 		}
 		
+		if (condition instanceof NullCondition){
+
+			return condition;
+		}
+		
 		log.log(Level.WARN, "Condition: " + condition.toString() + "no tiene tipo reconocido");
 		// TODO Auto-generated method stub
 		return null;
@@ -84,7 +90,7 @@ public class QueryFlattener {
 		
 		if (rhs instanceof NestedQuery){
 			NestedQuery nQuery = (NestedQuery) rhs;
-			SimpleValue rhsSV = new SimpleValue(DatabaseHandler.getQueryResult(nQuery.getNestedQuery()));
+			SimpleValue rhsSV = new SimpleValue(DatabaseHandler.getQuerySingleResult(nQuery.getNestedQuery()));
 			return rhsSV;
 		}
 		

@@ -11,6 +11,7 @@ import mbfi.focalizedExtractor.FieldValue;
 import mbfi.focalizedExtractor.FocalizedExtractor;
 import mdfi.conditions.Formula;
 import mdfi.database.DatabaseHandler;
+import mdfi.database.DatabaseResult;
 import mdfi.query.Attribute;
 import mdfi.query.Query;
 
@@ -52,17 +53,21 @@ public class IncompletitudeFinder {
 		
 	}
 	
+	
 	public boolean processAttribute (Query query,Attribute attribute){
 		boolean foundValues;
 		
 		Query flattenedQuery = QueryFlattener.flattenQuery(query,attribute);
 		
-		ExtractionContext extContext = buildExtContext(flattenedQuery, attribute);
+		ExtractionContextBuilder builder = new ExtractionContextBuilder(flattenedQuery, attribute);
+		
+		ExtractionContext extContext = builder.buildExtContext();
 		
 		FocalizedExtractor focalizedExtractor = new FocalizedExtractor(getConfigFilePath(), 
 																	   extContext, 
 																	   getMinimumHitRadio());
 		List<FieldValue> values = focalizedExtractor.findFieldValue(attribute.getConcept());
+		
 		foundValues = (values.size()>0);
 		
 		for (Iterator <FieldValue> iterator = values.iterator(); iterator.hasNext();) {
@@ -75,22 +80,6 @@ public class IncompletitudeFinder {
 		return foundValues;
 	}
 	
-	private ExtractionContext buildExtContext (Query query,Attribute attribute){
-		List<FieldInformation> fieldsInformation = new ArrayList<FieldInformation>();
-		 
-		Formula condition = query.getCondition();
-		
-		fieldsInformation.addAll(getConditionFieldInformation(condition));
-	
-		return new ExtractionContext(fieldsInformation);
-	}
-
-	private Collection<FieldInformation> getConditionFieldInformation(
-			Formula condition) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	
 
 	public String getConfigFilePath() {

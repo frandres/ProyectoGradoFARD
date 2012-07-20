@@ -12,7 +12,6 @@ import mdfi.query.Query;
 import mdfi.conditions.*;
 import mdfi.conditions.rightHandedSide.BinaryRightHandSide;
 import mdfi.conditions.rightHandedSide.NestedQuery;
-import mdfi.conditions.rightHandedSide.NullCondition;
 import mdfi.conditions.rightHandedSide.RightHandSide;
 import mdfi.conditions.rightHandedSide.SimpleValue;
 import mdfi.incompletitudeFinder.QueryFlattener;
@@ -45,11 +44,8 @@ public class Prueba {
 		Query query = new Query(null, requestedAttributes, condition);
 		
 		System.out.println(query.toString());
-		
-		Attribute a1 = new Attribute("A1", "C1");
-		System.out.println(a1.getIdentifier());
-		System.out.println(requestedAttributes.get(0).getIdentifier());
-		query = QueryFlattener.flattenQuery(query,new Attribute("A1", "C1"));
+
+		query = QueryFlattener.flattenQuery(query,new Attribute("A2", "C1"));
 		
 		System.out.println(query.toString());
 		int a =2;

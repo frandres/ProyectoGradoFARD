@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Random;
 
 import mbfi.focalizedExtractor.FieldDescriptor;
-import mbfi.focalizedExtractor.FieldInformation;
 import mbfi.focalizedExtractor.FieldValue;
+import mdfi.query.Attribute;
 import mdfi.query.Query;
 
 /*
@@ -15,16 +15,25 @@ import mdfi.query.Query;
  */
 public class DatabaseHandler {
 
-	public static String getPrimaryKey (String conceptName){
-		return "Primary Key";
+	public static final String NULL = "NULL";
+
+	public static List<Attribute> getPrimaryKey (String conceptName){
+		return new ArrayList<Attribute>();
 	}
 	
-	public static List<FieldValue> getQueryResult (Query query){
+	public static List<FieldValue> getQuerySingleResult (Query query){
 		List<FieldValue> results = new ArrayList<FieldValue>();
 		Random random = new Random();
 		
 		FieldValue value = new FieldValue(Integer.toString(random.nextInt(100)), FieldDescriptor.INTEGER);
 		results.add(value);
+		return results;
+		
+	}
+	
+	public static List<DatabaseResult> getQueryResult (Query query){
+		List<DatabaseResult> results = new ArrayList<DatabaseResult>();
+
 		return results;
 		
 	}

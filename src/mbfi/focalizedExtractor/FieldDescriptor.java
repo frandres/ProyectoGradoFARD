@@ -3,6 +3,8 @@ package mbfi.focalizedExtractor;
 import java.util.ArrayList;
 import java.util.List;
 
+import common.DateManipulator;
+
 public class FieldDescriptor implements Comparable<FieldDescriptor>{
 
 	private String fieldName;

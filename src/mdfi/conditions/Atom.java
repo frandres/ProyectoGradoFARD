@@ -4,14 +4,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-
-import mdfi.conditions.rightHandedSide.NestedQuery;
 import mdfi.conditions.rightHandedSide.RightHandSide;
-import mdfi.incompletitudeFinder.IncompletitudeFinder;
 import mdfi.query.Attribute;
 import mdfi.query.Query;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 public class Atom extends Formula {
 
@@ -37,6 +35,7 @@ public class Atom extends Formula {
 	public static final int OP_GREATER_OR_EQUAL =5; // <
 	
 	public static final int OP_IN =6; // IN
+	
 	public Atom(RightHandSide rhs, 
 				List<Attribute> attributes,
 				int comparationOperation) {

@@ -5,9 +5,9 @@ import java.util.List;
 public class FieldInformation implements Comparable<FieldInformation>{
 
 	private String fieldName;
-	private List<String> fieldValues;
+	private List<FieldValue> fieldValues;
 
-	public FieldInformation(String fieldName, List<String> fieldValues) {
+	public FieldInformation(String fieldName, List<FieldValue> fieldValues) {
 		super();
 		this.fieldName = fieldName;
 		this.fieldValues = fieldValues;
@@ -16,13 +16,17 @@ public class FieldInformation implements Comparable<FieldInformation>{
 	public String getFieldName() {
 		return fieldName;
 	}
-	public List<String> getFieldValues() {
+	public List<FieldValue> getFieldValues() {
 		return fieldValues;
 	}
 
 	@Override
 	public int compareTo(FieldInformation o) {
 		return getFieldName().compareTo(o.getFieldName());
+	}
+
+	public void addValue(FieldValue fieldValue) {
+		fieldValues.add(fieldValue);
 	}
 
 	

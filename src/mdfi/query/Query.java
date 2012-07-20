@@ -32,6 +32,7 @@ public class Query {
 	
 	
 	public Formula getCondition() {
+		
 		return condition.clone();
 	}
 
@@ -53,6 +54,10 @@ public class Query {
 		}
 		
 		return list;
+	}
+
+	public void setRequestedAttributes(List<Attribute> requestedAttributes) {
+		this.requestedAttributes = requestedAttributes;
 	}
 
 	public Query clone(){
@@ -113,14 +118,15 @@ public class Query {
 	 * 
 	 */
 	public void removeAttribute(Attribute attribute) {
-		for (Iterator<Attribute> iterator = getRequestedAttributes().iterator(); iterator.hasNext();) {
+		for (Iterator<Attribute> iterator = requestedAttributes.iterator(); iterator.hasNext();) {
 			Attribute at = iterator.next();
 			if (at.equals(attribute)){
-				iterator.remove();
 				log.log(Level.INFO, "Found attribute");
+				iterator.remove();
+				
 			}
 		}
 		
-		getCondition().removeAttribute(attribute);
+		setCondition(condition.removeAttribute(attribute));
 	}
 }

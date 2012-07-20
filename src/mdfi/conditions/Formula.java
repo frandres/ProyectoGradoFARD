@@ -1,18 +1,14 @@
 package mdfi.conditions;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-
-import mbfi.focalizedExtractor.FieldInformation;
-import mdfi.conditions.rightHandedSide.NullCondition;
-import mdfi.incompletitudeFinder.QueryFlattener;
 import mdfi.query.Attribute;
 import mdfi.query.Query;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 /* 
  * Implementación de un transformador de expresiones lógicas a
@@ -156,14 +152,14 @@ public abstract class Formula {
 			
 			AndFormula andForm = new AndFormula(leftSide, rightSide);
 			
-			return flattenListOfFormulas(formulas);
+			return andForm;
 		}
 		if (remainingObjects<1){
 			
 			return new NullCondition();
 		}
 		
-		return null;
+		return new NullCondition();
 	}
 
 
@@ -173,8 +169,8 @@ public abstract class Formula {
 		for (Iterator <Formula> iterator = formulas.iterator(); iterator.hasNext();) {
 			 Formula formula = iterator.next();
 			if (formula.hasAttribute(attribute)){
-				iterator.remove();
 				log.log(Level.INFO, "Found attribute");
+				iterator.remove();
 			}
 		}
 		
