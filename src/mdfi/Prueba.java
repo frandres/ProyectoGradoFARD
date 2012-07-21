@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.sun.syndication.io.XmlReader;
+
 import mbfi.focalizedExtractor.FieldDescriptor;
 import mbfi.focalizedExtractor.FieldValue;
+
 import mdfi.query.Attribute;
 import mdfi.query.Query;
 
@@ -14,43 +17,58 @@ import mdfi.conditions.rightHandedSide.BinaryRightHandSide;
 import mdfi.conditions.rightHandedSide.NestedQuery;
 import mdfi.conditions.rightHandedSide.RightHandSide;
 import mdfi.conditions.rightHandedSide.SimpleValue;
+import mdfi.incompletitudeFinder.IncompletitudeFieldDescriptor;
 import mdfi.incompletitudeFinder.QueryFlattener;
+import mdfi.incompletitudeFinder.XMLReader;
 
 public class Prueba {
 	public static void main(String[] args) {
+		XMLReader xmlReader = new XMLReader("/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Escalafon/incompletitudeDeterminatorConfigFile.xml");
+		List<IncompletitudeFieldDescriptor> list= xmlReader.getFDescriptors();
+		IncompletitudeFieldDescriptor desc = list.get(0);
 		
-		List<Attribute> requestedAttributes = new ArrayList<Attribute>();
-		List<FieldValue> values;
-		RightHandSide rhsLS,rhsRS,rhs;
 		
-		requestedAttributes.add(new Attribute("A1", "C1"));
+		System.out.println(desc.getFieldName());
+		System.out.println(desc.getConceptName());
+		System.out.println(desc.getImplicitDomainMaxmumValue());
+		System.out.println(desc.getImplicitDomainMinimumValue());
+		System.out.println(desc.getDomainType());
+		System.out.println(desc.getType());
+		System.out.println(desc.getPossibleValues().get(0));
+		System.out.println(desc.isGenerateValues());
 		
-		values = new ArrayList<FieldValue>();
-		values.add(new FieldValue("1", FieldDescriptor.INTEGER));
-		rhsLS = new NestedQuery(new Query(null, requestedAttributes, new NullCondition()));
-		
-		values = new ArrayList<FieldValue>();
-		values.add(new FieldValue("-2", FieldDescriptor.DOUBLE));
-		
-		rhsRS = new SimpleValue(values);
-		
-		rhs = new BinaryRightHandSide(rhsLS, rhsRS, BinaryRightHandSide.OP_SUM);
-		
-		Formula condition = new NegativeFormula(
-									 new Atom(rhs, 
-									 new Attribute("A2", "C1"),
-									 Atom.OP_GREATER_THAN));
-		
-		Query query = new Query(null, requestedAttributes, condition);
-		
-		System.out.println(query.toString());
-
-		query = QueryFlattener.flattenQuery(query,new Attribute("A2", "C1"));
-		
-		System.out.println(query.toString());
-		int a =2;
-		double b = 1;
-		double c = (double) a;
+//		List<Attribute> requestedAttributes = new ArrayList<Attribute>();
+//		List<FieldValue> values;
+//		RightHandSide rhsLS,rhsRS,rhs;
+//		
+//		requestedAttributes.add(new Attribute("A1", "C1"));
+//		
+//		values = new ArrayList<FieldValue>();
+//		values.add(new FieldValue("1", FieldDescriptor.INTEGER));
+//		rhsLS = new NestedQuery(new Query(null, requestedAttributes, new NullCondition()));
+//		
+//		values = new ArrayList<FieldValue>();
+//		values.add(new FieldValue("-2", FieldDescriptor.DOUBLE));
+//		
+//		rhsRS = new SimpleValue(values);
+//		
+//		rhs = new BinaryRightHandSide(rhsLS, rhsRS, BinaryRightHandSide.OP_SUM);
+//		
+//		Formula condition = new NegativeFormula(
+//									 new Atom(rhs, 
+//									 new Attribute("A2", "C1"),
+//									 Atom.OP_GREATER_THAN));
+//		
+//		Query query = new Query(null, requestedAttributes, condition);
+//		
+//		System.out.println(query.toString());
+//
+//		query = QueryFlattener.flattenQuery(query,new Attribute("A2", "C1"));
+//		
+//		System.out.println(query.toString());
+//		int a =2;
+//		double b = 1;
+//		double c = (double) a;
 
 	}
 //	public static void main(String[] args) {

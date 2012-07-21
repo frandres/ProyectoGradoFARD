@@ -1,15 +1,9 @@
 package mdfi.incompletitudeFinder;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-
-import common.DateManipulator;
 
 import mbfi.focalizedExtractor.ExtractionContext;
 import mbfi.focalizedExtractor.FieldDescriptor;
@@ -28,6 +22,11 @@ import mdfi.database.DatabaseHandler;
 import mdfi.database.DatabaseResult;
 import mdfi.query.Attribute;
 import mdfi.query.Query;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
+import common.DateManipulator;
 
 public class ExtractionContextBuilder {
 	
@@ -81,12 +80,11 @@ public class ExtractionContextBuilder {
 	}
 
 	private List<FieldInformation> getConditionFieldInformation() {
-		// TODO Auto-generated method stub
-		
+
 		List<Atom> atoms = getAtoms();
 		List<IncompletitudeFieldDescriptor> fDescriptors = getFieldDescriptors(atoms);
 		List<FieldInformation> fInfo = buildFieldInfos(fDescriptors,atoms);
-		//TODO Aqui seguimos comandante! Viveremos y venceremos.
+
 		return fInfo;
 	}
 	

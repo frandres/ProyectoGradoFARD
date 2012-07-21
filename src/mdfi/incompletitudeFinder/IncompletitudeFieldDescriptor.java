@@ -7,15 +7,23 @@ import mdfi.query.Attribute;
 
 public class IncompletitudeFieldDescriptor {
 
+	public static final int CONTINUOUS =0;
+	public static final int DISCRETE =1 ;
+	
 	Attribute at;
 	String fieldInformationName;
-	String type;
-	String domainType;
+	int type;
+	int domainType;
 	List<FieldValue>possibleValues;
+	
+	String implicitDomainMinimumValue;
+	String implicitDomainMaxmumValue;
+	
 	boolean generateValues;
 	public IncompletitudeFieldDescriptor(String conceptName, String fieldName,
-			String type, String domainType, List<FieldValue> possibleValues,
-			boolean generateValues, String fieldInformationName) {
+			int type, int domainType, List<FieldValue> possibleValues,
+			boolean generateValues, String fieldInformationName,
+			String implicitDomainMinimumValue, String implicitDomainMaxmumValue) {
 		super();
 		
 		at = new Attribute(fieldName, conceptName);
@@ -24,6 +32,8 @@ public class IncompletitudeFieldDescriptor {
 		this.possibleValues = possibleValues;
 		this.generateValues = generateValues;
 		this.fieldInformationName = fieldInformationName;
+		this.implicitDomainMinimumValue = implicitDomainMinimumValue;
+		this.implicitDomainMaxmumValue = implicitDomainMaxmumValue;
 	}
 	
 	public String getConceptName() {
@@ -32,10 +42,10 @@ public class IncompletitudeFieldDescriptor {
 	public String getFieldName() {
 		return getAttribute().getName();
 	}
-	public String getType() {
+	public int getType() {
 		return type;
 	}
-	public String getDomainType() {
+	public int getDomainType() {
 		return domainType;
 	}
 	public List<FieldValue> getPossibleValues() {
@@ -60,10 +70,22 @@ public class IncompletitudeFieldDescriptor {
 												   getDomainType(), 
 												   getPossibleValues(), 
 												   isGenerateValues(),
-												   getFieldInformationName());
+												   getFieldInformationName(),
+												   getImplicitDomainMinimumValue(),
+												   getImplicitDomainMaxmumValue());
 	}
 
 	public String getFieldInformationName() {
 		return fieldInformationName;
 	}
+
+	public String getImplicitDomainMinimumValue() {
+		return implicitDomainMinimumValue;
+	}
+
+	public String getImplicitDomainMaxmumValue() {
+		return implicitDomainMaxmumValue;
+	}
+	
+	
 }

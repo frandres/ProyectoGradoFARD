@@ -1,20 +1,24 @@
 <Configuration>
-	<DomainName></DomainName>
+	<DomainName>fds</DomainName>
 	
 	<FieldDescriptors>
 		<FieldDescriptor>
-			<ConceptName>EsAscendido.Nombre</ConceptName>
-			<FieldName>EsAscendido.Nombre</FieldName>
-			<type></type>
-			<domainType></domainType>
-			<implicitDomainMinimumValue></implicitDomainMinimumValue>
-			<implicitDomainMaximumValue></implicitDomainMaximumValue>
+			<ConceptName>EsAscendido</ConceptName>
+			<FieldName>Nombre</FieldName>
+			<type>INTEGER</type>
+			<domainType>DISCRETE</domainType>
+			<generateValues>false</generateValues>
+			<implicitDomainMinimumValue>10</implicitDomainMinimumValue>
+			<implicitDomainMaximumValue>100</implicitDomainMaximumValue>
 			
 			<posibleValues>
-				<posibleValue></posibleValue>
+				<posibleValue>trolol</posibleValue>
 			</posibleValues>
+			
+			<FieldInformationName>EsAscendido.Nombre</FieldInformationName>
+			
 		</FieldDescriptor>
 	</FieldDescriptors>
 	
-<Configuration>	
+</Configuration>	
 	

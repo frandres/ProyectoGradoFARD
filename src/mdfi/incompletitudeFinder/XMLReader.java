@@ -1,4 +1,4 @@
-package mbfi.focalizedExtractor;
+package mdfi.incompletitudeFinder;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,6 +8,9 @@ import java.util.PriorityQueue;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
+import mbfi.focalizedExtractor.FieldDescriptor;
+import mbfi.focalizedExtractor.FieldValue;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -66,11 +69,11 @@ public class XMLReader {
 	 * the existing FieldDescriptors to return a list of those present
 	 * in the XML. 
 	 */
-	public List<FieldDescriptor> getFDescriptors(){
+	public List<IncompletitudeFieldDescriptor> getFDescriptors(){
 		//get the root elememt
 		Element docEle = dom.getDocumentElement();
 		
-		List<FieldDescriptor> fDescriptors = new ArrayList<FieldDescriptor>();
+		List<IncompletitudeFieldDescriptor> fDescriptors = new ArrayList<IncompletitudeFieldDescriptor>();
 		
 		//get a nodelist of <FieldDescriptor> elements
 		NodeList nl = docEle.getElementsByTagName("FieldDescriptor");
@@ -81,7 +84,7 @@ public class XMLReader {
 				Element el = (Element)nl.item(i);
 				
 				//get the FileSource object
-				FieldDescriptor f = getFieldDescriptor(el);
+				IncompletitudeFieldDescriptor f = getIncompletitudeFieldDescriptor(el);
 				
 				//add it to list
 				fDescriptors.add(f);
@@ -98,19 +101,56 @@ public class XMLReader {
 	 * @param filSEl
 	 * @return
 	 */
-	private FieldDescriptor getFieldDescriptor(Element filSEl) {
+	private IncompletitudeFieldDescriptor getIncompletitudeFieldDescriptor(Element filSEl) {
 		
-		String fieldName = getTextValue(filSEl,"FieldName");
-		List <String> specificRegExp = getSpecificRegExps(filSEl);
-		double weight = Double.parseDouble(getTextValue(filSEl,"Weight"));
+		String conceptName = getTextValue(filSEl,"ConceptName");
+		String attributeName = getTextValue(filSEl,"FieldName");
 		int type = parseFieldType(getTextValue(filSEl,"type"));
-				
-		return new FieldDescriptor(fieldName,
-								   specificRegExp, 
-								   weight,
-								   type);
+		int domainType = parseDomainType(getTextValue(filSEl,"domainType"));
+		boolean generateValues = false;
+		if (getTextValue(filSEl,"generateValues")!=null) {
+			generateValues = Boolean.parseBoolean(getTextValue(filSEl,"generateValues"));
+		}
+		String fieldInformationName = getTextValue(filSEl,"FieldInformationName");
+		List<FieldValue> possibleValues;
+		String implicitDomainMinimumValue = getTextValue(filSEl,"implicitDomainMinimumValue");
+		String implicitDomainMaxmumValue = getTextValue(filSEl,"implicitDomainMaximumValue");
+		
+		if (!generateValues){
+			possibleValues = getPossibleValues(filSEl,"posibleValue",type);
+		} else{
+			possibleValues = null;
+		}
+		return new IncompletitudeFieldDescriptor(
+				   conceptName, 
+				   attributeName, 
+				   type, 
+				   domainType, 
+				   possibleValues, 
+				   generateValues,
+				   fieldInformationName,
+				   implicitDomainMinimumValue,
+				   implicitDomainMaxmumValue);
 	}
 	
+	private List<FieldValue> getPossibleValues(Element filSEl, String name, int type){
+
+		List<FieldValue> fieldValues = new ArrayList<FieldValue>();
+		
+		NodeList nl = filSEl.getElementsByTagName(name);
+		
+		if(nl != null && nl.getLength() > 0) {
+			for(int i = 0 ; i < nl.getLength();i++) {
+				//get the employee element
+				Element el = (Element)nl.item(i);
+
+				//add it to list
+				fieldValues.add(new FieldValue(el.getTextContent(), type));
+			}
+		}
+		return fieldValues;
+	}
+
 	private int parseFieldType(String textValue) {
 		if (textValue.compareTo("INTEGER")==0){
 			return FieldDescriptor.INTEGER;
@@ -135,10 +175,21 @@ public class XMLReader {
 		log.log(Level.WARN, "No se pudo determinar el tipo para:" + textValue);
 		return FieldDescriptor.DEFAULT;
 	}
-
-	private List<String> getSpecificRegExps (Element filSEl){
-		return getRegExpWithPriority(filSEl, "SpecificRegExp");		
+	
+	private int parseDomainType(String textValue) {
+		if (textValue.compareTo("CONTINUOUS")==0){
+			return IncompletitudeFieldDescriptor.CONTINUOUS;
+		}
+		
+		if (textValue.compareTo("DISCRETE")==0){
+			return IncompletitudeFieldDescriptor.DISCRETE;
+		}
+		
+		log.log(Level.WARN, "No se pudo determinar el tipo para:" + textValue);
+		return FieldDescriptor.DEFAULT;
 	}
+
+
 	
 	/**
 	 * I take a xml element and the tag name, look for the tag and get
@@ -160,53 +211,27 @@ public class XMLReader {
 
 		return textVal;
 	}
-
-//	public List<String> getUnitRegExps() {
-//		Element docEle = dom.getDocumentElement();
 //
-//		return getTextValue(docEle,"UnitRegExp");
+////	public List<String> getUnitRegExps() {
+////		Element docEle = dom.getDocumentElement();
+////
+////		return getTextValue(docEle,"UnitRegExp");
+////	}
+
+//	public List<String> getUnitRegExps(){
+//		return getRegExpWithPriority(dom.getDocumentElement(), "UnitRegExp");
+//		
 //	}
-	private List<String> getRegExpWithPriority(Element filSEl, String name){
-
-		PriorityQueue<RegExpWithPriority> pQueue = new PriorityQueue<RegExpWithPriority>();
-		
-		List<String> regExps = new ArrayList<String>();
-		
-		//get a nodelist of <employee> elements\
-		
-		NodeList nl = filSEl.getElementsByTagName(name);
-		
-		if(nl != null && nl.getLength() > 0) {
-			for(int i = 0 ; i < nl.getLength();i++) {
-				//get the employee element
-				Element el = (Element)nl.item(i);
-
-				//add it to list
-				pQueue.add(new RegExpWithPriority(Double.parseDouble(el.getAttribute("priority")),
-												  el.getTextContent()));
-			}
-		}
-		
-		while (!pQueue.isEmpty()){
-			regExps.add(pQueue.poll().getRegExp());
-			
-		}
-		return regExps;
-	}
-	public List<String> getUnitRegExps(){
-		return getRegExpWithPriority(dom.getDocumentElement(), "UnitRegExp");
-		
-	}
 	public double getMinimumHitRatio() {
 		Element docEle = dom.getDocumentElement();
 		return Double.parseDouble(getTextValue(docEle,"MinimumHitRatio"));
 	}
 
-	public String getDocumentsFilePath() {
-		Element docEle = dom.getDocumentElement();
-
-		return getTextValue(docEle,"DocumentsFilePath");
-	}
+//	public String getDocumentsFilePath() {
+//		Element docEle = dom.getDocumentElement();
+//
+//		return getTextValue(docEle,"DocumentsFilePath");
+//	}
 
 }
 

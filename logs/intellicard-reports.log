@@ -1,2 +1,1 @@
-20120719180155 ERROR mdfi.incompletitudeFinder.QueryFlattener [operateBooleans] (261) - Operation: 4 not defined for type:1
-20120719180206 ERROR mdfi.incompletitudeFinder.QueryFlattener [flattenBRHS] (102) - Trying to operate 2 values of incompatible types: 3 and 1
+20120720221558 ERROR mdfi.incompletitudeFinder.XMLReader [<init>] (35) - Unable to read XML: /home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Escalafon/incompletitudeDeterminatorConfigFile.xml
