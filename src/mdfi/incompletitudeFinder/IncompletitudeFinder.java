@@ -21,9 +21,20 @@ public class IncompletitudeFinder {
 
 	String configFilePath;
 	double minimumHitRadio;
+	Configuration configuration;
 	
 	static Logger log = Logger.getLogger(IncompletitudeFinder.class.getName());
 	
+	
+	public IncompletitudeFinder(String configFilePath, double minimumHitRadio,
+			Configuration configuration) {
+		super();
+		this.configFilePath = configFilePath;
+		this.minimumHitRadio = minimumHitRadio;
+		this.configuration = configuration;
+	}
+
+
 	public void processQuery (Query query){
 		
 		boolean foundValues = true;
@@ -59,7 +70,7 @@ public class IncompletitudeFinder {
 		
 		Query flattenedQuery = QueryFlattener.flattenQuery(query,attribute);
 		
-		ExtractionContextBuilder builder = new ExtractionContextBuilder(flattenedQuery, attribute);
+		ExtractionContextBuilder builder = new ExtractionContextBuilder(flattenedQuery, attribute,getConfiguration());
 		
 		ExtractionContext extContext = builder.buildExtContext();
 		
@@ -89,6 +100,12 @@ public class IncompletitudeFinder {
 	public double getMinimumHitRadio() {
 		return minimumHitRadio;
 	}
+
+
+	public Configuration getConfiguration() {
+		return configuration;
+	}
+	
 	
 	
 }
