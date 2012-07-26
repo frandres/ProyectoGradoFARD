@@ -3,7 +3,6 @@ package mdfi.incompletitudeFinder;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.PriorityQueue;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -115,7 +114,7 @@ public class XMLReader {
 		List<FieldValue> possibleValues;
 		String implicitDomainMinimumValue = getTextValue(filSEl,"implicitDomainMinimumValue");
 		String implicitDomainMaxmumValue = getTextValue(filSEl,"implicitDomainMaximumValue");
-		
+		String increment = getTextValue(filSEl,"increment");
 		if (!generateValues){
 			possibleValues = getPossibleValues(filSEl,"posibleValue",type);
 		} else{
@@ -130,7 +129,8 @@ public class XMLReader {
 				   generateValues,
 				   fieldInformationName,
 				   implicitDomainMinimumValue,
-				   implicitDomainMaxmumValue);
+				   implicitDomainMaxmumValue,
+				   increment);
 	}
 	
 	private List<FieldValue> getPossibleValues(Element filSEl, String name, int type){

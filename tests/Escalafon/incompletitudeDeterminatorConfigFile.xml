@@ -5,12 +5,12 @@
 		<FieldDescriptor>
 			<ConceptName>EsAscendido</ConceptName>
 			<FieldName>Nombre</FieldName>
-			<type>INTEGER</type>
-			<domainType>DISCRETE</domainType>
-			<generateValues>false</generateValues>
-			<implicitDomainMinimumValue>10</implicitDomainMinimumValue>
-			<implicitDomainMaximumValue>100</implicitDomainMaximumValue>
-			
+			<type>DATE</type>
+			<domainType>CONTINUOUS</domainType>
+			<generateValues>true</generateValues>
+			<implicitDomainMinimumValue>14/02/1985</implicitDomainMinimumValue>
+			<implicitDomainMaximumValue>14/03/1985</implicitDomainMaximumValue>
+			<increment>2</increment>
 			<posibleValues>
 				<posibleValue>trolol</posibleValue>
 			</posibleValues>

@@ -23,10 +23,18 @@ public class DateManipulator {
 												   "yyyy/MM",
 												   "dd-MM-yyyy",
 												   "MM-yyyy",
-												   "yyyy-MM",};
+												   "yyyy-MM"};
 	public DateManipulator(String date) {
 		super();
 		this.date = date;
+	}
+	
+	public static String getDefaultStringRepresentation(Date date){
+
+		DateFormat dFormat =  new SimpleDateFormat(dateFormats[7]);
+		
+		return dFormat.format(date);
+		
 	}
 	
 	public List<String> getEquivalentDates(){
@@ -42,11 +50,13 @@ public class DateManipulator {
 	}
 
 	public Date getDate(){
+		
 		Date dat = null;
 		
 		int format = determineFormat();
 		
 		if (format<0){
+			log.log(Level.ERROR, "Could not parse date");
 			return null;
 		}
 		
@@ -60,6 +70,7 @@ public class DateManipulator {
 		
 		return dat;
 	}
+	
 	private List<String> getFormats(int format) {
 		ArrayList<String> list = new ArrayList<String>();
 		

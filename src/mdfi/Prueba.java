@@ -18,24 +18,44 @@ import mdfi.conditions.rightHandedSide.NestedQuery;
 import mdfi.conditions.rightHandedSide.RightHandSide;
 import mdfi.conditions.rightHandedSide.SimpleValue;
 import mdfi.incompletitudeFinder.IncompletitudeFieldDescriptor;
+import mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder;
 import mdfi.incompletitudeFinder.QueryFlattener;
 import mdfi.incompletitudeFinder.XMLReader;
 
 public class Prueba {
 	public static void main(String[] args) {
 		XMLReader xmlReader = new XMLReader("/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Escalafon/incompletitudeDeterminatorConfigFile.xml");
-		List<IncompletitudeFieldDescriptor> list= xmlReader.getFDescriptors();
-		IncompletitudeFieldDescriptor desc = list.get(0);
+			
+		IncompletitudeFieldDescriptor desc;
+		IncompletitudeFieldDescriptorBuilder builder = new IncompletitudeFieldDescriptorBuilder("/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Escalafon/incompletitudeDeterminatorConfigFile.xml");
 		
+		List<IncompletitudeFieldDescriptor> list = builder.buildIncompletitudeFieldDescriptors();
 		
-		System.out.println(desc.getFieldName());
-		System.out.println(desc.getConceptName());
-		System.out.println(desc.getImplicitDomainMaxmumValue());
-		System.out.println(desc.getImplicitDomainMinimumValue());
-		System.out.println(desc.getDomainType());
-		System.out.println(desc.getType());
-		System.out.println(desc.getPossibleValues().get(0));
-		System.out.println(desc.isGenerateValues());
+		desc = list.get(0);
+		
+		for (Iterator iterator = list.iterator(); iterator.hasNext();) {
+			desc = (IncompletitudeFieldDescriptor) iterator.next();
+			System.out.println(desc.getFieldName());
+			System.out.println(" " + desc.getConceptName());
+			System.out.println(" " + desc.getImplicitDomainMaxmumValue());
+			System.out.println(" " + desc.getImplicitDomainMinimumValue());
+			System.out.println(" " + desc.getDomainType());
+			System.out.println(" " + desc.getType());
+			
+			List<FieldValue> possibleValues =desc.getPossibleValues();
+			System.out.println(" Values:");
+			for (Iterator iterator2 = possibleValues.iterator(); iterator2
+					.hasNext();) {
+				FieldValue fieldValue = (FieldValue) iterator2.next();
+				
+				System.out.println("  " + fieldValue.getTextValue() + ", type: "+ fieldValue.getType());
+			}
+			
+			System.out.println(" " + desc.isGenerateValues());
+			
+			System.out.println("-------------");
+		}
+
 		
 //		List<Attribute> requestedAttributes = new ArrayList<Attribute>();
 //		List<FieldValue> values;

@@ -16,6 +16,8 @@ public class IncompletitudeFieldDescriptor {
 	int domainType;
 	List<FieldValue>possibleValues;
 	
+	String increment;
+	
 	String implicitDomainMinimumValue;
 	String implicitDomainMaxmumValue;
 	
@@ -23,7 +25,8 @@ public class IncompletitudeFieldDescriptor {
 	public IncompletitudeFieldDescriptor(String conceptName, String fieldName,
 			int type, int domainType, List<FieldValue> possibleValues,
 			boolean generateValues, String fieldInformationName,
-			String implicitDomainMinimumValue, String implicitDomainMaxmumValue) {
+			String implicitDomainMinimumValue, String implicitDomainMaxmumValue,
+			String increment) {
 		super();
 		
 		at = new Attribute(fieldName, conceptName);
@@ -34,6 +37,7 @@ public class IncompletitudeFieldDescriptor {
 		this.fieldInformationName = fieldInformationName;
 		this.implicitDomainMinimumValue = implicitDomainMinimumValue;
 		this.implicitDomainMaxmumValue = implicitDomainMaxmumValue;
+		this.increment = increment;
 	}
 	
 	public String getConceptName() {
@@ -72,7 +76,8 @@ public class IncompletitudeFieldDescriptor {
 												   isGenerateValues(),
 												   getFieldInformationName(),
 												   getImplicitDomainMinimumValue(),
-												   getImplicitDomainMaxmumValue());
+												   getImplicitDomainMaxmumValue(),
+												   getIncrement());
 	}
 
 	public String getFieldInformationName() {
@@ -85,6 +90,10 @@ public class IncompletitudeFieldDescriptor {
 
 	public String getImplicitDomainMaxmumValue() {
 		return implicitDomainMaxmumValue;
+	}
+
+	public String getIncrement() {
+		return increment;
 	}
 	
 	

@@ -1,1 +1,2 @@
-20120720221558 ERROR mdfi.incompletitudeFinder.XMLReader [<init>] (35) - Unable to read XML: /home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Escalafon/incompletitudeDeterminatorConfigFile.xml
+20120724190711 ERROR common.DateManipulator [getDate] (59) - Could not parse date
+20120724190711 ERROR common.DateManipulator [getDate] (59) - Could not parse date
