@@ -22,18 +22,24 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 public class QueryFlattener {
-	static Logger log = Logger.getLogger(QueryFlattener.class.getName());
+	Logger log = Logger.getLogger(QueryFlattener.class.getName());
+	DatabaseHandler dbHandler;
 	
-	public static  Query flattenQuery(Query query) {
+	public QueryFlattener(DatabaseHandler dbHandler) {
+		super();
+		this.dbHandler = dbHandler;
+	}
+	
+	public  Query flattenQuery(Query query) {
 		return flattenQuery(query,null);
 	}
-	public static  Query flattenQuery(Query query, Attribute at) {
+	public  Query flattenQuery(Query query, Attribute at) {
 		
 		Query workingCopy = query.clone();
 		
 		if (at!= null){
 			workingCopy.removeAttribute(at);
-			System.out.println(workingCopy.toString());
+			//System.out.println(workingCopy.toString());
 		} else{
 			workingCopy.setCondition(workingCopy.getCondition().toNCFSF());
 		}
@@ -46,7 +52,7 @@ public class QueryFlattener {
 		return newQuery;
 	}
 
-	private static Formula flattenCondition(Formula condition) {
+	private Formula flattenCondition(Formula condition) {
 		
 		if (condition == null){
 			log.log(Level.WARN, "Null Condition: ");
@@ -86,11 +92,14 @@ public class QueryFlattener {
 		return null;
 	}
 
-	private static SimpleValue flattenRHS(RightHandSide rhs) {
+	private DatabaseHandler getDatabaseHandler(){
+		return dbHandler;
+	}
+	private SimpleValue flattenRHS(RightHandSide rhs) {
 		
 		if (rhs instanceof NestedQuery){
 			NestedQuery nQuery = (NestedQuery) rhs;
-			SimpleValue rhsSV = new SimpleValue(DatabaseHandler.getQuerySingleResult(nQuery.getNestedQuery()));
+			SimpleValue rhsSV = new SimpleValue(getDatabaseHandler().getQuerySingleResult(nQuery.getNestedQuery()));
 			return rhsSV;
 		}
 		
@@ -110,7 +119,7 @@ public class QueryFlattener {
 		return null;
 	}
 
-	private static SimpleValue flattenBRHS(SimpleValue flattenRHS,
+	private SimpleValue flattenBRHS(SimpleValue flattenRHS,
 			SimpleValue flattenRHS2,int operation) {
 		FieldValue val1 = flattenRHS.getValues().get(0);
 		FieldValue val2 = flattenRHS2.getValues().get(0);
@@ -126,7 +135,7 @@ public class QueryFlattener {
 		
 	}
 	
-	private static SimpleValue operateBRHS (FieldValue op1,
+	private SimpleValue operateBRHS (FieldValue op1,
 			FieldValue op2,int operation) {
 		
 		List<FieldValue> values = new ArrayList<FieldValue>();
@@ -176,7 +185,7 @@ public class QueryFlattener {
 		return simpleValue;
 	}
 	
-	private static FieldValue operateInts (FieldValue op1, FieldValue op2, int operation){
+	private FieldValue operateInts (FieldValue op1, FieldValue op2, int operation){
 		switch (operation) {
 		case BinaryRightHandSide.OP_SUM:
 			return new FieldValue(Integer.toString(op1.getIntValue()+op2.getIntValue()),FieldDescriptor.INTEGER);
@@ -197,7 +206,7 @@ public class QueryFlattener {
 		
 	}
 	
-	private static FieldValue operateDoubles (FieldValue op1, FieldValue op2, int operation){
+	private FieldValue operateDoubles (FieldValue op1, FieldValue op2, int operation){
 		switch (operation) {
 		case BinaryRightHandSide.OP_SUM:
 			return new FieldValue(Double.toString(op1.getDouble()+op2.getDouble()),FieldDescriptor.DOUBLE);
@@ -218,7 +227,7 @@ public class QueryFlattener {
 		
 	}
 	
-	private static FieldValue operateIntAndDouble (FieldValue op1, FieldValue op2, int operation){
+	private FieldValue operateIntAndDouble (FieldValue op1, FieldValue op2, int operation){
 		
 		double a,b;
 	
@@ -250,7 +259,7 @@ public class QueryFlattener {
 		
 	}
 	
-	private static FieldValue operateStrings (FieldValue op1, FieldValue op2, int operation){
+	private FieldValue operateStrings (FieldValue op1, FieldValue op2, int operation){
 		switch (operation) {
 		case BinaryRightHandSide.OP_SUM:
 			return new FieldValue(op1.getStringValue()+op2.getStringValue(), 
@@ -265,7 +274,7 @@ public class QueryFlattener {
 		
 	}
 	
-	private static FieldValue operateBooleans (FieldValue op1, FieldValue op2, int operation){
+	private FieldValue operateBooleans (FieldValue op1, FieldValue op2, int operation){
 		switch (operation) {
 		case BinaryRightHandSide.OP_AND:
 			return new FieldValue(Boolean.toString(op1.getBooleanValue() && op2.getBooleanValue()), 
@@ -283,7 +292,7 @@ public class QueryFlattener {
 		
 	}
 	
-	private static boolean verifyTypeCompability(int type, int type2, int operation) {
+	private boolean verifyTypeCompability(int type, int type2, int operation) {
 		
 		if (type2==FieldDescriptor.DATE){
 			return false;

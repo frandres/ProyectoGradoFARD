@@ -22,16 +22,18 @@ public class IncompletitudeFinder {
 	String configFilePath;
 	double minimumHitRadio;
 	Configuration configuration;
+	DatabaseHandler dbHandler;
 	
 	static Logger log = Logger.getLogger(IncompletitudeFinder.class.getName());
 	
 	
 	public IncompletitudeFinder(String configFilePath, double minimumHitRadio,
-			Configuration configuration) {
+			Configuration configuration,DatabaseHandler dbHandler) {
 		super();
 		this.configFilePath = configFilePath;
 		this.minimumHitRadio = minimumHitRadio;
 		this.configuration = configuration;
+		this.dbHandler = dbHandler;
 	}
 
 
@@ -68,11 +70,15 @@ public class IncompletitudeFinder {
 	public boolean processAttribute (Query query,Attribute attribute){
 		boolean foundValues;
 		
-		Query flattenedQuery = QueryFlattener.flattenQuery(query,attribute);
+		QueryFlattener flatter = new QueryFlattener(getDbHandler());
 		
-		ExtractionContextBuilder builder = new ExtractionContextBuilder(flattenedQuery, attribute,getConfiguration());
+		Query flattenedQuery = flatter.flattenQuery(query,attribute);
+		
+		ExtractionContextBuilder builder = new ExtractionContextBuilder(flattenedQuery, attribute,getConfiguration(),getDbHandler());
 		
 		ExtractionContext extContext = builder.buildExtContext();
+		
+		FieldValue primaryKeyValue = extContext.getFieldInformationByName(getDbHandler().getPrimaryKey().getName()).getFieldValues().get(0);
 		
 		FocalizedExtractor focalizedExtractor = new FocalizedExtractor(getConfigFilePath(), 
 																	   extContext, 
@@ -80,10 +86,11 @@ public class IncompletitudeFinder {
 		List<FieldValue> values = focalizedExtractor.findFieldValue(attribute.getConcept());
 		
 		foundValues = (values.size()>0);
-		
+
 		for (Iterator <FieldValue> iterator = values.iterator(); iterator.hasNext();) {
 			FieldValue fieldValue = iterator.next();
-			DatabaseHandler.insertValuesIntoOntology(attribute.getConcept(), 
+			getDbHandler().insertValuesIntoOntology(attribute.getConcept(),
+													primaryKeyValue,
 													 attribute.getName(), 
 													 fieldValue);
 		}
@@ -104,6 +111,11 @@ public class IncompletitudeFinder {
 
 	public Configuration getConfiguration() {
 		return configuration;
+	}
+
+
+	private DatabaseHandler getDbHandler() {
+		return dbHandler;
 	}
 	
 	

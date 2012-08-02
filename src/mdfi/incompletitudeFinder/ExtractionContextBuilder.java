@@ -35,20 +35,27 @@ public class ExtractionContextBuilder {
 	Query query;
 	Attribute attribute;
 	Configuration configuration;
-	public ExtractionContextBuilder(Query query, Attribute attribute, Configuration configuration) {
+	DatabaseHandler dbHandler;
+	
+	public ExtractionContextBuilder(Query query, 
+									Attribute attribute, 
+									Configuration configuration,
+									DatabaseHandler dbHandler) {
 		this.query= query;
 		this.attribute= attribute;
 		this.configuration = configuration;
+		this.dbHandler = dbHandler;
 	}
 
 	private List<FieldInformation> getPrimaryKeyContext(){
-		List<Attribute> attributes = DatabaseHandler.getPrimaryKey(attribute.getConcept());
+		List<Attribute> attributes = new ArrayList<Attribute>();
+		attributes.add(getDBHandler().getPrimaryKey());
 		attributes.add(attribute);
 		
 		int numAttributes = attributes.size(); 
 		Query incompletitudeFinderQuery = query.clone();
 		incompletitudeFinderQuery.setRequestedAttributes(attributes);
-		List<DatabaseResult> queryResults = DatabaseHandler.getQueryResult(incompletitudeFinderQuery);
+		List<DatabaseResult> queryResults = getDBHandler().getQueryResult(incompletitudeFinderQuery);
 		
 		List<FieldInformation> primaryKeyContext = new ArrayList<FieldInformation>(numAttributes-1);
 		
@@ -69,6 +76,10 @@ public class ExtractionContextBuilder {
 		
 	}
 	
+	private DatabaseHandler getDBHandler() {
+		return dbHandler;
+	}
+
 	public ExtractionContext buildExtContext (){
 		
 		List<FieldInformation> primaryKeyInformation =  getPrimaryKeyContext();
