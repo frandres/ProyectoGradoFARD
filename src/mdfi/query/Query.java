@@ -14,7 +14,24 @@ public class Query {
 	private Query parentQuery;
 	private List<Attribute> requestedAttributes;
 	private Formula condition;
+	private int aggregateFunction;
 	
+	public static final int NO_AGGREGATE =0;
+	public static final int SUM =1;
+	public static final int AVG =2;
+	public static final int MAX =3;
+	public static final int MIN =4;
+	
+	
+	public Query(Query parentQuery, List<Attribute> requestedAttributes,
+			Formula condition, int aggregateFunction) {
+		super();
+		this.parentQuery = parentQuery;
+		this.requestedAttributes = requestedAttributes;
+		this.condition = condition;
+		this.aggregateFunction = aggregateFunction;
+	}
+
 	static Logger log = Logger.getLogger(Query.class.getName());
 	
 	public Query(Query parentQuery, List<Attribute> requestedAttributes,
@@ -23,6 +40,8 @@ public class Query {
 		this.parentQuery = parentQuery;
 		this.requestedAttributes = requestedAttributes;
 		this.condition = condition;
+		this.aggregateFunction = NO_AGGREGATE;
+		
 	}
 
 	public List<Attribute>  getQualifierAttributes (){
@@ -129,4 +148,9 @@ public class Query {
 		
 		setCondition(condition.removeAttribute(attribute));
 	}
+
+	public int getAggregateFunction() {
+		return aggregateFunction;
+	}
+	
 }

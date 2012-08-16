@@ -259,7 +259,7 @@ public class QueryEvaluator {
 		return false;
 	}
 
-	private boolean verifyTypeCompability(int type, int type2,
+	public static boolean verifyTypeCompability(int type, int type2,
 			int comparationOperation) {
 		
 		switch (type) {

@@ -38,7 +38,7 @@ public class DateManipulator {
 	}
 	
 	public List<String> getEquivalentDates(){
-		int format = determineFormat();
+		int format = determineFormat(date);
 		
 		if (format<0){
 			ArrayList<String> list = new ArrayList<String>();
@@ -53,7 +53,7 @@ public class DateManipulator {
 		
 		Date dat = null;
 		
-		int format = determineFormat();
+		int format = determineFormat(date);
 		
 		if (format<0){
 			log.log(Level.ERROR, "Could not parse date");
@@ -99,16 +99,22 @@ public class DateManipulator {
 		return list;
 	}
 
-	private int determineFormat() {
+	private static int determineFormat(String dString) {
 		for (int i = 0; i < dateFormats.length; i++) {
 			String format = dateFormats[i].replace("d", "\\d").
 										   replace("M", "\\d").
 										   replace("y", "\\d");
 			
-			if (date.matches(format)){
+			if (dString.matches(format)){
 				return i;
 			}
 		}
 		return -1;
+	}
+	
+	public static boolean isDate(String dString){
+		
+		return (determineFormat(dString)>=0);
+		
 	}
 }

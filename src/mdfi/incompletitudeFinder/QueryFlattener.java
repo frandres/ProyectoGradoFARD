@@ -22,7 +22,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 public class QueryFlattener {
-	Logger log = Logger.getLogger(QueryFlattener.class.getName());
+	static Logger log = Logger.getLogger(QueryFlattener.class.getName());
 	DatabaseHandler dbHandler;
 	
 	public QueryFlattener(DatabaseHandler dbHandler) {
@@ -135,7 +135,7 @@ public class QueryFlattener {
 		
 	}
 	
-	private SimpleValue operateBRHS (FieldValue op1,
+	public static SimpleValue operateBRHS (FieldValue op1,
 			FieldValue op2,int operation) {
 		
 		List<FieldValue> values = new ArrayList<FieldValue>();
@@ -185,7 +185,7 @@ public class QueryFlattener {
 		return simpleValue;
 	}
 	
-	private FieldValue operateInts (FieldValue op1, FieldValue op2, int operation){
+	private static FieldValue operateInts (FieldValue op1, FieldValue op2, int operation){
 		switch (operation) {
 		case BinaryRightHandSide.OP_SUM:
 			return new FieldValue(Integer.toString(op1.getIntValue()+op2.getIntValue()),FieldDescriptor.INTEGER);
@@ -206,7 +206,7 @@ public class QueryFlattener {
 		
 	}
 	
-	private FieldValue operateDoubles (FieldValue op1, FieldValue op2, int operation){
+	private static FieldValue operateDoubles (FieldValue op1, FieldValue op2, int operation){
 		switch (operation) {
 		case BinaryRightHandSide.OP_SUM:
 			return new FieldValue(Double.toString(op1.getDouble()+op2.getDouble()),FieldDescriptor.DOUBLE);
@@ -227,7 +227,7 @@ public class QueryFlattener {
 		
 	}
 	
-	private FieldValue operateIntAndDouble (FieldValue op1, FieldValue op2, int operation){
+	private static FieldValue operateIntAndDouble (FieldValue op1, FieldValue op2, int operation){
 		
 		double a,b;
 	
@@ -259,7 +259,7 @@ public class QueryFlattener {
 		
 	}
 	
-	private FieldValue operateStrings (FieldValue op1, FieldValue op2, int operation){
+	private static FieldValue operateStrings (FieldValue op1, FieldValue op2, int operation){
 		switch (operation) {
 		case BinaryRightHandSide.OP_SUM:
 			return new FieldValue(op1.getStringValue()+op2.getStringValue(), 
@@ -274,7 +274,7 @@ public class QueryFlattener {
 		
 	}
 	
-	private FieldValue operateBooleans (FieldValue op1, FieldValue op2, int operation){
+	private static FieldValue operateBooleans (FieldValue op1, FieldValue op2, int operation){
 		switch (operation) {
 		case BinaryRightHandSide.OP_AND:
 			return new FieldValue(Boolean.toString(op1.getBooleanValue() && op2.getBooleanValue()), 
@@ -292,7 +292,7 @@ public class QueryFlattener {
 		
 	}
 	
-	private boolean verifyTypeCompability(int type, int type2, int operation) {
+	private static boolean verifyTypeCompability(int type, int type2, int operation) {
 		
 		if (type2==FieldDescriptor.DATE){
 			return false;

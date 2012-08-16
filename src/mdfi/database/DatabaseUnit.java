@@ -29,6 +29,10 @@ public class DatabaseUnit {
 		return result;
 		
 	}
+	
+	public List<FieldInformation> getValues() {
+		return values;
+	}
 
 	public void insertValue(FieldInformation fInfo) {
 		values.add(fInfo);

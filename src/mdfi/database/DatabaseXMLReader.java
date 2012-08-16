@@ -130,6 +130,7 @@ public class DatabaseXMLReader {
 		List<FieldValue> fieldValues = new ArrayList<FieldValue>();
 		fieldValues.add(new FieldValue(getTextValue(el, "FieldValue"),
 						parseFieldType(getTextValue(el, "FieldType"))));
+		
 		return new FieldInformation(getTextValue(el, "FieldName"), fieldValues);
 	}
 

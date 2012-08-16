@@ -10,8 +10,13 @@ import java.util.regex.Pattern;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
+import common.DateManipulator;
+
 import mbfi.focalizedExtractor.ExtractionContext;
+import mbfi.focalizedExtractor.FieldDescriptor;
 import mbfi.focalizedExtractor.FieldInformation;
+import mbfi.focalizedExtractor.FieldValue;
+import mdfi.database.DatabaseHandler;
 
 public class Tester {
 
@@ -92,11 +97,42 @@ public class Tester {
 			}		
 		}
 		
-		List<String> values = new ArrayList<String>();
-		values.add(fieldValue);
+		List<FieldValue> values = new ArrayList<FieldValue>();
+		
+		FieldValue fValue = new FieldValue(fieldValue, determineType(fieldValue));
+		values.add(fValue);
 		return new FieldInformation(fieldName, values);
 	}
 	
+//	public final static int STRING = 0;
+//	public final static int DEFAULT = 0;
+	
+	private int determineType(String fieldValue) {
+		
+		//ATENCION: EL ORDEN DE ESTOS IFS AFECTA EL RESULTADO DEL COMPUTO.
+		
+		if (fieldValue.matches("[Tt][Rr][Uu][Ee]") || fieldValue.matches("[Ff][Aa][Ll][Ss][Ee]")){
+			return FieldDescriptor.BOOLEAN;
+		}
+		
+		if (fieldValue.matches("\\d+[.,]\\d+")){
+			return FieldDescriptor.DOUBLE;
+		}
+		
+		if (fieldValue.matches("\\d+")){
+			return FieldDescriptor.INTEGER;
+		}
+		
+		if(DateManipulator.isDate(fieldValue)){
+			return FieldDescriptor.DATE;
+		}
+		
+		if (fieldValue.matches("\\w*")){
+			return FieldDescriptor.STRING;
+		}
+				
+		return FieldDescriptor.DEFAULT;
+	}
 
 	private static double  [] getMinimumHitMeasure(boolean training){
 		
@@ -137,6 +173,12 @@ public class Tester {
 	}
 	
 	public static void main(String[] args) {
+		
+		System.out.println(DateManipulator.isDate("15/04/2012"));
+		
+		if(true){
+			return;
+		}
 		String configFilePath, testCasesPath;
 		
 		int mode = 0;
@@ -175,6 +217,7 @@ public class Tester {
 			
 			designacionesTestSet = new TestSet(testGen.getFieldIinfos(),0);
 			designacionesTestSet.getUnits(configFilePath);
+			
 		}else{
 		
 			double minimumHitMeasure [] = getMinimumHitMeasure(mode==TRAINING);
