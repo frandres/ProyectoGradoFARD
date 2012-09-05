@@ -3,12 +3,8 @@ package mdfi.database;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Random;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-
-import javassist.bytecode.FieldInfo;
 
 import mbfi.focalizedExtractor.FieldDescriptor;
 import mbfi.focalizedExtractor.FieldInformation;
@@ -16,6 +12,7 @@ import mbfi.focalizedExtractor.FieldValue;
 import mdfi.conditions.rightHandedSide.BinaryRightHandSide;
 import mdfi.incompletitudeFinder.ExtractionContextBuilder;
 import mdfi.incompletitudeFinder.QueryFlattener;
+import mdfi.query.AggregateFunction;
 import mdfi.query.Attribute;
 import mdfi.query.Query;
 
@@ -40,7 +37,20 @@ public class DatabaseHandler {
 	public DatabaseHandler (String databaseFile){
 		DatabaseXMLReader reader = new DatabaseXMLReader(databaseFile);
 		primaryKey = reader.getPrimaryKey();
-		databaseUnits = reader.getDatabaseUnits();		
+		databaseUnits = reader.getDatabaseUnits();	
+		
+//		for (Iterator <DatabaseUnit> iterator = databaseUnits.iterator(); iterator.hasNext();) {
+//			DatabaseUnit dUnit = iterator.next();
+//			
+//			System.out.println("\nConcept\n\n");
+//			List<FieldValue> fValues = dUnit.getValues().get(0).getFieldValues();
+//			
+//			for (Iterator iterator2 = fValues.iterator(); iterator2.hasNext();) {
+//				FieldValue fieldValue = (FieldValue) iterator2.next();
+//				
+//				System.out.println(fieldValue.getTextValue());
+//			}
+//		}
 	}
 	
 	
@@ -62,12 +72,15 @@ public class DatabaseHandler {
 		
 		List<DatabaseUnit> units = evaluator.evaluateQuery();
 		
+		
 		results = getResults (units,query);
 		
-		if (query.getAggregateFunction()!=Query.NO_AGGREGATE){
-			return results;
+		
+		if (query.hasAggregateFunction()){
+			return processAggregate(results,
+					query.getAggregateFunction().get(0).getAggregateFunction());
 		} else{
-			return processAggregate(results,query.getAggregateFunction());
+			return results;
 		}
 		
 		
@@ -76,14 +89,15 @@ public class DatabaseHandler {
 	private List<DatabaseResult> processAggregate(List<DatabaseResult> input,
 			int aggregateFunction) {
 		
+		// To be implemented.
 		List<DatabaseResult> results = new ArrayList<DatabaseResult>();
 		
-		if (aggregateFunction==Query.AVG){
+		if (aggregateFunction==AggregateFunction.AVG){
 			DatabaseResult sum = processAggregate(input, aggregateFunction).get(0);
 			
 			return divideResult(sum,input.size());
 			
-		}
+		} 
 		
 		DatabaseResult aggregate = null;
 		
@@ -92,20 +106,21 @@ public class DatabaseHandler {
 			
 			
 			switch (aggregateFunction) {
-			case Query.SUM:
+			case AggregateFunction.SUM:
 				aggregate = applySum(aggregate,result);
 				break;
 		
-			case Query.MAX:
+			case AggregateFunction.MAX:
 				aggregate = applyMax(aggregate,result);
 				break;	
 				
-			case Query.MIN:
+			case AggregateFunction.MIN:
 				aggregate = applyMin(aggregate,result);
 				break;					
 			default:
 				break;
 			}
+			
 		}
 		
 		results.add(aggregate);
@@ -192,7 +207,6 @@ public class DatabaseHandler {
 
 	private List<DatabaseResult> divideResult(DatabaseResult sum, int size) {
 		
-		
 		FieldValue op1 = sum.getResults().get(0).getFieldValues().get(0);
 		String rep = Integer.toString(size)+ ".0";
 		
@@ -212,7 +226,7 @@ public class DatabaseHandler {
 		
 		return resultsDef;
 	}
-
+ 
 	private List<DatabaseResult> getResults(List<DatabaseUnit> units,
 			Query query) {
 		
@@ -224,16 +238,18 @@ public class DatabaseHandler {
 		FieldInformation fInfo;
 		
 		for (Iterator <DatabaseUnit> iterator = units.iterator(); iterator.hasNext();) {
+			
 			DatabaseUnit databaseUnit = (DatabaseUnit) iterator.next();
 			fieldInfos = new ArrayList<FieldInformation>();
 			atts = query.getRequestedAttributes();
 			
 			for (Iterator <Attribute> iterator2 = atts.iterator(); iterator2.hasNext();) {
+				
 				Attribute attribute = iterator2.next();
 				fValues = new ArrayList<FieldValue>();
 				fValues.add(databaseUnit.getFieldValueByFieldName(attribute.getIdentifier()));
-				fInfo = new FieldInformation(attribute.getIdentifier(), fValues);
 				
+				fInfo = new FieldInformation(attribute.getIdentifier(), fValues);
 				fieldInfos.add(fInfo);
 			}
 			DatabaseResult result = new DatabaseResult(fieldInfos);

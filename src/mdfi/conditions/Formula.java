@@ -58,11 +58,15 @@ public abstract class Formula {
 			}
 		}
 		
-		return false;
+		return hasNestedQueryWithAttribute(at);
+		
 	}
 	// Metodos abstractos
 	
 	
+	protected abstract boolean hasNestedQueryWithAttribute(Attribute at);
+
+
 	/*
 	 * Método para obtener el texto de la condición en formato de 
 	 * condición SQL/ODIL.
@@ -179,6 +183,9 @@ public abstract class Formula {
 	}
 
 
+	/*
+	 * Returns a flattened NCF. 
+	 */
 	public Formula toNCFSF() {
 		List<Formula> formulas = toNCF();
 		return flattenListOfFormulas(formulas);

@@ -125,5 +125,9 @@ public abstract class BinaryFormula extends Formula {
 		this.rightSide = rightSide;
 	}
 
-	
+	@Override
+	protected boolean hasNestedQueryWithAttribute(Attribute at) {
+		return getLeftSide().hasNestedQueryWithAttribute(at) || 
+			   getRightSide().hasNestedQueryWithAttribute(at);
+	}
 }

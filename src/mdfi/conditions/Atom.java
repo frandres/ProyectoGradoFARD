@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import mdfi.conditions.rightHandedSide.NestedQuery;
 import mdfi.conditions.rightHandedSide.RightHandSide;
 import mdfi.query.Attribute;
 import mdfi.query.Query;
@@ -186,6 +187,16 @@ public class Atom extends Formula {
 		}
 		
 		return newAtom;
+	}
+
+	@Override
+	protected boolean hasNestedQueryWithAttribute(Attribute at) {
+		if (getRhs() instanceof NestedQuery ){
+			NestedQuery rhsNQ = (NestedQuery) getRhs();
+			return rhsNQ.getNestedQuery().hasAttribute(at);
+		}
+		
+		return false;
 	}
 
 	

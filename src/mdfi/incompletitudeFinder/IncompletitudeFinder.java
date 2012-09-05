@@ -20,53 +20,92 @@ import org.apache.log4j.Logger;
 public class IncompletitudeFinder {
 
 	String configFilePath;
-	double minimumHitRadio;
 	Configuration configuration;
 	DatabaseHandler dbHandler;
 	
 	static Logger log = Logger.getLogger(IncompletitudeFinder.class.getName());
 	
 	
-	public IncompletitudeFinder(String configFilePath, double minimumHitRadio,
-			Configuration configuration,DatabaseHandler dbHandler) {
+	public IncompletitudeFinder(String configFilePath, DatabaseHandler dbHandler) {
 		super();
 		this.configFilePath = configFilePath;
-		this.minimumHitRadio = minimumHitRadio;
-		this.configuration = configuration;
+		XMLReader reader = new XMLReader(configFilePath);
+		
+		this.configuration = new Configuration(configFilePath);
+		
 		this.dbHandler = dbHandler;
 	}
 
 
-	public void processQuery (Query query){
+	private boolean processConditionAttributes (Query query){
+		boolean foundValues = false;
+		List<Attribute> conditionAttributes = query.getConditionAttributes();
 		
-		boolean foundValues = true;
+		for (Iterator <Attribute> iterator = conditionAttributes.iterator(); iterator
+				.hasNext();) {
+			Attribute attribute = iterator.next();
+			foundValues = foundValues || processAttribute(query,attribute);
+		}
+		
+		return foundValues;
+	}
+	
+	private boolean processRequiredAttributes (Query query){
+		boolean foundValues = false;
+		
+		List<Attribute> requiredAttributes = query.getRequestedAttributes();
+		
+		for (Iterator <Attribute> iterator = requiredAttributes.iterator(); iterator
+		.hasNext();) {
+			Attribute attribute = iterator.next();
+			foundValues = foundValues || processAttribute(query,attribute);
+		}
+		
+		return foundValues;
+	}
+	
+	public boolean processQuery (Query query){
+		
+		boolean foundValues,foundAtLeastOneValue;
+		foundAtLeastOneValue = false;
 		// Hallar incompletitudes.
 		
 		// Para cada atributo, armar contexto, extracción focalizada, insertar.
 		
 		do {
 			foundValues = false;
-			List<Attribute> conditionAttributes = query.getConditionAttributes();
 			
-			for (Iterator <Attribute> iterator = conditionAttributes.iterator(); iterator
-					.hasNext();) {
-				Attribute attribute = iterator.next();
-				foundValues = foundValues || processAttribute(query,attribute);
-			}
+			// Las funciones agregadas ya se manejan en processRequiredAttributes.
+			foundValues = foundValues || processRequiredAttributes(query);
+			foundValues = foundValues || processConditionAttributes(query);
+			foundValues = foundValues || processNestedQueries(query);
+			foundValues = foundValues || processAggregates(query);
 			
-			List<Attribute> requiredAttributes = query.getQualifierAttributes();
-			
-			for (Iterator <Attribute> iterator = requiredAttributes.iterator(); iterator
-			.hasNext();) {
-				Attribute attribute = iterator.next();
-				foundValues = foundValues || processAttribute(query,attribute);
-			}
+			foundAtLeastOneValue = foundAtLeastOneValue || foundValues;
 			
 		}while (foundValues);
-		
+	
+		return foundAtLeastOneValue;
 	}
 	
 	
+	private boolean processAggregates(Query query) {
+		// This function has not been implemented.
+		return false;
+	}
+
+
+	private boolean processNestedQueries(Query query) {
+		boolean foundValues = false;
+		List<Query> nestedQueries = query.getNestedQueries();
+		for (Iterator iterator = nestedQueries.iterator(); iterator.hasNext();) {
+			Query nQuery = (Query) iterator.next();
+			foundValues = foundValues || processQuery(nQuery);
+		}
+		return foundValues;
+	}
+
+
 	public boolean processAttribute (Query query,Attribute attribute){
 		boolean foundValues;
 		
@@ -78,11 +117,13 @@ public class IncompletitudeFinder {
 		
 		ExtractionContext extContext = builder.buildExtContext();
 		
-		FieldValue primaryKeyValue = extContext.getFieldInformationByName(getDbHandler().getPrimaryKey().getName()).getFieldValues().get(0);
+		FieldValue primaryKeyValue = extContext.getFieldInformationByName(getDbHandler().getPrimaryKey().getIdentifier()).getFieldValues().get(0);
 		
-		FocalizedExtractor focalizedExtractor = new FocalizedExtractor(getConfigFilePath(), 
+		
+		FocalizedExtractor focalizedExtractor = new FocalizedExtractor(getExtractorConfigFile(), 
 																	   extContext, 
 																	   getMinimumHitRadio());
+		
 		List<FieldValue> values = focalizedExtractor.findFieldValue(attribute.getConcept());
 		
 		foundValues = (values.size()>0);
@@ -100,12 +141,12 @@ public class IncompletitudeFinder {
 	
 	
 
-	public String getConfigFilePath() {
-		return configFilePath;
+	public String getExtractorConfigFile() {
+		return configuration.getExtractorFilePath();
 	}
 
 	public double getMinimumHitRadio() {
-		return minimumHitRadio;
+		return configuration.getMinimumHitRadio();
 	}
 
 

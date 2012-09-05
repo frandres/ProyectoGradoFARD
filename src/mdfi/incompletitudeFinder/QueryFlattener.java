@@ -33,7 +33,8 @@ public class QueryFlattener {
 	public  Query flattenQuery(Query query) {
 		return flattenQuery(query,null);
 	}
-	public  Query flattenQuery(Query query, Attribute at) {
+	
+	public Query flattenQuery(Query query, Attribute at) {
 		
 		Query workingCopy = query.clone();
 		
@@ -95,6 +96,7 @@ public class QueryFlattener {
 	private DatabaseHandler getDatabaseHandler(){
 		return dbHandler;
 	}
+	
 	private SimpleValue flattenRHS(RightHandSide rhs) {
 		
 		if (rhs instanceof NestedQuery){

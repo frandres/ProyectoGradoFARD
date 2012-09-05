@@ -27,8 +27,8 @@ public class Prueba {
 		XMLReader xmlReader = new XMLReader("/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Escalafon/incompletitudeDeterminatorConfigFile.xml");
 			
 		IncompletitudeFieldDescriptor desc;
-		IncompletitudeFieldDescriptorBuilder builder = new IncompletitudeFieldDescriptorBuilder("/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Escalafon/incompletitudeDeterminatorConfigFile.xml");
 		
+		IncompletitudeFieldDescriptorBuilder builder = new IncompletitudeFieldDescriptorBuilder("/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Escalafon/incompletitudeDeterminatorConfigFile.xml");
 		List<IncompletitudeFieldDescriptor> list = builder.buildIncompletitudeFieldDescriptors();
 		
 		desc = list.get(0);

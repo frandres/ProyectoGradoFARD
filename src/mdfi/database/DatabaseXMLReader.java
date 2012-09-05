@@ -33,7 +33,7 @@ public class DatabaseXMLReader {
 	public DatabaseXMLReader(String fname){
 
 		dom = parseXmlFile(fname);	
-		
+
 		if (dom == null){
 			log.log(Level.ERROR, "Unable to read XML: " + fname);	
 		}
@@ -109,10 +109,9 @@ public class DatabaseXMLReader {
 		List<FieldInformation> fieldInfos = new ArrayList<FieldInformation>();
 		
 		//get a nodelist of <FieldDescriptor> elements
-		NodeList nl = filSEl.getElementsByTagName("FieldInfo");
+		NodeList nl = filSEl.getElementsByTagName("FieldInformation");
 		if(nl != null && nl.getLength() > 0) {
 			for(int i = 0 ; i < nl.getLength();i++) {
-				
 				//get the element
 				Element el = (Element)nl.item(i);
 				
@@ -175,6 +174,9 @@ public class DatabaseXMLReader {
 		NodeList nl = ele.getElementsByTagName(tagName);
 		if(nl != null && nl.getLength() > 0) {
 			Element el = (Element)nl.item(0);
+			if (el==null|| el.getFirstChild()==null){
+				return "";
+			}
 			textVal = el.getFirstChild().getNodeValue();
 			
 		}
@@ -192,12 +194,9 @@ public class DatabaseXMLReader {
 //		return getRegExpWithPriority(dom.getDocumentElement(), "UnitRegExp");
 //		
 //	}
-	public double getMinimumHitRatio() {
-		Element docEle = dom.getDocumentElement();
-		return Double.parseDouble(getTextValue(docEle,"MinimumHitRatio"));
-	}
 
 	public Attribute getPrimaryKey() {
+
 		return new Attribute(getTextValue(dom.getDocumentElement(),"ConceptName"), 
 							 getTextValue(dom.getDocumentElement(),"PrimaryKeyName"));
 	}

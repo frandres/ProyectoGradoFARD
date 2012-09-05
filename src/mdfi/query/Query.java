@@ -14,22 +14,15 @@ public class Query {
 	private Query parentQuery;
 	private List<Attribute> requestedAttributes;
 	private Formula condition;
-	private int aggregateFunction;
-	
-	public static final int NO_AGGREGATE =0;
-	public static final int SUM =1;
-	public static final int AVG =2;
-	public static final int MAX =3;
-	public static final int MIN =4;
-	
+	List<AggregateFunction> aggregateFunctions;
 	
 	public Query(Query parentQuery, List<Attribute> requestedAttributes,
-			Formula condition, int aggregateFunction) {
+			Formula condition, List<AggregateFunction> aggregateFunctions) {
 		super();
 		this.parentQuery = parentQuery;
 		this.requestedAttributes = requestedAttributes;
 		this.condition = condition;
-		this.aggregateFunction = aggregateFunction;
+		this.aggregateFunctions = aggregateFunctions;
 	}
 
 	static Logger log = Logger.getLogger(Query.class.getName());
@@ -40,7 +33,7 @@ public class Query {
 		this.parentQuery = parentQuery;
 		this.requestedAttributes = requestedAttributes;
 		this.condition = condition;
-		this.aggregateFunction = NO_AGGREGATE;
+		this.aggregateFunctions = null;
 		
 	}
 
@@ -72,6 +65,13 @@ public class Query {
 			
 		}
 		
+		if (hasAggregateFunction()){
+			for (Iterator <AggregateFunction> iterator = getAggregateFunctions().iterator(); iterator.hasNext();) {
+				AggregateFunction aFunction = iterator.next();
+				
+				list.add(aFunction.getAt());
+			}
+		}
 		return list;
 	}
 
@@ -137,20 +137,70 @@ public class Query {
 	 * 
 	 */
 	public void removeAttribute(Attribute attribute) {
+		
 		for (Iterator<Attribute> iterator = requestedAttributes.iterator(); iterator.hasNext();) {
 			Attribute at = iterator.next();
 			if (at.equals(attribute)){
-				log.log(Level.INFO, "Found attribute");
+//				log.log(Level.INFO, "Found attribute");
 				iterator.remove();
 				
 			}
 		}
 		
+		if (hasAggregateFunction()){
+
+			for (Iterator <AggregateFunction> iterator = getAggregateFunctions().iterator(); iterator.hasNext();) {
+				AggregateFunction aFunction = iterator.next();
+				
+				if (aFunction.getAt().equals(attribute)){
+					iterator.remove();
+				}
+				
+			}
+		}
 		setCondition(condition.removeAttribute(attribute));
 	}
 
-	public int getAggregateFunction() {
-		return aggregateFunction;
+
+	public List<AggregateFunction> getAggregateFunctions() {
+		return aggregateFunctions;
+	}
+
+	public boolean hasAttribute(Attribute at) {
+		for (Iterator <Attribute> iterator = getConditionAttributes().iterator(); iterator.hasNext();) {
+			Attribute at2 = iterator.next();
+			if (at.equals(at2)){
+				return true;
+			}
+		}
+		
+		for (Iterator <Attribute> iterator = getQualifierAttributes().iterator(); iterator.hasNext();) {
+			Attribute at2 = iterator.next();
+			if (at.equals(at2)){
+				return true;
+			}
+		}
+		
+		for (Iterator <AggregateFunction> iterator = getAggregateFunctions().iterator(); iterator.hasNext();) {
+			AggregateFunction aFunction = iterator.next();
+			
+			if (aFunction.getAt().equals(at)){
+				return true;
+			}
+			
+		}
+		return false;
 	}
 	
+	public boolean hasAggregateFunction(){
+		return (getAggregateFunctions()!= null && getAggregateFunctions().size()>0);
+	}
+
+	public List<AggregateFunction> getAggregateFunction() {
+		return aggregateFunctions;
+	}
+
+	public List<Query> getNestedQueries() {
+		return condition.getNestedQueries();
+	}
 }

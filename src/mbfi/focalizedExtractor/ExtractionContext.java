@@ -1,10 +1,13 @@
 package mbfi.focalizedExtractor;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+
+import ucar.units.RaiseException;
 
 public class ExtractionContext {
 
@@ -25,9 +28,15 @@ public class ExtractionContext {
 	public FieldInformation getFieldInformationByName (String name){
 		FieldInformation dummy = new FieldInformation(name, null);
 		
+		for (Iterator <FieldInformation> iterator = fieldsInformation.iterator(); iterator.hasNext();) {
+			FieldInformation fInfo= (FieldInformation) iterator.next();
+			
+		}
+		
 		int iPoint = Collections.binarySearch(fieldsInformation, dummy);
-		if (iPoint>fieldsInformation.size()){
+		if (iPoint>fieldsInformation.size()||iPoint<0){
 			log.log(Level.INFO, "No se ha encontrado el campo: " + name + "entre los file descriptors");
+			System.out.println(1/0);
 			return null;
 		}
 		

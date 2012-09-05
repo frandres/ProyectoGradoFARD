@@ -16,7 +16,7 @@ import mbfi.focalizedExtractor.FieldValue;
 
 public class IncompletitudeFieldDescriptorBuilder {
 
-	String configPath;
+	XMLReader reader;
 	
 	static Logger log = Logger.getLogger(IncompletitudeFieldDescriptorBuilder.class.getName());
 	
@@ -32,16 +32,15 @@ public class IncompletitudeFieldDescriptorBuilder {
 	private static final String DATE_MINIMUM = "01-01-1988";
 	private static final String DATE_MAXIMUM = "31-12-2012";
 	
-	public IncompletitudeFieldDescriptorBuilder(String configPath) {
+	public IncompletitudeFieldDescriptorBuilder(XMLReader reader) {
 		super();
-		this.configPath = configPath;
+		this.reader = reader;
 	}
 
 	public List<IncompletitudeFieldDescriptor> buildIncompletitudeFieldDescriptors(){
 			
 			List<IncompletitudeFieldDescriptor> iFDs;
-			XMLReader reader = new XMLReader(getConfigPath());
-			
+						
 			iFDs = reader.getFDescriptors();
 			
 			for (Iterator <IncompletitudeFieldDescriptor> iterator = iFDs.iterator(); iterator.hasNext();) {
@@ -77,9 +76,10 @@ public class IncompletitudeFieldDescriptorBuilder {
 						 iFD.getDomainType() ==  IncompletitudeFieldDescriptor.CONTINUOUS);
 			
 			case FieldDescriptor.BOOLEAN:
+				
 			case FieldDescriptor.STRING:
 			
-				log.log(Level.WARN,"Value generation not implemented for type: " + iFD.getType());
+				
 				
 			default:
 				break;
@@ -204,10 +204,6 @@ public class IncompletitudeFieldDescriptorBuilder {
 		return iFD;
 
 	}	
-	
-	private String getConfigPath() {
-		return configPath;
-	}
 	
 	
 }

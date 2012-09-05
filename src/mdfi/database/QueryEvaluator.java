@@ -53,13 +53,15 @@ public class QueryEvaluator {
 		for (Iterator <DatabaseUnit> iterator = databaseUnits.iterator(); iterator.hasNext();) {
 			admitted = true;
 			DatabaseUnit unit = iterator.next();
+			
 			for (Iterator <Formula> iterator2 = conditions.iterator(); iterator2
 					.hasNext() && admitted;) {
-				Formula formula = iterator2.next();
 				
+				Formula formula = iterator2.next();
 				admitted = admitted && evaluateCondition(formula,unit);
 				
 			}
+			
 			
 			if (admitted){
 				results.add(unit);
@@ -92,6 +94,8 @@ public class QueryEvaluator {
 		
 		if (condition instanceof Atom){
 			Atom atom = (Atom) condition;
+			//log.log(Level.TRACE, atom.getConditionText(false));
+			
 			return evaluateAtom(atom,unit);
 		}
 		
@@ -107,6 +111,7 @@ public class QueryEvaluator {
 	private boolean evaluateAtom(Atom atom, DatabaseUnit unit) {
 		
 		FieldValue leftHandValue = resolveLeftHandValue(atom.getAttributes().get(0),unit);
+
 		
 		RightHandSide rhs = atom.getRhs();
 		
@@ -121,8 +126,8 @@ public class QueryEvaluator {
 		
 		for (Iterator <FieldValue> iterator = rightHandValues.iterator(); iterator.hasNext();) {
 			FieldValue righthandValue = iterator.next();
-			
 			if (evaluate(leftHandValue,righthandValue,atom.getComparationOperation())){
+				
 				return true;
 			}
 		}
@@ -135,6 +140,7 @@ public class QueryEvaluator {
 			FieldValue righthandValue, int comparationOperation) {
 		
 		if (verifyTypeCompability(leftHandValue.getType(),righthandValue.getType(),comparationOperation)){
+			
 			return evaluateWithoutTypeChecks(leftHandValue,righthandValue,comparationOperation);
 		} else{
 			log.log(Level.ERROR, "Trying to operate 2 values of incompatible types: " 
@@ -148,6 +154,7 @@ public class QueryEvaluator {
 		
 		switch (comparationOperation) {
 		case Atom.OP_EQUALS:
+			
 			return testEquality(leftHandValue,righthandValue);
 		case Atom.OP_DIFFERENT_THAN:
 			return !testEquality(leftHandValue,righthandValue);
@@ -172,6 +179,7 @@ public class QueryEvaluator {
 	public static boolean testEquality(FieldValue op1, FieldValue op2) {
 		switch (op1.getType()) {
 		case FieldDescriptor.STRING:
+			
 			return (op1.getStringValue().compareTo(op2.getStringValue())==0);
 
 		case FieldDescriptor.INTEGER:			
@@ -286,6 +294,7 @@ public class QueryEvaluator {
 
 	private FieldValue resolveLeftHandValue(Attribute attribute,
 			DatabaseUnit unit) {
+		
 		
 		return unit.getFieldValueByFieldName(attribute.getIdentifier());
 	}

@@ -120,6 +120,11 @@ public class NegativeFormula extends Formula {
 		return getnFormula().negateCondition();
 	}
 	
+	@Override
+	protected boolean hasNestedQueryWithAttribute(Attribute at) {
+		return getnFormula().hasNestedQueryWithAttribute(at);
+	}
+	
 	/*
 	@Override
 	public Formula filterAttribute(Attribute at) {

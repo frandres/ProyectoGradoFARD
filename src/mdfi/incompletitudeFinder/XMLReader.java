@@ -227,6 +227,11 @@ public class XMLReader {
 		return Double.parseDouble(getTextValue(docEle,"MinimumHitRatio"));
 	}
 
+	public String getExtractorConfigFile() {
+		Element docEle = dom.getDocumentElement();
+		return getTextValue(docEle,"ExtractorConfigFile");
+	}
+
 //	public String getDocumentsFilePath() {
 //		Element docEle = dom.getDocumentElement();
 //

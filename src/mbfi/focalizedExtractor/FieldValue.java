@@ -58,4 +58,8 @@ public class FieldValue {
 	public FieldValue clone(){
 		return new FieldValue(getTextValue(), getType());
 	}
+	
+	public boolean equals(FieldValue fValue){
+		return (this.getTextValue().compareTo(fValue.getTextValue())==0) && (fValue.getType()==getType());
+	}
 }

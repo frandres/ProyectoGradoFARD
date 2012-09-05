@@ -6,7 +6,19 @@ import java.util.List;
 
 public class Configuration {
 	
+	private double minimumHitRatio;
 	private List<IncompletitudeFieldDescriptor> fDescriptors;
+	String extractorConfigFile;
+	
+	public Configuration(String configFilePath) {
+		super();
+		XMLReader reader = new XMLReader(configFilePath);
+		IncompletitudeFieldDescriptorBuilder builder = new IncompletitudeFieldDescriptorBuilder(reader);
+		this.fDescriptors = builder.buildIncompletitudeFieldDescriptors();
+		this.minimumHitRatio=reader.getMinimumHitRatio();
+		this.extractorConfigFile=reader.getExtractorConfigFile();
+	}
+
 
 	public List<IncompletitudeFieldDescriptor> getfDescriptors() {
 		
@@ -18,6 +30,16 @@ public class Configuration {
 		}
 		
 		return fDescs;
+	}
+
+
+	public double getMinimumHitRadio() {
+		return minimumHitRatio;
+	}
+
+
+	public String getExtractorFilePath() {
+		return extractorConfigFile;
 	}
 	
 	

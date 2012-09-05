@@ -3,6 +3,8 @@ package mdfi.conditions;
 import java.util.ArrayList;
 import java.util.List;
 
+import mdfi.query.Attribute;
+
 public class AndFormula extends BinaryFormula {
 
 	private static final String OdilLangAndOperator = " AND ";
@@ -95,4 +97,5 @@ public class AndFormula extends BinaryFormula {
 	public Formula clone() {
 		return new AndFormula(getLeftSide(), getRightSide());
 	}
+
 }

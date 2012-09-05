@@ -50,9 +50,14 @@ public class ExtractionContextBuilder {
 	private List<FieldInformation> getPrimaryKeyContext(){
 		List<Attribute> attributes = new ArrayList<Attribute>();
 		attributes.add(getDBHandler().getPrimaryKey());
-		attributes.add(attribute);
 		
-		int numAttributes = attributes.size(); 
+		
+		if (!attribute.equals(getDBHandler().getPrimaryKey())){
+			attributes.add(attribute);
+		}
+
+		int numAttributes = attributes.size();
+		
 		Query incompletitudeFinderQuery = query.clone();
 		incompletitudeFinderQuery.setRequestedAttributes(attributes);
 		List<DatabaseResult> queryResults = getDBHandler().getQueryResult(incompletitudeFinderQuery);
@@ -61,8 +66,8 @@ public class ExtractionContextBuilder {
 		
 		for (Iterator <DatabaseResult> iterator = queryResults.iterator(); iterator.hasNext();) {
 			DatabaseResult databaseResult = (DatabaseResult) iterator.next();
-			List<FieldInformation> results = databaseResult.getResults();
-			if (results.get(numAttributes-1).getFieldValues().get(0).getStringValue()==DatabaseHandler.NULL){
+			List<FieldInformation> results = databaseResult.getResults(); 
+			if (results.get(numAttributes-1).getFieldValues().get(0).getStringValue()!=DatabaseHandler.NULL){
 				int cont = 0;
 				for (Iterator<FieldInformation> iterator2 = primaryKeyContext.iterator(); iterator2
 						.hasNext();) {
@@ -72,6 +77,8 @@ public class ExtractionContextBuilder {
 				}
 			}
 		}
+		
+		System.out.println(primaryKeyContext.size());
 		return primaryKeyContext;
 		
 	}
@@ -82,11 +89,16 @@ public class ExtractionContextBuilder {
 
 	public ExtractionContext buildExtContext (){
 		
+		// TODO Aqui está el problema.
+		
 		List<FieldInformation> primaryKeyInformation =  getPrimaryKeyContext();
+		
 		List<FieldInformation> conditionFieldInformation =  getConditionFieldInformation();
 		List<FieldInformation> fInfo = primaryKeyInformation;
 		
 		fInfo.addAll(conditionFieldInformation);
+		
+
 		return new ExtractionContext(fInfo);
 	}
 
@@ -191,6 +203,7 @@ public class ExtractionContextBuilder {
 		
 		return difference;
 	}
+	
 	private List<Atom> getAtoms(){
 		List<Formula> forms = query.getCondition().toNCF();
 		
@@ -242,6 +255,16 @@ public class ExtractionContextBuilder {
 	}
 	
 	private List<FieldValue> filterByCondition(Atom condition, List<FieldValue> possibleValues){
+		
+		List<FieldValue> condValue = null;
+		
+		if (condition.getRhs() instanceof SimpleValue){
+		
+			SimpleValue sValue = (SimpleValue) condition.getRhs();
+			
+			condValue = sValue.getValues();
+		}
+		
 		for (Iterator <FieldValue> iterator = possibleValues.iterator(); iterator.hasNext();) {
 			FieldValue sValue = iterator.next();
 			if (conditionFails(sValue,condition)){
@@ -249,6 +272,27 @@ public class ExtractionContextBuilder {
 			}
 			
 		}
+		
+		List<FieldValue> tempList = new ArrayList<FieldValue>();
+		if (condValue != null){
+			boolean present;
+			for (Iterator <FieldValue> iterator = condValue.iterator(); iterator.hasNext();) {
+				FieldValue condFieldValue = iterator.next();
+				present = false;
+				for (Iterator <FieldValue> iterator2 = possibleValues.iterator(); iterator.hasNext();) {
+					FieldValue possibleValue = iterator.next();
+					
+					present = present || (condFieldValue.equals(possibleValue));
+				}
+				
+				if (!present){
+					tempList.add(condFieldValue);
+				}
+			}
+			
+		}
+		
+		possibleValues.addAll(tempList);
 		
 		return possibleValues;
 		

@@ -1,9 +1,31 @@
-20120813142314 ERROR mbfi.auxiliary.XMLDatabaseGenerator [getFieldIinfos] (68) - Problem reading file:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML.xml Error:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML.xml (No such file or directory)
-20120813142608 ERROR mbfi.auxiliary.XMLDatabaseGenerator [getFieldIinfos] (68) - Problem reading file:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML.xml Error:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML.xml (No such file or directory)
-20120813142628 ERROR mbfi.auxiliary.XMLDatabaseGenerator [getFieldIinfos] (68) - Problem reading file:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML Error:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML (No such file or directory)
-20120813143140 ERROR mbfi.auxiliary.XMLDatabaseGenerator [getFieldIinfos] (68) - Problem reading file:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML.xml Error:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML.xml (No such file or directory)
-20120813154020 ERROR mbfi.auxiliary.XMLDatabaseGenerator [getFieldIinfos] (68) - Problem reading file:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML Error:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML (No such file or directory)
-20120813154422 ERROR mbfi.auxiliary.XMLDatabaseGenerator [getFieldIinfos] (68) - Problem reading file:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML Error:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML (No such file or directory)
-20120813154539 ERROR mbfi.auxiliary.XMLDatabaseGenerator [getFieldIinfos] (68) - Problem reading file:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML Error:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML (No such file or directory)
-20120813154557 ERROR mbfi.auxiliary.XMLDatabaseGenerator [getFieldIinfos] (68) - Problem reading file:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML Error:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML (No such file or directory)
-20120813154626 ERROR mbfi.auxiliary.XMLDatabaseGenerator [getFieldIinfos] (68) - Problem reading file:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML Error:/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Designaciones/dbXML (No such file or directory)
+20120905145912 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
+20120905150142 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
+20120905150142 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120905150433 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
+20120905150433 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120905150505 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
+20120905150505 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120905150505 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (39) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
+20120905150821 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
+20120905150821 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120905150821 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (39) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
+20120905150901 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
+20120905150901 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120905150901 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (40) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
+20120905151148 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
+20120905151148 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120905151148 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (39) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
+20120905151212 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
+20120905151212 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120905151448 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
+20120905151448 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120905151448 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (38) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
+20120905151550 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
+20120905151550 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120905151550 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (38) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
+20120905151603 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
+20120905151603 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120905151603 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (38) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
+20120905153456 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
+20120905153456 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120905153456 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (38) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors

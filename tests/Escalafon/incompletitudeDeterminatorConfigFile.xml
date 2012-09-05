@@ -5,20 +5,77 @@
 		<FieldDescriptor>
 			<ConceptName>EsAscendido</ConceptName>
 			<FieldName>Nombre</FieldName>
-			<type>DATE</type>
+			<type>STRING</type>
 			<domainType>CONTINUOUS</domainType>
-			<generateValues>true</generateValues>
+			<generateValues>false</generateValues>
 			<implicitDomainMinimumValue>14/02/1985</implicitDomainMinimumValue>
 			<implicitDomainMaximumValue>14/03/1985</implicitDomainMaximumValue>
 			<increment>2</increment>
 			<posibleValues>
-				<posibleValue>trolol</posibleValue>
 			</posibleValues>
 			
 			<FieldInformationName>EsAscendido.Nombre</FieldInformationName>
 			
 		</FieldDescriptor>
+
+		<FieldDescriptor>
+			<ConceptName>EsAscendido</ConceptName>
+			<FieldName>NombreTrabajo</FieldName>
+			<type>STRING</type>
+			<domainType>CONTINUOUS</domainType>
+			<generateValues>false</generateValues>
+			<implicitDomainMinimumValue>14/02/1985</implicitDomainMinimumValue>
+			<implicitDomainMaximumValue>14/03/1985</implicitDomainMaximumValue>
+			<increment>2</increment>
+			<posibleValues>
+			</posibleValues>
+			
+			<FieldInformationName>EsAscendido.NombreTrabajo</FieldInformationName>
+			
+		</FieldDescriptor>
+
+		<FieldDescriptor>
+			<ConceptName>EsAscendido</ConceptName>
+			<FieldName>fecha</FieldName>
+			<type>STRING</type>
+			<domainType>CONTINUOUS</domainType>
+			<generateValues>true</generateValues>
+                        <increment>1</increment>
+			<implicitDomainMinimumValue>01/01/1985</implicitDomainMinimumValue>
+			<implicitDomainMaximumValue>31/12/2012</implicitDomainMaximumValue>
+			<increment>2</increment>
+			<posibleValues>
+			</posibleValues>
+			
+			<FieldInformationName>EsAscendido.fecha</FieldInformationName>
+			
+		</FieldDescriptor>
+
+		<FieldDescriptor>
+			<ConceptName>EsAscendido</ConceptName>
+			<FieldName>escalafon</FieldName>
+			<type>STRING</type>
+			<domainType>CONTINUOUS</domainType>
+			<generateValues>false</generateValues>
+			<implicitDomainMinimumValue>14/02/1985</implicitDomainMinimumValue>
+			<implicitDomainMaximumValue>14/03/1985</implicitDomainMaximumValue>
+			<increment>2</increment>
+			<posibleValues>
+                                <possibleValue>TITULAR</possibleValue>
+                                <possibleValue>AGREGADO</possibleValue>
+                                <possibleValue>ASOCIADO</possibleValue>
+                                <possibleValue>ORDINARIO</possibleValue>
+                                <possibleValue>ASISTENTE</possibleValue>
+			</posibleValues>
+			
+			<FieldInformationName>EsAscendido.escalafon</FieldInformationName>
+			
+		</FieldDescriptor>
 	</FieldDescriptors>
 	
+        <MinimumHitRatio>.75</MinimumHitRatio>
+
+        <ExtractorConfigFile>/home/frandres/Eclipse/workspace/ProyectoGradoFARD/tests/Escalafon/extractionConfigFile.xml</ExtractorConfigFile>
+
 </Configuration>	
 	

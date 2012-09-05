@@ -41,5 +41,9 @@ public class NullCondition extends Formula {
 	public Formula negateCondition() {
 		return clone();
 	}
+	@Override
+	protected boolean hasNestedQueryWithAttribute(Attribute at) {
+		return false;
+	}
 
 }
