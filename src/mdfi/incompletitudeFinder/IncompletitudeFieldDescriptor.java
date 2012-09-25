@@ -66,6 +66,7 @@ public class IncompletitudeFieldDescriptor {
 	public void setPossibleValues(List<FieldValue> possibleValues) {
 		this.possibleValues = possibleValues;
 	}
+	
 
 	public IncompletitudeFieldDescriptor clone() {
 		return new IncompletitudeFieldDescriptor(getConceptName(), 

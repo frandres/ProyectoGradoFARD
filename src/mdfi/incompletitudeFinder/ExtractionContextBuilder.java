@@ -48,9 +48,13 @@ public class ExtractionContextBuilder {
 	}
 
 	private List<FieldInformation> getPrimaryKeyContext(){
+		
+		if (attribute.equals(getDBHandler().getPrimaryKey())){
+			return new ArrayList<FieldInformation>();
+		}
+		
 		List<Attribute> attributes = new ArrayList<Attribute>();
 		attributes.add(getDBHandler().getPrimaryKey());
-		
 		
 		if (!attribute.equals(getDBHandler().getPrimaryKey())){
 			attributes.add(attribute);
@@ -66,7 +70,10 @@ public class ExtractionContextBuilder {
 		
 		for (Iterator <DatabaseResult> iterator = queryResults.iterator(); iterator.hasNext();) {
 			DatabaseResult databaseResult = (DatabaseResult) iterator.next();
-			List<FieldInformation> results = databaseResult.getResults(); 
+						
+			List<FieldInformation> results = databaseResult.getResults();
+			
+			// If the attribute upon which we are building the context is null, add it to the context.
 			if (results.get(numAttributes-1).getFieldValues().get(0).getStringValue()!=DatabaseHandler.NULL){
 				int cont = 0;
 				for (Iterator<FieldInformation> iterator2 = primaryKeyContext.iterator(); iterator2
@@ -94,18 +101,20 @@ public class ExtractionContextBuilder {
 		List<FieldInformation> primaryKeyInformation =  getPrimaryKeyContext();
 		
 		List<FieldInformation> conditionFieldInformation =  getConditionFieldInformation();
+		
 		List<FieldInformation> fInfo = primaryKeyInformation;
 		
 		fInfo.addAll(conditionFieldInformation);
 		
-
 		return new ExtractionContext(fInfo);
 	}
 
 	private List<FieldInformation> getConditionFieldInformation() {
-
+//TODO
+		
 		List<Atom> atoms = getAtoms();
 		List<IncompletitudeFieldDescriptor> fDescriptors = getFieldDescriptors(atoms);
+		
 		List<FieldInformation> fInfo = buildFieldInfos(fDescriptors,atoms);
 
 		return fInfo;
@@ -157,6 +166,7 @@ public class ExtractionContextBuilder {
 		List<IncompletitudeFieldDescriptor> fDescriptors = new ArrayList<IncompletitudeFieldDescriptor>();
 		List<IncompletitudeFieldDescriptor> allFDescriptors = configuration.getfDescriptors();
 		
+		
 		for (Iterator<Attribute> iterator = attributes.iterator(); iterator.hasNext();) {
 			Attribute at = iterator.next();
 			fDescriptors.add(getFieldDescriptorByAtribute(at,allFDescriptors));
@@ -167,7 +177,14 @@ public class ExtractionContextBuilder {
 
 	private IncompletitudeFieldDescriptor getFieldDescriptorByAtribute(Attribute at,List<IncompletitudeFieldDescriptor> fds) {
 		
+		for (Iterator iterator = fds.iterator(); iterator.hasNext();) {
+			IncompletitudeFieldDescriptor incompletitudeFieldDescriptor = (IncompletitudeFieldDescriptor) iterator
+					.next();
+			System.out.println(incompletitudeFieldDescriptor.getConceptName()+"."+incompletitudeFieldDescriptor.getFieldName());
+			
+		}
 		
+		System.out.println("Attribute: "+ at.getIdentifier());
 		for (Iterator<IncompletitudeFieldDescriptor> iterator = fds.iterator(); iterator.hasNext();) {
 			IncompletitudeFieldDescriptor incompletitudeFieldDescriptor = iterator.next();
 			

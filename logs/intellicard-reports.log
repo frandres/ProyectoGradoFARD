@@ -1,31 +1,9 @@
-20120905145912 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
-20120905150142 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
-20120905150142 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
-20120905150433 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
-20120905150433 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
-20120905150505 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
-20120905150505 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
-20120905150505 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (39) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
-20120905150821 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
-20120905150821 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
-20120905150821 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (39) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
-20120905150901 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
-20120905150901 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
-20120905150901 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (40) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
-20120905151148 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
-20120905151148 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
-20120905151148 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (39) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
-20120905151212 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
-20120905151212 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
-20120905151448 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
-20120905151448 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
-20120905151448 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (38) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
-20120905151550 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
-20120905151550 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
-20120905151550 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (38) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
-20120905151603 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
-20120905151603 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
-20120905151603 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (38) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
-20120905153456 DEBUG mdfi.incompletitudeFinder.IncompletitudeFieldDescriptorBuilder [generateValues] (88) - Field type not identified: 0
-20120905153456 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
-20120905153456 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (38) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
+20120925171254 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (188) - Warning, inc field descriptor not found.
+20120925172701 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (196) - Warning, inc field descriptor not found.
+20120925172844 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (196) - Warning, inc field descriptor not found.
+20120925173845 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (203) - Warning, inc field descriptor not found.
+20120925175247 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (197) - Warning, inc field descriptor not found.
+20120925175351 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (197) - Warning, inc field descriptor not found.
+20120925175452 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (197) - Warning, inc field descriptor not found.
+20120925175606 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (197) - Warning, inc field descriptor not found.
+20120925180039 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (197) - Warning, inc field descriptor not found.

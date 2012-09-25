@@ -80,7 +80,43 @@ public class Query {
 	}
 
 	public Query clone(){
-		return new Query(parentQuery, requestedAttributes, condition);
+		
+		List<Attribute> reqAtClone = null;
+		
+		if (requestedAttributes != null){
+		
+			reqAtClone = new ArrayList<Attribute>();
+			
+			for (Iterator<Attribute> iterator = requestedAttributes.iterator(); iterator.hasNext();) {
+				reqAtClone.add(iterator.next());
+			}
+		}
+		
+		List<AggregateFunction> agFunctionsClone = null;
+		
+		if (aggregateFunctions != null){
+			
+			agFunctionsClone = new ArrayList<AggregateFunction>();
+			
+			
+			for (Iterator <AggregateFunction>iterator = aggregateFunctions.iterator(); iterator
+					.hasNext();) {
+				agFunctionsClone.add(iterator.next());
+			}
+		}
+		
+		Query pQClone = null;
+		
+		if (parentQuery !=null){
+			pQClone = parentQuery.clone();
+		}
+		
+		Formula cClone = null;
+		
+		if (condition!=null){
+			cClone = condition.clone();
+		}
+		return new Query(pQClone, reqAtClone, cClone,agFunctionsClone);
 	}
 	
 	private final static String keyword []= new String[10];

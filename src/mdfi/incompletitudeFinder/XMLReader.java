@@ -120,7 +120,7 @@ public class XMLReader {
 		} else{
 			possibleValues = null;
 		}
-		return new IncompletitudeFieldDescriptor(
+		IncompletitudeFieldDescriptor ifd = new IncompletitudeFieldDescriptor(
 				   conceptName, 
 				   attributeName, 
 				   type, 
@@ -131,6 +131,8 @@ public class XMLReader {
 				   implicitDomainMinimumValue,
 				   implicitDomainMaxmumValue,
 				   increment);
+		
+		return ifd;
 	}
 	
 	private List<FieldValue> getPossibleValues(Element filSEl, String name, int type){

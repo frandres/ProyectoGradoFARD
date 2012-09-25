@@ -67,7 +67,7 @@ public class DatabaseHandler {
 		List<DatabaseResult> results = new ArrayList<DatabaseResult>();
 		QueryFlattener flatter = new QueryFlattener(this);
 		Query wCopy = flatter.flattenQuery(query);
-		
+				
 		QueryEvaluator evaluator = new QueryEvaluator(wCopy, databaseUnits);
 		
 		List<DatabaseUnit> units = evaluator.evaluateQuery();

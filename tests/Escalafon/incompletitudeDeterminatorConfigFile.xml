@@ -36,7 +36,7 @@
 
 		<FieldDescriptor>
 			<ConceptName>EsAscendido</ConceptName>
-			<FieldName>fecha</FieldName>
+			<FieldName>Fecha</FieldName>
 			<type>STRING</type>
 			<domainType>CONTINUOUS</domainType>
 			<generateValues>true</generateValues>
@@ -47,13 +47,13 @@
 			<posibleValues>
 			</posibleValues>
 			
-			<FieldInformationName>EsAscendido.fecha</FieldInformationName>
+			<FieldInformationName>EsAscendido.Fecha</FieldInformationName>
 			
 		</FieldDescriptor>
 
 		<FieldDescriptor>
 			<ConceptName>EsAscendido</ConceptName>
-			<FieldName>escalafon</FieldName>
+			<FieldName>Escalafon</FieldName>
 			<type>STRING</type>
 			<domainType>CONTINUOUS</domainType>
 			<generateValues>false</generateValues>
@@ -68,7 +68,7 @@
                                 <possibleValue>ASISTENTE</possibleValue>
 			</posibleValues>
 			
-			<FieldInformationName>EsAscendido.escalafon</FieldInformationName>
+			<FieldInformationName>EsAscendido.Escalafon</FieldInformationName>
 			
 		</FieldDescriptor>
 	</FieldDescriptors>

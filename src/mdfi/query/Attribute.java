@@ -17,9 +17,11 @@ public class Attribute {
 		  
 	    if (o instanceof Attribute) {
 	      Attribute at = (Attribute) o;
+	      
 	      if (getIdentifier().compareTo(at.getIdentifier())==0){ 
 	    	  return true;
 	      }
+	      
 	    }
 	    return false;
 	    

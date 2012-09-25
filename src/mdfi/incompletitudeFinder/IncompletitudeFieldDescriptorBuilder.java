@@ -46,6 +46,7 @@ public class IncompletitudeFieldDescriptorBuilder {
 			for (Iterator <IncompletitudeFieldDescriptor> iterator = iFDs.iterator(); iterator.hasNext();) {
 				IncompletitudeFieldDescriptor iFD = iterator.next();
 				
+				System.out.println(iFD.getAttribute().getIdentifier());
 				if (iFD.isGenerateValues()){
 					iFD = generateValues(iFD);
 				}
@@ -76,16 +77,16 @@ public class IncompletitudeFieldDescriptorBuilder {
 						 iFD.getDomainType() ==  IncompletitudeFieldDescriptor.CONTINUOUS);
 			
 			case FieldDescriptor.BOOLEAN:
-				
+				break;
 			case FieldDescriptor.STRING:
-			
-				
+				break;
 				
 			default:
+				log.log(Level.DEBUG,"Field type not identified: " + iFD.getType());
 				break;
 		}
 		
-		log.log(Level.DEBUG,"Field type not identified: " + iFD.getType());
+		
 		return iFD;
 	}
 	

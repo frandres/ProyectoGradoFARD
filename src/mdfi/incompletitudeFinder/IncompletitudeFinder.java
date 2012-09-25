@@ -76,6 +76,7 @@ public class IncompletitudeFinder {
 			foundValues = false;
 			
 			// Las funciones agregadas ya se manejan en processRequiredAttributes.
+			
 			foundValues = foundValues || processRequiredAttributes(query);
 			foundValues = foundValues || processConditionAttributes(query);
 			foundValues = foundValues || processNestedQueries(query);
@@ -106,12 +107,17 @@ public class IncompletitudeFinder {
 	}
 
 
-	public boolean processAttribute (Query query,Attribute attribute){
+	public boolean processAttribute (Query query, Attribute attribute){
 		boolean foundValues;
 		
 		QueryFlattener flatter = new QueryFlattener(getDbHandler());
 		
 		Query flattenedQuery = flatter.flattenQuery(query,attribute);
+		
+		if (queryIsNull(flattenedQuery)){
+			return false;
+		}else{
+		}
 		
 		ExtractionContextBuilder builder = new ExtractionContextBuilder(flattenedQuery, attribute,getConfiguration(),getDbHandler());
 		
@@ -140,6 +146,13 @@ public class IncompletitudeFinder {
 	}
 	
 	
+
+	private boolean queryIsNull(Query query) {
+				
+		return ((query.getRequestedAttributes() == null || query.getRequestedAttributes().size() ==0)
+			  && (query.getQualifierAttributes() == null || query.getQualifierAttributes().size() ==0));
+	}
+
 
 	public String getExtractorConfigFile() {
 		return configuration.getExtractorFilePath();
