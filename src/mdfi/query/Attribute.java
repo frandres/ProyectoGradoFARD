@@ -39,7 +39,7 @@ public class Attribute {
 		return getIdentifier();
 	}
 	public String getIdentifier() {
-		return getName() + "."  + getConcept();
+		return getConcept()+  "."  + getName();
 	}
  
 	public Attribute clone(){

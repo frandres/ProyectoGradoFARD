@@ -46,7 +46,6 @@ public class IncompletitudeFieldDescriptorBuilder {
 			for (Iterator <IncompletitudeFieldDescriptor> iterator = iFDs.iterator(); iterator.hasNext();) {
 				IncompletitudeFieldDescriptor iFD = iterator.next();
 				
-				System.out.println(iFD.getAttribute().getIdentifier());
 				if (iFD.isGenerateValues()){
 					iFD = generateValues(iFD);
 				}

@@ -85,7 +85,6 @@ public class ExtractionContextBuilder {
 			}
 		}
 		
-		System.out.println(primaryKeyContext.size());
 		return primaryKeyContext;
 		
 	}
@@ -96,7 +95,6 @@ public class ExtractionContextBuilder {
 
 	public ExtractionContext buildExtContext (){
 		
-		// TODO Aqui está el problema.
 		
 		List<FieldInformation> primaryKeyInformation =  getPrimaryKeyContext();
 		
@@ -110,9 +108,12 @@ public class ExtractionContextBuilder {
 	}
 
 	private List<FieldInformation> getConditionFieldInformation() {
-//TODO
 		
 		List<Atom> atoms = getAtoms();
+		
+		if (atoms.size()==0){
+			return new ArrayList<FieldInformation>();
+		}
 		List<IncompletitudeFieldDescriptor> fDescriptors = getFieldDescriptors(atoms);
 		
 		List<FieldInformation> fInfo = buildFieldInfos(fDescriptors,atoms);
@@ -177,14 +178,6 @@ public class ExtractionContextBuilder {
 
 	private IncompletitudeFieldDescriptor getFieldDescriptorByAtribute(Attribute at,List<IncompletitudeFieldDescriptor> fds) {
 		
-		for (Iterator iterator = fds.iterator(); iterator.hasNext();) {
-			IncompletitudeFieldDescriptor incompletitudeFieldDescriptor = (IncompletitudeFieldDescriptor) iterator
-					.next();
-			System.out.println(incompletitudeFieldDescriptor.getConceptName()+"."+incompletitudeFieldDescriptor.getFieldName());
-			
-		}
-		
-		System.out.println("Attribute: "+ at.getIdentifier());
 		for (Iterator<IncompletitudeFieldDescriptor> iterator = fds.iterator(); iterator.hasNext();) {
 			IncompletitudeFieldDescriptor incompletitudeFieldDescriptor = iterator.next();
 			

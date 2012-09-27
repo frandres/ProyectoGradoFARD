@@ -29,7 +29,7 @@ public class IncompletitudeFinder {
 	public IncompletitudeFinder(String configFilePath, DatabaseHandler dbHandler) {
 		super();
 		this.configFilePath = configFilePath;
-		XMLReader reader = new XMLReader(configFilePath);
+//		XMLReader reader = new XMLReader(configFilePath);
 		
 		this.configuration = new Configuration(configFilePath);
 		
@@ -39,6 +39,12 @@ public class IncompletitudeFinder {
 
 	private boolean processConditionAttributes (Query query){
 		boolean foundValues = false;
+		
+		if (query.getConditionAttributes()== null || 
+		    query.getConditionAttributes().size()==0){
+			return false;
+		}
+			
 		List<Attribute> conditionAttributes = query.getConditionAttributes();
 		
 		for (Iterator <Attribute> iterator = conditionAttributes.iterator(); iterator
@@ -52,6 +58,11 @@ public class IncompletitudeFinder {
 	
 	private boolean processRequiredAttributes (Query query){
 		boolean foundValues = false;
+		
+		if (query.getRequestedAttributes()== null || 
+			    query.getRequestedAttributes().size()==0){
+				return false;
+			}
 		
 		List<Attribute> requiredAttributes = query.getRequestedAttributes();
 		
@@ -84,7 +95,7 @@ public class IncompletitudeFinder {
 			
 			foundAtLeastOneValue = foundAtLeastOneValue || foundValues;
 			
-		}while (foundValues);
+		} while (foundValues);
 	
 		return foundAtLeastOneValue;
 	}
@@ -98,7 +109,14 @@ public class IncompletitudeFinder {
 
 	private boolean processNestedQueries(Query query) {
 		boolean foundValues = false;
+		
 		List<Query> nestedQueries = query.getNestedQueries();
+		
+		if (nestedQueries== null || 
+				nestedQueries.size()==0){
+			return false;
+		}
+		
 		for (Iterator iterator = nestedQueries.iterator(); iterator.hasNext();) {
 			Query nQuery = (Query) iterator.next();
 			foundValues = foundValues || processQuery(nQuery);
@@ -119,29 +137,53 @@ public class IncompletitudeFinder {
 		}else{
 		}
 		
+		System.out.println("A:" + attribute);
+		
+		System.out.println("N: " + query.toString());
+		
+		System.out.println("F: " + flattenedQuery.toString());
+		
+		
 		ExtractionContextBuilder builder = new ExtractionContextBuilder(flattenedQuery, attribute,getConfiguration(),getDbHandler());
 		
 		ExtractionContext extContext = builder.buildExtContext();
 		
-		FieldValue primaryKeyValue = extContext.getFieldInformationByName(getDbHandler().getPrimaryKey().getIdentifier()).getFieldValues().get(0);
-		
+		FieldValue primaryKeyValue = null;
 		
 		FocalizedExtractor focalizedExtractor = new FocalizedExtractor(getExtractorConfigFile(), 
-																	   extContext, 
-																	   getMinimumHitRadio());
+				   extContext, 
+				   getMinimumHitRadio());
 		
-		List<FieldValue> values = focalizedExtractor.findFieldValue(attribute.getConcept());
+		FieldInformation fInfo = extContext.getFieldInformationByName(getDbHandler().getPrimaryKey().getIdentifier()); 
+		
+		if (fInfo!=null){
+			primaryKeyValue = fInfo.getFieldValues().get(0);
+		}
+		
+		if (primaryKeyValue ==null){
+			List<FieldValue> pKValues = focalizedExtractor.findFieldValue(getDbHandler().getPrimaryKey().getIdentifier()); 
+			if (pKValues != null &&
+				pKValues.size()==1){
+				primaryKeyValue = pKValues.get(0);
+			}
+			  
+		}
+			
+		
+		List<FieldValue> values = focalizedExtractor.findFieldValue(attribute.getIdentifier());
 		
 		foundValues = (values.size()>0);
 
-		for (Iterator <FieldValue> iterator = values.iterator(); iterator.hasNext();) {
-			FieldValue fieldValue = iterator.next();
-			getDbHandler().insertValuesIntoOntology(attribute.getConcept(),
-													primaryKeyValue,
-													 attribute.getName(), 
-													 fieldValue);
+		if (primaryKeyValue != null){
+			
+			for (Iterator <FieldValue> iterator = values.iterator(); iterator.hasNext();) {
+				FieldValue fieldValue = iterator.next();
+				getDbHandler().insertValuesIntoOntology(attribute.getConcept(),
+														primaryKeyValue,
+														 attribute.getName(), 
+														 fieldValue);
+			}
 		}
-		
 		return foundValues;
 	}
 	

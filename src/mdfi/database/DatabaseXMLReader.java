@@ -197,8 +197,8 @@ public class DatabaseXMLReader {
 
 	public Attribute getPrimaryKey() {
 
-		return new Attribute(getTextValue(dom.getDocumentElement(),"ConceptName"), 
-							 getTextValue(dom.getDocumentElement(),"PrimaryKeyName"));
+		return new Attribute(getTextValue(dom.getDocumentElement(),"PrimaryKeyName"),
+							 getTextValue(dom.getDocumentElement(),"ConceptName"));
 	}
 
 //	public String getDocumentsFilePath() {

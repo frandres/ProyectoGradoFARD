@@ -1,9 +1,18 @@
-20120925171254 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (188) - Warning, inc field descriptor not found.
-20120925172701 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (196) - Warning, inc field descriptor not found.
-20120925172844 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (196) - Warning, inc field descriptor not found.
-20120925173845 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (203) - Warning, inc field descriptor not found.
-20120925175247 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (197) - Warning, inc field descriptor not found.
-20120925175351 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (197) - Warning, inc field descriptor not found.
-20120925175452 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (197) - Warning, inc field descriptor not found.
-20120925175606 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (197) - Warning, inc field descriptor not found.
-20120925180039 WARN mdfi.incompletitudeFinder.ExtractionContextBuilder [getFieldDescriptorByAtribute] (197) - Warning, inc field descriptor not found.
+20120927083942 INFO mbfi.focalizedExtractor.FocalizedExtractor [findFieldValue] (153) - Unit: JUAN CARLOS RODRÍGUEZ, quien presentó el trabajo titulado “FUNCIÓN PÚBLICA, DESCENTRALIZACIÓN Y PLANIFICACIÓN URBANA LOCAL, ESTUDIO DE CASOS EN EL ÁREA METROPOLITANA DE CARACAS”, asciende a la categoría de TITULAR a partir del 15-12-2001.  has weight: 1.0
+20120927083942 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120927083942 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (39) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
+20120927084306 INFO mbfi.focalizedExtractor.FocalizedExtractor [findFieldValue] (153) - Unit: JUAN CARLOS RODRÍGUEZ, quien presentó el trabajo titulado “FUNCIÓN PÚBLICA, DESCENTRALIZACIÓN Y PLANIFICACIÓN URBANA LOCAL, ESTUDIO DE CASOS EN EL ÁREA METROPOLITANA DE CARACAS”, asciende a la categoría de TITULAR a partir del 15-12-2001.  has weight: 1.0
+20120927084306 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120927084306 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (39) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
+20120927084306 INFO mbfi.focalizedExtractor.FocalizedExtractor [findFieldValue] (148) - No unit found.
+20120927084306 INFO mbfi.focalizedExtractor.FocalizedExtractor [findFieldValue] (148) - No unit found.
+20120927084351 INFO mbfi.focalizedExtractor.FocalizedExtractor [findFieldValue] (153) - Unit: JUAN CARLOS RODRÍGUEZ, quien presentó el trabajo titulado “FUNCIÓN PÚBLICA, DESCENTRALIZACIÓN Y PLANIFICACIÓN URBANA LOCAL, ESTUDIO DE CASOS EN EL ÁREA METROPOLITANA DE CARACAS”, asciende a la categoría de TITULAR a partir del 15-12-2001.  has weight: 1.0
+20120927084351 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120927084351 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (39) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
+20120927084351 INFO mbfi.focalizedExtractor.FocalizedExtractor [findFieldValue] (148) - No unit found.
+20120927084351 INFO mbfi.focalizedExtractor.FocalizedExtractor [findFieldValue] (148) - No unit found.
+20120927084410 INFO mbfi.focalizedExtractor.FocalizedExtractor [findFieldValue] (153) - Unit: JUAN CARLOS RODRÍGUEZ, quien presentó el trabajo titulado “FUNCIÓN PÚBLICA, DESCENTRALIZACIÓN Y PLANIFICACIÓN URBANA LOCAL, ESTUDIO DE CASOS EN EL ÁREA METROPOLITANA DE CARACAS”, asciende a la categoría de TITULAR a partir del 15-12-2001.  has weight: 1.0
+20120927084410 INFO mdfi.conditions.Formula [removeAttribute] (176) - Found attribute
+20120927084410 INFO mbfi.focalizedExtractor.ExtractionContext [getFieldInformationByName] (39) - No se ha encontrado el campo: EsAscendido.NombreTrabajoentre los file descriptors
+20120927084410 INFO mbfi.focalizedExtractor.FocalizedExtractor [findFieldValue] (148) - No unit found.
+20120927084410 INFO mbfi.focalizedExtractor.FocalizedExtractor [findFieldValue] (148) - No unit found.

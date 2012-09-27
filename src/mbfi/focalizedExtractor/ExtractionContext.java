@@ -27,16 +27,17 @@ public class ExtractionContext {
 
 	public FieldInformation getFieldInformationByName (String name){
 		FieldInformation dummy = new FieldInformation(name, null);
-		
+//		System.out.println("--");
+//		System.out.println("L:"+name);
 		for (Iterator <FieldInformation> iterator = fieldsInformation.iterator(); iterator.hasNext();) {
 			FieldInformation fInfo= (FieldInformation) iterator.next();
-			
+//			System.out.println("P:"+fInfo.getFieldName());
 		}
 		
 		int iPoint = Collections.binarySearch(fieldsInformation, dummy);
 		if (iPoint>fieldsInformation.size()||iPoint<0){
 			log.log(Level.INFO, "No se ha encontrado el campo: " + name + "entre los file descriptors");
-			System.out.println(1/0);
+//			System.out.println(1/0);
 			return null;
 		}
 		

@@ -121,6 +121,7 @@ public class FocalizedExtractor {
 	
 	
 	public List<FieldValue> findFieldValue (String missingFieldName){
+		
 		PriorityQueue<UnitHit> pQueue = new PriorityQueue<UnitHit>();
 		List<FieldValue> fieldValueList = new ArrayList<FieldValue>();
 		String unit;
@@ -171,7 +172,6 @@ public class FocalizedExtractor {
 	}
 
 	private String extractFieldValue(String missingFieldName, String unit) {
-		
 		
 		FieldDescriptor fDesc = getFieldDescriptorByName(missingFieldName);
 		
@@ -253,10 +253,13 @@ public class FocalizedExtractor {
 	}
 
 	private FieldDescriptor getFieldDescriptorByName (String fieldName){
+		
+		
 		FieldDescriptor dummy = new FieldDescriptor(fieldName);
+		
 		int iPoint = Collections.binarySearch(fieldDescriptors, dummy);
 		if (iPoint>fieldDescriptors.size() || iPoint<0){
-			//log.log(Level.INFO, "No se ha encontrado el campo: " + fieldName + "entre los file descriptors");
+			log.log(Level.INFO, "No se ha encontrado el campo: " + fieldName + "entre los file descriptors");
 			return null;
 		}
 		
