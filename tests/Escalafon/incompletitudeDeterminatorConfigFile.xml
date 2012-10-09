@@ -37,7 +37,7 @@
 		<FieldDescriptor>
 			<ConceptName>EsAscendido</ConceptName>
 			<FieldName>Fecha</FieldName>
-			<type>STRING</type>
+			<type>DATE</type>
 			<domainType>CONTINUOUS</domainType>
 			<generateValues>true</generateValues>
                         <increment>1</increment>

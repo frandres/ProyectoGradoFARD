@@ -14,6 +14,8 @@ import java.util.regex.Pattern;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
+import common.FocalizedExtractorResult;
+
 public class FocalizedExtractor {
 	
 	static Logger log = Logger.getLogger(FocalizedExtractor.class.getName());
@@ -120,10 +122,10 @@ public class FocalizedExtractor {
 	}
 	
 	
-	public List<FieldValue> findFieldValue (String missingFieldName){
+	public List<FocalizedExtractorResult> findFieldValue (String missingFieldName){
 		
 		PriorityQueue<UnitHit> pQueue = new PriorityQueue<UnitHit>();
-		List<FieldValue> fieldValueList = new ArrayList<FieldValue>();
+		List<FocalizedExtractorResult> fieldValueList = new ArrayList<FocalizedExtractorResult>();
 		String unit;
 		
 		if (documentFragments == null){
@@ -143,18 +145,29 @@ public class FocalizedExtractor {
 		}
 	
 		String fieldValue;
-		
+		String pKeyValue;
 		if (pQueue.isEmpty()){
 			log.log(Level.INFO, "No unit found.");
 		}
 		while (!pQueue.isEmpty()){
 			UnitHit uHit = pQueue.poll();
 			unit = uHit.getUnit();
-			log.log(Level.INFO, "Unit: " + unit + " has weight: " + uHit.getHitMeasure());
+//			log.log(Level.INFO, "Unit: " + unit + " has weight: " + uHit.getHitMeasure());
 			
 			if ((fieldValue=extractFieldValue(missingFieldName,unit))!=null){
-				int type = getFieldDescriptorByName(missingFieldName).getType();
-				fieldValueList.add(new FieldValue(parseFieldValue(fieldValue,type),type));
+
+				if (((pKeyValue=extractFieldValue(eContext.getPrimaryKey().getIdentifier(),unit))!=null)){
+
+					FieldDescriptor pkeyDescriptor = getFieldDescriptorByName(eContext.getPrimaryKey().getIdentifier());
+					int type = getFieldDescriptorByName(missingFieldName).getType();
+					fieldValueList.add(new FocalizedExtractorResult(new FieldValue(parseFieldValue(pKeyValue,pkeyDescriptor.getType()),
+																				pkeyDescriptor.getType()),
+																	new FieldValue(parseFieldValue(fieldValue,type),
+																				   type)));
+				}
+				
+			} else{
+				
 			}
 							
 		}
@@ -181,8 +194,8 @@ public class FocalizedExtractor {
 		
 		for (Iterator<String> iterator = specificRegExps.iterator(); iterator.hasNext();) {
 			
-			
 			String regExp = iterator.next();
+			
 			Pattern pattern = Pattern.compile(regExp,
 	                					  		Pattern.DOTALL);
 		
@@ -200,6 +213,7 @@ public class FocalizedExtractor {
 		
 		}
 		
+//		System.out.println("Missing field name: " + value);
 		return value; 
 	}
 
@@ -253,12 +267,17 @@ public class FocalizedExtractor {
 	}
 
 	private FieldDescriptor getFieldDescriptorByName (String fieldName){
-		
-		
+			
 		FieldDescriptor dummy = new FieldDescriptor(fieldName);
 		
+
 		int iPoint = Collections.binarySearch(fieldDescriptors, dummy);
 		if (iPoint>fieldDescriptors.size() || iPoint<0){
+//			System.out.println("Looking for: " + fieldName);
+//			for (Iterator  it = fieldDescriptors.iterator(); it.hasNext();) {
+//				FieldDescriptor fDescriptor = (FieldDescriptor) it.next();
+//				System.out.println(" FD: " + fDescriptor.getFieldName());
+//			}
 			log.log(Level.INFO, "No se ha encontrado el campo: " + fieldName + "entre los file descriptors");
 			return null;
 		}

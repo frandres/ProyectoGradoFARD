@@ -74,7 +74,8 @@ public class ExtractionContextBuilder {
 			List<FieldInformation> results = databaseResult.getResults();
 			
 			// If the attribute upon which we are building the context is null, add it to the context.
-			if (results.get(numAttributes-1).getFieldValues().get(0).getStringValue()!=DatabaseHandler.NULL){
+			if (results.get(numAttributes-1).getFieldValues().get(0) != null && 
+				results.get(numAttributes-1).getFieldValues().get(0).getStringValue()!=DatabaseHandler.NULL){
 				int cont = 0;
 				for (Iterator<FieldInformation> iterator2 = primaryKeyContext.iterator(); iterator2
 						.hasNext();) {
@@ -104,7 +105,7 @@ public class ExtractionContextBuilder {
 		
 		fInfo.addAll(conditionFieldInformation);
 		
-		return new ExtractionContext(fInfo);
+		return new ExtractionContext(fInfo, getDBHandler().getPrimaryKey());
 	}
 
 	private List<FieldInformation> getConditionFieldInformation() {
@@ -123,6 +124,7 @@ public class ExtractionContextBuilder {
 	
 	private List<FieldInformation> buildFieldInfos(
 			List<IncompletitudeFieldDescriptor> fDescriptors, List<Atom> atoms) {
+		
 		
 		List <Attribute> conditionAttributes;
 		IncompletitudeFieldDescriptor fDescriptor;
@@ -166,11 +168,23 @@ public class ExtractionContextBuilder {
 		
 		List<IncompletitudeFieldDescriptor> fDescriptors = new ArrayList<IncompletitudeFieldDescriptor>();
 		List<IncompletitudeFieldDescriptor> allFDescriptors = configuration.getfDescriptors();
-		
-		
+				
 		for (Iterator<Attribute> iterator = attributes.iterator(); iterator.hasNext();) {
 			Attribute at = iterator.next();
 			fDescriptors.add(getFieldDescriptorByAtribute(at,allFDescriptors));
+			
+//			if (getFieldDescriptorByAtribute(at,allFDescriptors)==null){
+//				System.out.println("Not found");
+//				System.out.println(at);
+//				
+//				for (Iterator iterator2 = allFDescriptors.iterator(); iterator2
+//						.hasNext();) {
+//					IncompletitudeFieldDescriptor incompletitudeFieldDescriptor = (IncompletitudeFieldDescriptor) iterator2
+//							.next();
+//					System.out.println(" "+ incompletitudeFieldDescriptor.getAttribute());
+//				}
+//				
+//			}
 		}
 
 		return fDescriptors;
@@ -181,8 +195,20 @@ public class ExtractionContextBuilder {
 		for (Iterator<IncompletitudeFieldDescriptor> iterator = fds.iterator(); iterator.hasNext();) {
 			IncompletitudeFieldDescriptor incompletitudeFieldDescriptor = iterator.next();
 			
+//			if (at== null){
+//			
+//				System.out.println("Attribute is null");
+//			}
+//			
+//			if (incompletitudeFieldDescriptor!= null){
+//				
+//				System.out.println(incompletitudeFieldDescriptor.getAttribute());
+//			}
+//			
 			if (at.equals(incompletitudeFieldDescriptor.getAttribute())) {
+				
 				return incompletitudeFieldDescriptor;
+				
 			}
 			
 		}
@@ -275,6 +301,8 @@ public class ExtractionContextBuilder {
 			condValue = sValue.getValues();
 		}
 		
+	
+		
 		for (Iterator <FieldValue> iterator = possibleValues.iterator(); iterator.hasNext();) {
 			FieldValue sValue = iterator.next();
 			if (conditionFails(sValue,condition)){
@@ -318,7 +346,7 @@ public class ExtractionContextBuilder {
 		SimpleValue rhsSV = (SimpleValue) rhs;
 		FieldValue rhsFieldValue = rhsSV.getValues().get(0);
 		if (!verifyTypeCompability(rhsSV.getValues().get(0).getType(), fieldValue.getType())){
-			log.log(Level.WARN, "Attempting to compare values of different types");
+			log.log(Level.WARN, "Attempting to compare values of different types: " + rhsSV.getValues().get(0).getType() + " y " + fieldValue.getType());
 			return false;
 		}
 		switch (condition.getComparationOperation()) {
@@ -382,6 +410,7 @@ public class ExtractionContextBuilder {
 	}
 
 	private boolean testLessThan(FieldValue op1, FieldValue op2) {
+		
 		switch (op1.getType()) {
 		case FieldDescriptor.STRING:
 			return (op1.getStringValue().compareTo(op2.getStringValue())<0);
@@ -443,9 +472,9 @@ public class ExtractionContextBuilder {
 
 	private boolean verifyTypeCompability(int type, int type2) {
 		
-		if (type2==FieldDescriptor.DATE){
-			return false;
-		}
+//		if (type2==FieldDescriptor.DATE){
+//			return false;
+//		}
 		
 		switch (type) {
 		case FieldDescriptor.STRING:

@@ -62,4 +62,8 @@ public class FieldValue {
 	public boolean equals(FieldValue fValue){
 		return (this.getTextValue().compareTo(fValue.getTextValue())==0) && (fValue.getType()==getType());
 	}
+
+	public boolean isNull() {
+		return getTextValue()==null || getTextValue()==""; 
+	}
 }

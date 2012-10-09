@@ -18,7 +18,7 @@ public class Attribute {
 	    if (o instanceof Attribute) {
 	      Attribute at = (Attribute) o;
 	      
-	      if (getIdentifier().compareTo(at.getIdentifier())==0){ 
+	      if (getIdentifier().compareToIgnoreCase(at.getIdentifier())==0){ 
 	    	  return true;
 	      }
 	      

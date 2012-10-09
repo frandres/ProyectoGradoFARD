@@ -4,6 +4,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import mdfi.query.Attribute;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -14,11 +16,13 @@ public class ExtractionContext {
 	static Logger log = Logger.getLogger(ExtractionContext.class.getName());
 	
 	private List<FieldInformation> fieldsInformation;
+	private Attribute pkey;
 	
-	public ExtractionContext(List<FieldInformation> fieldsInformation) {
+	public ExtractionContext(List<FieldInformation> fieldsInformation, Attribute pkey) {
 		super();
 		this.fieldsInformation = fieldsInformation;
 		Collections.sort(this.fieldsInformation);
+		this.pkey = pkey;
 	}
 	
 	public List<FieldInformation> getFieldsInformation() {
@@ -50,5 +54,10 @@ public class ExtractionContext {
 			return null;
 		}	
 	}
+
+	public Attribute getPrimaryKey() {
+		return pkey.clone();
+	}
+
 	
 }

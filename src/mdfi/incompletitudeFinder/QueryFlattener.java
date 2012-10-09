@@ -59,6 +59,7 @@ public class QueryFlattener {
 			log.log(Level.WARN, "Null Condition: ");
 			return null;
 		}
+		
 		if (condition instanceof BinaryFormula){
 			BinaryFormula binCondition = (BinaryFormula) condition;
 			binCondition.setLeftSide(flattenCondition(binCondition.getLeftSide()));

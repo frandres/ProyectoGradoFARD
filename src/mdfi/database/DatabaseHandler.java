@@ -68,21 +68,19 @@ public class DatabaseHandler {
 		QueryFlattener flatter = new QueryFlattener(this);
 		Query wCopy = flatter.flattenQuery(query);
 				
+//		System.out.println(wCopy);
 		QueryEvaluator evaluator = new QueryEvaluator(wCopy, databaseUnits);
 		
 		List<DatabaseUnit> units = evaluator.evaluateQuery();
 		
-		
 		results = getResults (units,query);
-		
-		
+				
 		if (query.hasAggregateFunction()){
 			return processAggregate(results,
 					query.getAggregateFunction().get(0).getAggregateFunction());
 		} else{
 			return results;
 		}
-		
 		
 	}
 	
@@ -259,32 +257,65 @@ public class DatabaseHandler {
 		return results;
 	}
 
-	public void insertValuesIntoOntology(String conceptName,
+	public boolean insertValuesIntoOntology(String conceptName,
 										 FieldValue primaryKeyValue,
 												String attribute, 
 												List<FieldValue> values){
 		
+		boolean found = false;
+		
+		System.out.println("----------------------------------");
 		for (Iterator <DatabaseUnit> iterator = getDatabaseUnits().iterator(); iterator.hasNext();) {
 			DatabaseUnit dUnit = iterator.next();
 
-			if (QueryEvaluator.testEquality(primaryKeyValue, 
-										dUnit.getFieldValueByFieldName(getPrimaryKey().getIdentifier()))){
+//			if (QueryEvaluator.testEquality(primaryKeyValue, 
+//										dUnit.getFieldValueByFieldName(getPrimaryKey().getIdentifier()))){
+			if (primaryKeyValue.equals(dUnit.getFieldValueByFieldName(getPrimaryKey().getIdentifier()))){
 				FieldInformation fInfo = new FieldInformation(attribute, values);
 				dUnit.insertValue(fInfo);
+				System.out.println("Gotcha");
+				return true;
+				//log.log(Level.TRACE, "Inserted value into ontology");
+			} else{
+				if (primaryKeyValue.getTextValue().compareTo("CULTURA DE INVESTIGACIÓN Y PRODUCTIVIDAD INVESTIGATIVA DEL PERSONAL ACADÉMICO DE LA UNIVERSIDAD SIMÓN BOLÍVAR SEDE DEL LITORAL. DIAGNÓSTICO Y PROPUESTA") ==0){
 				
-				log.log(Level.TRACE, "Inserted value into ontology");
+					System.out.println(dUnit.getFieldValueByFieldName(getPrimaryKey().getIdentifier()).getTextValue());
+					System.out.println(primaryKeyValue.getTextValue());
+				}
 			}
 			
 		}
+		System.out.println("----------------------------------");
+		if (!found){
+			
+			List<FieldValue> newValues = new ArrayList<FieldValue>();
+			List<FieldInformation> fieldInfo = new ArrayList<FieldInformation>();
+
+			newValues.add(new FieldValue(primaryKeyValue.getTextValue(),primaryKeyValue.getType() ));
+			fieldInfo.add (new FieldInformation(getPrimaryKey().getIdentifier(),newValues));
+			
+			if (attribute.compareTo(getPrimaryKey().getIdentifier())!=0){
+				newValues = new ArrayList<FieldValue>();
+				newValues.add(new FieldValue(values.get(0).getTextValue(),values.get(0).getType() ));
+				fieldInfo.add (new FieldInformation(attribute,newValues));
+			} 
+						
+			DatabaseUnit newUnit = new DatabaseUnit(fieldInfo);
+			getDatabaseUnits().add(newUnit);
+			
+			return true;
+		}
+		
+		return false;
 	}
 
-	public void insertValuesIntoOntology(String conceptName,
+	public boolean insertValuesIntoOntology(String conceptName,
 			 FieldValue primaryKeyValue,
 					String attribute, 
 					FieldValue value){
 		List<FieldValue> fieldValues = new ArrayList<FieldValue>();
 		fieldValues.add(value);
-		insertValuesIntoOntology(conceptName, primaryKeyValue,attribute,fieldValues);
+		return insertValuesIntoOntology(conceptName, primaryKeyValue,attribute,fieldValues);
 	}
 	
 	private List<DatabaseUnit> getDatabaseUnits() {

@@ -118,7 +118,7 @@ public class XMLReader {
 		if (!generateValues){
 			possibleValues = getPossibleValues(filSEl,"posibleValue",type);
 		} else{
-			possibleValues = null;
+			possibleValues = new ArrayList<FieldValue>();
 		}
 		IncompletitudeFieldDescriptor ifd = new IncompletitudeFieldDescriptor(
 				   conceptName, 

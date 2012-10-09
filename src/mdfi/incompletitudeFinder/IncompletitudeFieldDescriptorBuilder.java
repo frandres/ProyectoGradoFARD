@@ -162,13 +162,14 @@ public class IncompletitudeFieldDescriptorBuilder {
 			
 			possibleFieldValues.add(new FieldValue(dateRep, FieldDescriptor.DATE));
 			
-			if (counter++ >= 100000){
+			if (counter++ >= 1000000){
 				log.log(Level.WARN, "Passed numer of possible dates");
 				return iFD;
 			}
 			
 			c.setTime(idate);
 			c.add(Calendar.DATE, increment);
+			idate = c.getTime();
 		}
 		
 		iFD.setPossibleValues(possibleFieldValues);

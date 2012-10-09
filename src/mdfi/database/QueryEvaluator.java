@@ -7,11 +7,13 @@ import java.util.List;
 
 import mbfi.focalizedExtractor.FieldDescriptor;
 import mbfi.focalizedExtractor.FieldValue;
+import mdfi.conditions.AndFormula;
 import mdfi.conditions.Atom;
 import mdfi.conditions.BinaryFormula;
 import mdfi.conditions.Formula;
 import mdfi.conditions.NegativeFormula;
 import mdfi.conditions.NullCondition;
+import mdfi.conditions.OrFormula;
 import mdfi.conditions.rightHandedSide.RightHandSide;
 import mdfi.conditions.rightHandedSide.SimpleValue;
 import mdfi.query.Attribute;
@@ -29,6 +31,7 @@ public class QueryEvaluator {
 	private Query query;
 	private List<DatabaseUnit> databaseUnits;
 	
+	//TODO It's here
 	public QueryEvaluator(Query query, List<DatabaseUnit> dbUnits) {
 		super();
 		this.query = query;
@@ -58,6 +61,10 @@ public class QueryEvaluator {
 					.hasNext() && admitted;) {
 				
 				Formula formula = iterator2.next();
+				
+//				System.out.println(formula.getConditionText(true));
+//				System.out.println(unit.getFieldValueByFieldName("EsAscendido.NombreTrabajo").getTextValue());
+				
 				admitted = admitted && evaluateCondition(formula,unit);
 				
 			}
@@ -79,28 +86,54 @@ public class QueryEvaluator {
 			log.log(Level.WARN, "Null Condition: ");
 			return false;
 		}
-		if (condition instanceof BinaryFormula){
+		
+		if (condition instanceof AndFormula){
+			
+//			System.out.println("AND");
+			
 			BinaryFormula binCondition = (BinaryFormula) condition;
 
+			boolean bool = (evaluateCondition(binCondition.getLeftSide(),unit) &&
+				   evaluateCondition(binCondition.getRightSide(),unit));
+			
+			if (bool){
+				System.out.println(unit);
+			}
 			return evaluateCondition(binCondition.getLeftSide(),unit) &&
+				   evaluateCondition(binCondition.getRightSide(),unit) ;
+		}
+		
+		if (condition instanceof OrFormula){
+			BinaryFormula binCondition = (BinaryFormula) condition;
+
+//			System.out.println("OR");
+			
+			return evaluateCondition(binCondition.getLeftSide(),unit) ||
 				   evaluateCondition(binCondition.getRightSide(),unit) ;
 		}
 		
 		if (condition instanceof NegativeFormula){
 			NegativeFormula negCondition = (NegativeFormula) condition;
 			
+//			System.out.println("NEG");
+			
 			return !evaluateCondition(negCondition,unit);
 		}
 		
 		if (condition instanceof Atom){
 			Atom atom = (Atom) condition;
+//			System.out.println(unit);
 			//log.log(Level.TRACE, atom.getConditionText(false));
+			
+//			System.out.println("Atom");
 			
 			return evaluateAtom(atom,unit);
 		}
 		
 		if (condition instanceof NullCondition){
 
+//			System.out.println("Null");
+			
 			return true;
 		}
 		
@@ -112,6 +145,13 @@ public class QueryEvaluator {
 		
 		FieldValue leftHandValue = resolveLeftHandValue(atom.getAttributes().get(0),unit);
 
+		if (leftHandValue == null || leftHandValue.isNull()){
+			return false;
+		} else{
+//			System.out.println("Type: " + leftHandValue.getType());
+//			System.out.println("Value: " + leftHandValue.getTextValue());
+		}
+		
 		
 		RightHandSide rhs = atom.getRhs();
 		
@@ -142,6 +182,7 @@ public class QueryEvaluator {
 		if (verifyTypeCompability(leftHandValue.getType(),righthandValue.getType(),comparationOperation)){
 			
 			return evaluateWithoutTypeChecks(leftHandValue,righthandValue,comparationOperation);
+			
 		} else{
 			log.log(Level.ERROR, "Trying to operate 2 values of incompatible types: " 
 					  + leftHandValue.getType() + " and " + righthandValue.getType());
@@ -182,7 +223,8 @@ public class QueryEvaluator {
 			
 			return (op1.getStringValue().compareTo(op2.getStringValue())==0);
 
-		case FieldDescriptor.INTEGER:			
+		case FieldDescriptor.INTEGER:	
+			
 			return (op1.getIntValue() == op2.getIntValue());
 			
 		case FieldDescriptor.DOUBLE:
@@ -197,10 +239,14 @@ public class QueryEvaluator {
 			DateManipulator dMan = new DateManipulator(op1.getTextValue());
 			Date date1 = dMan.getDate();
 			
-			dMan = new DateManipulator(op1.getTextValue());
+			dMan = new DateManipulator(op2.getTextValue());
 			Date date2 = dMan.getDate();
 			
+//			System.out.println(date1);
+//			System.out.println(date2);
+//			System.out.println(date1.compareTo(date2) ==0);
 			return (date1.compareTo(date2) ==0);
+			
 		default:
 			break;
 		}

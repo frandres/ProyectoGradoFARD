@@ -56,7 +56,7 @@
 		</FieldDescriptor>		
 		<!-- í: \u00ed -->
 		<FieldDescriptor>
-			<FieldName>EsAscendido.fecha</FieldName>
+			<FieldName>EsAscendido.Fecha</FieldName>
 			<SpecificRegExps>
 				<SpecificRegExp priority="1" >a\s+partir\s+del{0,1}\s+([0-9]+[\-/\.][0-9]+[\-/\.][0-9]+).*</SpecificRegExp>
 				<SpecificRegExp priority="101" >([0-9]+[\-/\.][0-9]+[\-/\.][0-9]+)</SpecificRegExp>				
@@ -66,7 +66,7 @@
 		</FieldDescriptor>		
 		
 		<FieldDescriptor>
-			<FieldName>EsAscendido.escalafon</FieldName>
+			<FieldName>EsAscendido.Escalafon</FieldName>
 			<SpecificRegExps>
 				<SpecificRegExp priority="1" >((?:[Tt][Ii][Tt][Uu][Ll][Aa][Rr])|(?:[Aa][Gg][Rr][Ee][Gg][Aa][Dd][Oo])|(?:[Aa][Ss][Oo][Cc][Ii][Aa][Dd][Oo]))</SpecificRegExp>
 			</SpecificRegExps>
@@ -75,7 +75,7 @@
 		</FieldDescriptor>		
 		
 		<FieldDescriptor>
-			<FieldName>EsAscendido.postergado</FieldName>
+			<FieldName>EsAscendido.Postergado</FieldName>
 			<SpecificRegExps>
 				<SpecificRegExp priority="1" >([Vv][Ee][Rr][Ee][Dd][Ii][Cc][Tt][o] *\s* *(?:(?:[Rr][Ee][Pp][Rr][Oo][Bb][Aa][Tt][Oo][Rr][Ii][Oo])|(?:[Dd][Ee][Ss][Ff][Aa][Vv][Oo][Rr][Aa][Bb][Ll][Ee])))</SpecificRegExp>
 				<SpecificRegExp priority="2" >([Rr][Ee][Cc][Hh][Aa][Zz][Aa][Rr] *\s* *[Dd][Ii][Cc][Hh][Oo] *\s* *[Tt][Rr][Aa][Bb][Aa][Jj][Oo])</SpecificRegExp>

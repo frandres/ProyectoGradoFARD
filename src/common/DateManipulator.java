@@ -15,15 +15,80 @@ public class DateManipulator {
 	private String date;
 	static Logger log = Logger.getLogger(DateManipulator.class.getName());
 	
-	private final static  String [] dateFormats= {"dd.MM.yyyy",
-												  "MM.yyyy",
-												   "yyyy.MM",
-												   "dd/MM/yyyy",
-												   "MM/yyyy",
-												   "yyyy/MM",
-												   "dd-MM-yyyy",
-												   "MM-yyyy",
-												   "yyyy-MM"};
+	private final static  String [] dateFormats= {
+		"dd\\.MM\\.yyyy",
+		"MM\\.yyyy",
+		"yyyy\\.MM",
+		"dd/MM/yyyy",
+		"MM/yyyy",
+		"yyyy/MM",
+		"dd-MM-yyyy",
+		"MM-yyyy",
+		"yyyy-MM",
+		"d\\.MM\\.yyyy",
+		"MM\\.yyyy",
+		"yyyy\\.MM",
+		"d/MM/yyyy",
+		"MM/yyyy",
+		"yyyy/MM",
+		"d-MM-yyyy",
+		"MM-yyyy",
+		"yyyy-MM",
+		"dd\\.M\\.yyyy",
+		"M\\.yyyy",
+		"yyyy\\.M",
+		"dd/M/yyyy",
+		"M/yyyy",
+		"yyyy/M",
+		"dd-M-yyyy",
+		"M-yyyy",
+		"yyyy-M",
+		"d\\.M\\.yyyy",
+		"M\\.yyyy",
+		"yyyy\\.M",
+		"d/M/yyyy",
+		"M/yyyy",
+		"yyyy/M",
+		"d-M-yyyy",
+		"M-yyyy",
+		"yyyy-M",
+		"dd\\.MM\\.yy",
+		"MM\\.yy",
+		"yy\\.MM",
+		"dd/MM/yy",
+		"MM/yy",
+		"yy/MM",
+		"dd-MM-yy",
+		"MM-yy",
+		"yy-MM",
+		"d\\.MM\\.yy",
+		"MM\\.yy",
+		"yy\\.MM",
+		"d/MM/yy",
+		"MM/yy",
+		"yy/MM",
+		"d-MM-yy",
+		"MM-yy",
+		"yy-MM",
+		"dd\\.M\\.yy",
+		"M\\.yy",
+		"yy\\.M",
+		"dd/M/yy",
+		"M/yy",
+		"yy/M",
+		"dd-M-yy",
+		"M-yy",
+		"yy-M",
+		"d\\.M\\.yy",
+		"M\\.yy",
+		"yy\\.M",
+		"d/M/yy",
+		"M/yy",
+		"yy/M",
+		"d-M-yy",
+		"M-yy",
+		"yy-M"};
+		
 	public DateManipulator(String date) {
 		super();
 		this.date = date;
@@ -61,10 +126,14 @@ public class DateManipulator {
 		}
 		
 		DateFormat dFormat =  new SimpleDateFormat(dateFormats[format]);
+//		System.out.println(date);
+//		System.out.println(dateFormats[format]);
+		
 		try {
+			
 			dat = dFormat.parse(date);
 		} catch (ParseException e) {
-			//log.log(Level.ERROR, "Could not parse date");
+			log.log(Level.ERROR, "Could not parse date");
 
 		}
 		
@@ -100,11 +169,14 @@ public class DateManipulator {
 	}
 
 	private static int determineFormat(String dString) {
+		
 		for (int i = 0; i < dateFormats.length; i++) {
-			String format = dateFormats[i].replace("d", "\\d").
-										   replace("M", "\\d").
-										   replace("y", "\\d");
 			
+			String format;
+			format = new String(dateFormats[i]);
+			format = format.replace("d", "\\d").
+				     replace("M", "\\d").
+				     replace("y", "\\d");
 			if (dString.matches(format)){
 				return i;
 			}

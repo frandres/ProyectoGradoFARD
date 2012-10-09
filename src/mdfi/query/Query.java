@@ -163,6 +163,7 @@ public class Query {
 		if (nestedQuery){
 			qString += ")";
 		}
+		
 		return qString;
 		
 	}
